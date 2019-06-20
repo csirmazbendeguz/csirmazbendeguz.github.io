@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-20T14:50:38+02:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="http://localhost:4000/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>http://localhost:4000/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="http://localhost:4000/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-20T18:30:43+02:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="http://localhost:4000/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>http://localhost:4000/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="http://localhost:4000/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on 20 March, 2019.&lt;/p&gt;
   
   &lt;ul&gt;
@@ -98,11 +98,13 @@
       &lt;/tr&gt;
     &lt;/tbody&gt;
   &lt;/table&gt;
+  &lt;br /&gt;
   &lt;p&gt;
     In PHP, however, comparison operators are &lt;em&gt;non-associative&lt;/em&gt;.
     They cannot be used next to each other.
-    The expression &lt;code class=&quot;highlighter-rouge&quot;&gt;$z &gt; $y &gt; $x&lt;/code&gt; is illegal in PHP.
   &lt;/p&gt;
+  &lt;p&gt;The expression &lt;code class=&quot;highlighter-rouge&quot;&gt;$z &gt; $y &gt; $x&lt;/code&gt; is illegal in PHP.&lt;/p&gt;
+  &lt;br /&gt;
   &lt;table&gt;
     &lt;thead&gt;
       &lt;tr&gt;
@@ -449,7 +451,7 @@
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Variance (recap)&lt;/h2&gt;
   &lt;p&gt;When a subclass overrides a method of a superclass, it is possible to change its parameter and return types.&lt;/p&gt;
-  &lt;table&gt;
+  &lt;table style=&quot;margin: 0 auto;&quot;&gt;
     &lt;thead&gt;
       &lt;tr&gt;
         &lt;th&gt;Covariance&lt;/th&gt;

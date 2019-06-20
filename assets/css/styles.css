@@ -92,6 +92,9 @@
 .highlight .ss {
   color: #90a959; }
 
+* {
+  line-height: 1.6; }
+
 body {
   background-color: #00284d;
   font-family: "Noto Serif", "Times New Roman", Times, serif; }
@@ -116,17 +119,11 @@ ul {
   padding-left: 24px;
   line-height: normal; }
 
-li {
-  line-height: 1.6; }
-
 strong {
   font-weight: bold; }
 
 em {
   font-style: italic; }
-
-p {
-  line-height: 1.6; }
 
 th {
   font-weight: bold; }
@@ -136,6 +133,13 @@ th, td {
 
 tbody tr:nth-child(odd) {
   background-color: #f2f2f2; }
+
+dt {
+  background-color: #f2f2f2;
+  padding: 8px; }
+
+dd {
+  padding: 8px 16px; }
 
 .header {
   font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
