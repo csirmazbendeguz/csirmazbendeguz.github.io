@@ -128,11 +128,37 @@
   <h2>Answer</h2>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">B</code></pre></figure>
+</section>
 
-  <p>
-    PHP constructors can be overridden with <em>any</em> signature.
-    Were they not constructors, PHP would issue a warning.
-  </p>
+<section class="section">
+  <h2>Signatures</h2>
+  <p>PHP constructors can be overridden with <em>any</em> signature.</p>
+
+  <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="k">array</span> <span class="nv">$a</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">B</span> <span class="k">extends</span> <span class="nx">A</span> <span class="p">{</span>
+  <span class="c1">// Works fine!</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">Closure</span> <span class="nv">$c</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span></code></pre></figure>
+
+  <br />
+
+  <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="k">array</span> <span class="nv">$a</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">B</span> <span class="k">extends</span> <span class="nx">A</span> <span class="p">{</span>
+  <span class="c1">// This is OK too.</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span> <span class="p">{}</span>
+<span class="p">}</span></code></pre></figure>
+
+  <p>Were they not constructors, PHP would issue a warning.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
@@ -145,32 +171,15 @@
   <span class="c1">// compatible with A::abc(LogicException $l)</span>
   <span class="k">public</span> <span class="k">function</span> <span class="nf">abc</span><span class="p">(</span><span class="nx">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span></code></pre></figure>
+</section>
 
-  <p>More examples:</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="k">array</span> <span class="nv">$l</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span>
-
-<span class="k">class</span> <span class="nc">B</span> <span class="k">extends</span> <span class="nx">A</span> <span class="p">{</span>
-  <span class="c1">// Works fine!</span>
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">Closure</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span></code></pre></figure>
-
-  <br />
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="k">array</span> <span class="nv">$l</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span>
-
-<span class="k">class</span> <span class="nc">B</span> <span class="k">extends</span> <span class="nx">A</span> <span class="p">{</span>
-  <span class="c1">// This is OK too.</span>
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span> <span class="p">{}</span>
-<span class="p">}</span></code></pre></figure>
+<section class="question-paginator">
+  <a href="/2019/06/16/php-quiz-part-4-hoisting.html">
+    <h2>&lt;&lt; previous</h2>
+  </a>
+  <a href="/2019/06/16/php-quiz-part-6-covariance.html">
+    <h2>next &gt;&gt;</h2>
+  </a>
 </section>
 
 

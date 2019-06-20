@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-18T17:04:21+02:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="http://localhost:4000/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>http://localhost:4000/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="http://localhost:4000/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-20T14:50:38+02:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="http://localhost:4000/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>http://localhost:4000/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="http://localhost:4000/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on 20 March, 2019.&lt;/p&gt;
   
   &lt;ul&gt;
@@ -69,6 +69,10 @@
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Answer&lt;/h2&gt;
   &lt;p&gt;It will output a syntax error.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h2&gt;Associativity&lt;/h2&gt;
   &lt;p&gt;Operator associativity decides how operators of equal precedence are grouped.&lt;/p&gt;
   &lt;table&gt;
     &lt;thead&gt;
@@ -117,6 +121,15 @@
       &lt;/tr&gt;
     &lt;/tbody&gt;
   &lt;/table&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;question-paginator&quot;&gt;
+  &lt;a href=&quot;/2019/06/15/php-quiz-part-2-echoes.html&quot;&gt;
+    &lt;h2&gt;&amp;lt;&amp;lt; previous&lt;/h2&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;/2019/06/16/php-quiz-part-4-hoisting.html&quot;&gt;
+    &lt;h2&gt;next &amp;gt;&amp;gt;&lt;/h2&gt;
+  &lt;/a&gt;
 &lt;/section&gt;</content><author><name></name></author><summary type="html">Some thoughts about operator associativity.</summary></entry><entry><title type="html">PHP Quiz - Part 4 - hoisting</title><link href="http://localhost:4000/2019/06/16/php-quiz-part-4-hoisting.html" rel="alternate" type="text/html" title="PHP Quiz - Part 4 - hoisting" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>http://localhost:4000/2019/06/16/php-quiz-part-4-hoisting</id><content type="html" xml:base="http://localhost:4000/2019/06/16/php-quiz-part-4-hoisting.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on 20 March, 2019.&lt;/p&gt;
   
@@ -185,7 +198,10 @@
   &lt;h2&gt;Answer&lt;/h2&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Hello World!&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/section&gt;
 
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h2&gt;Hoisting&lt;/h2&gt;
   &lt;p&gt;
     Similarly to JavaScript, function declarations are resolved compile time.
     By the time the interpreter calls our function, it will have been already defined.
@@ -213,6 +229,15 @@
 
 &lt;span class=&quot;c1&quot;&gt;// Includes the helloWorld function.&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;helloWorld.php&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;question-paginator&quot;&gt;
+  &lt;a href=&quot;/2019/06/16/php-quiz-part-3-associativity.html&quot;&gt;
+    &lt;h2&gt;&amp;lt;&amp;lt; previous&lt;/h2&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;/2019/06/16/php-quiz-part-5-constructors.html&quot;&gt;
+    &lt;h2&gt;next &amp;gt;&amp;gt;&lt;/h2&gt;
+  &lt;/a&gt;
 &lt;/section&gt;</content><author><name></name></author><summary type="html">&quot;Hoisting&quot; in PHP.</summary></entry><entry><title type="html">PHP Quiz - Part 5 - constructors</title><link href="http://localhost:4000/2019/06/16/php-quiz-part-5-constructors.html" rel="alternate" type="text/html" title="PHP Quiz - Part 5 - constructors" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>http://localhost:4000/2019/06/16/php-quiz-part-5-constructors</id><content type="html" xml:base="http://localhost:4000/2019/06/16/php-quiz-part-5-constructors.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on 20 March, 2019.&lt;/p&gt;
   
@@ -289,11 +314,37 @@
   &lt;h2&gt;Answer&lt;/h2&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;B&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/section&gt;
 
-  &lt;p&gt;
-    PHP constructors can be overridden with &lt;em&gt;any&lt;/em&gt; signature.
-    Were they not constructors, PHP would issue a warning.
-  &lt;/p&gt;
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h2&gt;Signatures&lt;/h2&gt;
+  &lt;p&gt;PHP constructors can be overridden with &lt;em&gt;any&lt;/em&gt; signature.&lt;/p&gt;
+
+  &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Works fine!&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Closure&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+  &lt;br /&gt;
+
+  &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// This is OK too.&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+  &lt;p&gt;Were they not constructors, PHP would issue a warning.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
 
@@ -306,32 +357,15 @@
   &lt;span class=&quot;c1&quot;&gt;// compatible with A::abc(LogicException $l)&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;abc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/section&gt;
 
-  &lt;p&gt;More examples:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// Works fine!&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Closure&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-  &lt;br /&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// This is OK too.&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;section class=&quot;question-paginator&quot;&gt;
+  &lt;a href=&quot;/2019/06/16/php-quiz-part-4-hoisting.html&quot;&gt;
+    &lt;h2&gt;&amp;lt;&amp;lt; previous&lt;/h2&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;/2019/06/16/php-quiz-part-6-covariance.html&quot;&gt;
+    &lt;h2&gt;next &amp;gt;&amp;gt;&lt;/h2&gt;
+  &lt;/a&gt;
 &lt;/section&gt;</content><author><name></name></author><summary type="html">A (not at all obvious) difference between constructors and functions.</summary></entry><entry><title type="html">PHP Quiz - Part 6 - covariance</title><link href="http://localhost:4000/2019/06/16/php-quiz-part-6-covariance.html" rel="alternate" type="text/html" title="PHP Quiz - Part 6 - covariance" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>http://localhost:4000/2019/06/16/php-quiz-part-6-covariance</id><content type="html" xml:base="http://localhost:4000/2019/06/16/php-quiz-part-6-covariance.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on 20 March, 2019.&lt;/p&gt;
   
@@ -561,6 +595,12 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
   &lt;h2&gt;The future&lt;/h2&gt;
   &lt;p&gt;PHP is mostly invariant... but there is progress!&lt;/p&gt;
   &lt;p&gt;We can expect real covariance/contravariance in PHP 7.4 (&lt;a href=&quot;https://wiki.php.net/rfc/covariant-returns-and-contravariant-parameters&quot;&gt;rfc&lt;/a&gt;).&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;question-paginator&quot;&gt;
+  &lt;a href=&quot;/2019/06/16/php-quiz-part-5-constructors.html&quot;&gt;
+    &lt;h2&gt;&amp;lt;&amp;lt; previous&lt;/h2&gt;
+  &lt;/a&gt;
 &lt;/section&gt;</content><author><name></name></author><summary type="html">Covariance, contravariance and PHP.</summary></entry><entry><title type="html">PHP Quiz - Part 2 - echoes</title><link href="http://localhost:4000/2019/06/15/php-quiz-part-2-echoes.html" rel="alternate" type="text/html" title="PHP Quiz - Part 2 - echoes" /><published>2019-06-15T00:00:00+02:00</published><updated>2019-06-15T00:00:00+02:00</updated><id>http://localhost:4000/2019/06/15/php-quiz-part-2-echoes</id><content type="html" xml:base="http://localhost:4000/2019/06/15/php-quiz-part-2-echoes.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on 20 March, 2019.&lt;/p&gt;
   
@@ -630,8 +670,18 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
   &lt;h2&gt;Answer&lt;/h2&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;baac&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/section&gt;
 
-  &lt;p&gt;The trick is to think about the arguments as seperate &lt;code class=&quot;highlighter-rouge&quot;&gt;echo&lt;/code&gt; statements.&lt;/p&gt;
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h2&gt;Arguments&lt;/h2&gt;
+  &lt;p&gt;
+    The arguments are not evaluated eagerly...
+    they are evaluated one by one!
+  &lt;/p&gt;
+  &lt;p&gt;
+    It's quite logical actually.
+    The trick is to think about them as seperate &lt;code class=&quot;highlighter-rouge&quot;&gt;echo&lt;/code&gt; statements.
+  &lt;/p&gt;
 
   &lt;div class=&quot;compare-table&quot;&gt;
     &lt;table&gt;
@@ -649,11 +699,14 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
       &lt;/tbody&gt;
     &lt;/table&gt;
   &lt;/div&gt;
+&lt;/section&gt;
 
+&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;
-    This happens because &lt;code class=&quot;highlighter-rouge&quot;&gt;echo&lt;/code&gt; is a language construct.
-    Similarly to other language constructs (namely variable declarations), it can be &quot;&lt;em&gt;stacked&lt;/em&gt;&quot;.
+    This happens because &lt;code class=&quot;highlighter-rouge&quot;&gt;echo&lt;/code&gt; is not a function.
+    It's a language construct.
   &lt;/p&gt;
+  &lt;p&gt;Similarly to other language constructs (namely variable declarations), it can be &quot;&lt;em&gt;stacked&lt;/em&gt;&quot; this way.&lt;br /&gt;&lt;/p&gt;
 
   &lt;div class=&quot;compare-table&quot;&gt;
     &lt;table&gt;
@@ -690,6 +743,17 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
       &lt;/tbody&gt;
     &lt;/table&gt;
   &lt;/div&gt;
+
+  &lt;p&gt;This is legal in PHP, albeit discouraged because of readability reasons.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;question-paginator&quot;&gt;
+  &lt;a href=&quot;/2019/06/14/php-quiz-part-1-for-loops.html&quot;&gt;
+    &lt;h2&gt;&amp;lt;&amp;lt; previous&lt;/h2&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;/2019/06/16/php-quiz-part-3-associativity.html&quot;&gt;
+    &lt;h2&gt;next &amp;gt;&amp;gt;&lt;/h2&gt;
+  &lt;/a&gt;
 &lt;/section&gt;</content><author><name></name></author><summary type="html">How exactly do echo arguments work?</summary></entry><entry><title type="html">PHP Quiz - Part 1 - for loops</title><link href="http://localhost:4000/2019/06/14/php-quiz-part-1-for-loops.html" rel="alternate" type="text/html" title="PHP Quiz - Part 1 - for loops" /><published>2019-06-14T00:00:00+02:00</published><updated>2019-06-14T00:00:00+02:00</updated><id>http://localhost:4000/2019/06/14/php-quiz-part-1-for-loops</id><content type="html" xml:base="http://localhost:4000/2019/06/14/php-quiz-part-1-for-loops.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on 20 March, 2019.&lt;/p&gt;
   
@@ -757,7 +821,10 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;0,0
 1,1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/section&gt;
 
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h2&gt;Comma operator&lt;/h2&gt;
   &lt;p&gt;In C, the &lt;a href=&quot;https://en.wikipedia.org/wiki/Comma_operator&quot;&gt;comma operator&lt;/a&gt; is an operator that evaluates two expressions, and returns the result of the second one.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/* prints &quot;Hello World!” and assigns 3 to 'a' */&lt;/span&gt;
@@ -776,4 +843,10 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
     Therefore, the expression &lt;code class=&quot;highlighter-rouge&quot;&gt;$i &lt; 3, $j &lt; 2&lt;/code&gt; is equivalent to &lt;code class=&quot;highlighter-rouge&quot;&gt;$j &lt; 2&lt;/code&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;$i &lt; 3&lt;/code&gt; is evaluated but disregarded).
     The loop will only iterate twice.
   &lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;question-paginator&quot;&gt;
+  &lt;a href=&quot;/2019/06/15/php-quiz-part-2-echoes.html&quot;&gt;
+    &lt;h2&gt;next &amp;gt;&amp;gt;&lt;/h2&gt;
+  &lt;/a&gt;
 &lt;/section&gt;</content><author><name></name></author><summary type="html">Everyone knows for loops... right?</summary></entry></feed>

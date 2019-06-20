@@ -250,3 +250,15 @@ tbody tr:nth-child(odd) {
       border-left: 0; }
     .compare-table table td:last-child {
       border-right: 0; }
+
+.question-paginator {
+  margin: 32px 0;
+  text-align: center; }
+  .question-paginator a {
+    display: inline-block; }
+    .question-paginator a:first-child {
+      margin-right: 16px; }
+    .question-paginator a:last-child {
+      margin-right: 0; }
+    .question-paginator a:hover {
+      opacity: 0.75; }

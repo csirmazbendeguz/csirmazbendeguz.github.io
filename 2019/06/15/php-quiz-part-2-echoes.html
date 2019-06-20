@@ -121,8 +121,18 @@
   <h2>Answer</h2>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">baac</code></pre></figure>
+</section>
 
-  <p>The trick is to think about the arguments as seperate <code class="highlighter-rouge">echo</code> statements.</p>
+<section class="section">
+  <h2>Arguments</h2>
+  <p>
+    The arguments are not evaluated eagerly...
+    they are evaluated one by one!
+  </p>
+  <p>
+    It's quite logical actually.
+    The trick is to think about them as seperate <code class="highlighter-rouge">echo</code> statements.
+  </p>
 
   <div class="compare-table">
     <table>
@@ -140,11 +150,14 @@
       </tbody>
     </table>
   </div>
+</section>
 
+<section class="section">
   <p>
-    This happens because <code class="highlighter-rouge">echo</code> is a language construct.
-    Similarly to other language constructs (namely variable declarations), it can be "<em>stacked</em>".
+    This happens because <code class="highlighter-rouge">echo</code> is not a function.
+    It's a language construct.
   </p>
+  <p>Similarly to other language constructs (namely variable declarations), it can be "<em>stacked</em>" this way.<br /></p>
 
   <div class="compare-table">
     <table>
@@ -181,6 +194,17 @@
       </tbody>
     </table>
   </div>
+
+  <p>This is legal in PHP, albeit discouraged because of readability reasons.</p>
+</section>
+
+<section class="question-paginator">
+  <a href="/2019/06/14/php-quiz-part-1-for-loops.html">
+    <h2>&lt;&lt; previous</h2>
+  </a>
+  <a href="/2019/06/16/php-quiz-part-3-associativity.html">
+    <h2>next &gt;&gt;</h2>
+  </a>
 </section>
 
 
