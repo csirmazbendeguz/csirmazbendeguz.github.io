@@ -121,6 +121,7 @@
 <section class="section">
   <h2>Answer</h2>
   <p>No, it won't.</p>
+  <p>There are a few cases where functions can be overridden with certain signatures.</p>
 </section>
 
 <section class="section">
@@ -217,7 +218,7 @@ obj.method(new T’());</code></pre></figure>
 <section class="section">
   <h2>Covariance, contravariance and PHP</h2>
   <p>
-    PHP does <em>not</em> support covariance/contravariance yet.
+    PHP does <em>not</em> support covariance/contravariance (yet).
     However, as always, there are a few exceptions:
   </p>
 </section>
@@ -279,8 +280,14 @@ obj.method(new T’());</code></pre></figure>
 
 <section class="section">
   <h2>The future</h2>
-  <p>PHP is mostly invariant... but there is progress!</p>
-  <p>We can expect real covariance/contravariance in PHP 7.4 (<a href="https://wiki.php.net/rfc/covariant-returns-and-contravariant-parameters">rfc</a>).</p>
+  <p>
+    PHP is mostly invariant... for now.
+    But there is progress!
+  </p>
+  <p>
+    PHP 7.4 is going to support real covariance/contravariance (<a href="https://wiki.php.net/rfc/covariant-returns-and-contravariant-parameters">rfc</a>).
+    A great improvement to PHP's type system.
+  </p>
 </section>
 
 <section class="question-paginator">

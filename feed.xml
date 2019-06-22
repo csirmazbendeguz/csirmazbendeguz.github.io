@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-22T14:36:58+02:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="http://localhost:4000/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>http://localhost:4000/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="http://localhost:4000/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-22T23:35:42+02:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="http://localhost:4000/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>http://localhost:4000/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="http://localhost:4000/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on 20 March, 2019.&lt;/p&gt;
   
   &lt;ul&gt;
@@ -230,7 +230,7 @@
   &lt;p&gt;
     Naturally, they are only resolved at runtime.
     So, when including a function, the include statement must run before the function call.
-    The following will throw a fatal error:
+    The following will result in a fatal error too:
   &lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
@@ -449,6 +449,7 @@
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Answer&lt;/h2&gt;
   &lt;p&gt;No, it won't.&lt;/p&gt;
+  &lt;p&gt;There are a few cases where functions can be overridden with certain signatures.&lt;/p&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
@@ -545,7 +546,7 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Covariance, contravariance and PHP&lt;/h2&gt;
   &lt;p&gt;
-    PHP does &lt;em&gt;not&lt;/em&gt; support covariance/contravariance yet.
+    PHP does &lt;em&gt;not&lt;/em&gt; support covariance/contravariance (yet).
     However, as always, there are a few exceptions:
   &lt;/p&gt;
 &lt;/section&gt;
@@ -607,8 +608,14 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;The future&lt;/h2&gt;
-  &lt;p&gt;PHP is mostly invariant... but there is progress!&lt;/p&gt;
-  &lt;p&gt;We can expect real covariance/contravariance in PHP 7.4 (&lt;a href=&quot;https://wiki.php.net/rfc/covariant-returns-and-contravariant-parameters&quot;&gt;rfc&lt;/a&gt;).&lt;/p&gt;
+  &lt;p&gt;
+    PHP is mostly invariant... for now.
+    But there is progress!
+  &lt;/p&gt;
+  &lt;p&gt;
+    PHP 7.4 is going to support real covariance/contravariance (&lt;a href=&quot;https://wiki.php.net/rfc/covariant-returns-and-contravariant-parameters&quot;&gt;rfc&lt;/a&gt;).
+    A great improvement to PHP's type system.
+  &lt;/p&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;question-paginator&quot;&gt;
