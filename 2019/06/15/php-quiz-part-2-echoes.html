@@ -130,8 +130,8 @@
     they are evaluated one by one!
   </p>
   <p>
-    It's quite logical actually.
-    The trick is to think about them as seperate <code class="highlighter-rouge">echo</code> statements.
+    It's quite logical, actually.
+    The trick is to think about them as seperate <code class="highlighter-rouge">echo</code> statements:
   </p>
 
   <div class="compare-table">
@@ -157,7 +157,10 @@
     This happens because <code class="highlighter-rouge">echo</code> is not a function.
     It's a language construct.
   </p>
-  <p>Similarly to other language constructs (namely variable declarations), it can be "<em>stacked</em>" this way.<br /></p>
+  <p>
+    Similarly to other language constructs (namely variable declarations), it can be "<em>stacked</em>" this way.
+    For example:
+  </p>
 
   <div class="compare-table">
     <table>
@@ -195,7 +198,10 @@
     </table>
   </div>
 
-  <p>This is legal in PHP, albeit discouraged because of readability reasons.</p>
+  <p>
+    Using commas in variable declarations is essentially the same as writing consecutive statements.
+    This is legal in PHP, albeit discouraged because of readability reasons.
+  </p>
 </section>
 
 <section class="question-paginator">

@@ -3,7 +3,8 @@
   font-size: 1.2em; }
 
 .highlight {
-  padding: 16px; }
+  padding: 16px;
+  line-height: 1; }
 
 .highlighter-rouge {
   border: 1px solid #151515;
@@ -223,7 +224,6 @@ dd {
 
 .teaser__date {
   display: block;
-  margin: 8px 0;
   font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
   font-style: italic; }
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-20T19:02:51+02:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="http://localhost:4000/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>http://localhost:4000/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="http://localhost:4000/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-22T11:44:57+02:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="http://localhost:4000/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>http://localhost:4000/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="http://localhost:4000/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on 20 March, 2019.&lt;/p&gt;
   
   &lt;ul&gt;
@@ -681,8 +681,8 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
     they are evaluated one by one!
   &lt;/p&gt;
   &lt;p&gt;
-    It's quite logical actually.
-    The trick is to think about them as seperate &lt;code class=&quot;highlighter-rouge&quot;&gt;echo&lt;/code&gt; statements.
+    It's quite logical, actually.
+    The trick is to think about them as seperate &lt;code class=&quot;highlighter-rouge&quot;&gt;echo&lt;/code&gt; statements:
   &lt;/p&gt;
 
   &lt;div class=&quot;compare-table&quot;&gt;
@@ -708,7 +708,10 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
     This happens because &lt;code class=&quot;highlighter-rouge&quot;&gt;echo&lt;/code&gt; is not a function.
     It's a language construct.
   &lt;/p&gt;
-  &lt;p&gt;Similarly to other language constructs (namely variable declarations), it can be &quot;&lt;em&gt;stacked&lt;/em&gt;&quot; this way.&lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;
+    Similarly to other language constructs (namely variable declarations), it can be &quot;&lt;em&gt;stacked&lt;/em&gt;&quot; this way.
+    For example:
+  &lt;/p&gt;
 
   &lt;div class=&quot;compare-table&quot;&gt;
     &lt;table&gt;
@@ -746,7 +749,10 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
     &lt;/table&gt;
   &lt;/div&gt;
 
-  &lt;p&gt;This is legal in PHP, albeit discouraged because of readability reasons.&lt;/p&gt;
+  &lt;p&gt;
+    Using commas in variable declarations is essentially the same as writing consecutive statements.
+    This is legal in PHP, albeit discouraged because of readability reasons.
+  &lt;/p&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;question-paginator&quot;&gt;
@@ -827,7 +833,10 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Comma operator&lt;/h2&gt;
-  &lt;p&gt;In C, the &lt;a href=&quot;https://en.wikipedia.org/wiki/Comma_operator&quot;&gt;comma operator&lt;/a&gt; is an operator that evaluates two expressions, and returns the result of the second one.&lt;/p&gt;
+  &lt;p&gt;
+    In C, the &lt;a href=&quot;https://en.wikipedia.org/wiki/Comma_operator&quot;&gt;comma operator&lt;/a&gt; is an operator that evaluates two expressions, and returns the result of the second one.
+    For example:
+  &lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/* prints &quot;Hello World!” and assigns 3 to 'a' */&lt;/span&gt;
 &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -842,7 +851,7 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
     Weird!
   &lt;/p&gt;
   &lt;p&gt;
-    Therefore, the expression &lt;code class=&quot;highlighter-rouge&quot;&gt;$i &lt; 3, $j &lt; 2&lt;/code&gt; is equivalent to &lt;code class=&quot;highlighter-rouge&quot;&gt;$j &lt; 2&lt;/code&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;$i &lt; 3&lt;/code&gt; is evaluated but disregarded).
+    Thus, the expression &lt;code class=&quot;highlighter-rouge&quot;&gt;$i &lt; 3, $j &lt; 2&lt;/code&gt; is equivalent to &lt;code class=&quot;highlighter-rouge&quot;&gt;$j &lt; 2&lt;/code&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;$i &lt; 3&lt;/code&gt; is evaluated but disregarded).
     The loop will only iterate twice.
   &lt;/p&gt;
 &lt;/section&gt;
