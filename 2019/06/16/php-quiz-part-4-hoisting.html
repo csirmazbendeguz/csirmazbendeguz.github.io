@@ -131,8 +131,8 @@
 
   <p>
     When the function is defined conditionally, this is not the case.
-    It has to be defined on the top level.
-    The following will not work:
+    For hoisting to work, it has to be defined on the top level.
+    The following will throw a fatal error:
   </p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
