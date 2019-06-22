@@ -125,24 +125,33 @@
 <section class="section">
   <h2>Hoisting</h2>
   <p>
-    Similarly to JavaScript, function declarations are resolved compile time.
+    Similarly to JavaScript, function declarations are resolved at compile time.
     By the time the interpreter calls our function, it will have been already defined.
   </p>
 
-  <p>When the function is defined conditionally, this is obviously not the case.</p>
+  <p>
+    When the function is defined conditionally, this is not the case.
+    It has to be defined on the top level.
+    The following will not work:
+  </p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
-<span class="c1">// Fatal error: Uncaught Error: Call to undefined function helloWorld().</span>
-<span class="k">echo</span> <span class="nx">helloWorld</span><span class="p">();</span>
-
 <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Fatal error: Uncaught Error: Call to undefined function helloWorld().</span>
+  <span class="k">echo</span> <span class="nx">helloWorld</span><span class="p">()</span>
+
   <span class="k">function</span> <span class="nf">helloWorld</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="s2">"Hello World!</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-  <br />
+  <p>What about includes?</p>
+  <p>
+    Naturally, they are only resolved at runtime.
+    So, when including a function, the include statement must run before the function call.
+    The following will throw a fatal error:
+  </p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
