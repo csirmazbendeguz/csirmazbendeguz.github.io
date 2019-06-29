@@ -98,7 +98,7 @@
 
 body {
   background-color: #00284d;
-  font-family: "Noto Serif", "Times New Roman", Times, serif; }
+  font-family: "Nunito Sans", Arial, Helvetica, sans-serif; }
 
 a:link {
   color: #00284d; }
@@ -143,7 +143,6 @@ dd {
   padding: 8px 16px; }
 
 .header {
-  font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
   background-color: #00284d;
   color: #ffffff; }
 
@@ -211,7 +210,6 @@ dd {
   padding: 16px 32px;
   background-color: #00284d;
   color: #ffffff;
-  font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
   font-style: italic; }
 
 .teaser {
@@ -224,7 +222,6 @@ dd {
 
 .teaser__date {
   display: block;
-  font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
   font-style: italic; }
 
 .teaser__text {
