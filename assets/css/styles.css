@@ -96,6 +96,9 @@
 * {
   line-height: 1.6; }
 
+:root {
+  font-size: 18px; }
+
 body {
   background-color: #00284d;
   font-family: "Nunito Sans", Arial, Helvetica, sans-serif; }

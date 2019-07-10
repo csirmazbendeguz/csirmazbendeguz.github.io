@@ -100,6 +100,10 @@
 
 <section class="section">
   <h2>PHP Quiz - Part 1 - for loops</h2>
+  <p>
+    <code class="highlighter-rouge">for</code> loops: one of the most fundamental and ubiquitous control flow statements.
+    I never would have thought I could learn anything new about them... and here we are:
+  </p>
   <script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src='https://embed.playbuzz.com/sdk.js';fjs.parentNode.insertBefore(js,fjs);}(document,'script','playbuzz-sdk'));</script>
   <div class="playbuzz" data-id="be7fa8ae-6b22-44bc-a397-c0bec2ce5d08" data-show-share="false" data-show-info="false"></div>
 </section>
@@ -123,7 +127,11 @@
 </section>
 
 <section class="section">
-  <h2>Comma operator</h2>
+  <h2>Explanation</h2>
+</section>
+
+<section class="section">
+  <h3>Comma operator</h3>
   <p>
     In C, the <a href="https://en.wikipedia.org/wiki/Comma_operator">comma operator</a> is an operator that evaluates two expressions, and returns the result of the second one.
     For example:
@@ -131,18 +139,21 @@
 
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cm">/* prints "Hello World!” and assigns 3 to 'a' */</span>
 <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">printf</span><span class="p">(</span><span class="s">"Hello World!</span><span class="se">\n</span><span class="s">"</span><span class="p">),</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">);</span></code></pre></figure>
+</section>
 
+<section class="section">
+  <h3>Comma operator in PHP</h3>
   <p>
     This ancient operator did not stand the test of time.
     Not many programming languages support it.
   </p>
   <p>
-    PHP does not have a comma operator either... <em>except</em> in for loop conditions.
+    PHP does not have a comma operator either... <em>except</em> in for loop conditions!
     For some strange reason, in for loop conditions the comma operator is correctly evaluated.
     Weird!
   </p>
   <p>
-    Thus, the expression <code class="highlighter-rouge">$i < 3, $j < 2</code> is equivalent to <code class="highlighter-rouge">$j < 2</code> (<code class="highlighter-rouge">$i < 3</code> is evaluated but disregarded).
+    So, the expression <code class="highlighter-rouge">$i < 3, $j < 2</code> is equivalent to <code class="highlighter-rouge">$j < 2</code> (<code class="highlighter-rouge">$i < 3</code> is evaluated but disregarded).
     The loop will only iterate twice.
   </p>
 </section>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-06-29T14:38:17+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-07-10T22:53:11+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on March 20, 2019.&lt;/p&gt;
   
   &lt;ul&gt;
@@ -669,6 +669,11 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;PHP Quiz - Part 2 - echoes&lt;/h2&gt;
+  &lt;p&gt;
+    &lt;code class=&quot;highlighter-rouge&quot;&gt;echo&lt;/code&gt; was the first PHP statement I learned.
+    It went great: I echoed '&lt;em&gt;Hello World!&lt;/em&gt;' to the screen, and quickly moved on to more challenging problems.
+  &lt;/p&gt;
+  &lt;p&gt;It took me years to notice there is something unusual about its behaviour:&lt;/p&gt;
   &lt;script&gt;(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src='https://embed.playbuzz.com/sdk.js';fjs.parentNode.insertBefore(js,fjs);}(document,'script','playbuzz-sdk'));&lt;/script&gt;
   &lt;div class=&quot;playbuzz&quot; data-id=&quot;8257959d-b525-4b92-ad19-e36aa259a293&quot; data-show-share=&quot;false&quot; data-show-info=&quot;false&quot;&gt;&lt;/div&gt;
 &lt;/section&gt;
@@ -693,8 +698,13 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;baac&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;/section&gt;
 
+
 &lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;Arguments&lt;/h2&gt;
+  &lt;h2&gt;Explanation&lt;/h2&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Evaluation strategy&lt;/h3&gt;
   &lt;p&gt;
     The arguments are not evaluated eagerly...
     they are evaluated one by one!
@@ -723,6 +733,7 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Language constructs&lt;/h3&gt;
   &lt;p&gt;
     This happens because &lt;code class=&quot;highlighter-rouge&quot;&gt;echo&lt;/code&gt; is not a function.
     It's a language construct.
@@ -770,7 +781,7 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
   &lt;p&gt;
     Using commas in variable declarations is essentially the same as writing consecutive statements.
-    This is legal in PHP, albeit discouraged because of readability reasons.
+    It is legal in PHP, albeit discouraged because of readability reasons.
   &lt;/p&gt;
 &lt;/section&gt;
 
@@ -828,6 +839,10 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;PHP Quiz - Part 1 - for loops&lt;/h2&gt;
+  &lt;p&gt;
+    &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; loops: one of the most fundamental and ubiquitous control flow statements.
+    I never would have thought I could learn anything new about them... and here we are:
+  &lt;/p&gt;
   &lt;script&gt;(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src='https://embed.playbuzz.com/sdk.js';fjs.parentNode.insertBefore(js,fjs);}(document,'script','playbuzz-sdk'));&lt;/script&gt;
   &lt;div class=&quot;playbuzz&quot; data-id=&quot;be7fa8ae-6b22-44bc-a397-c0bec2ce5d08&quot; data-show-share=&quot;false&quot; data-show-info=&quot;false&quot;&gt;&lt;/div&gt;
 &lt;/section&gt;
@@ -851,7 +866,11 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;Comma operator&lt;/h2&gt;
+  &lt;h2&gt;Explanation&lt;/h2&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Comma operator&lt;/h3&gt;
   &lt;p&gt;
     In C, the &lt;a href=&quot;https://en.wikipedia.org/wiki/Comma_operator&quot;&gt;comma operator&lt;/a&gt; is an operator that evaluates two expressions, and returns the result of the second one.
     For example:
@@ -859,18 +878,21 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/* prints &quot;Hello World!” and assigns 3 to 'a' */&lt;/span&gt;
 &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/section&gt;
 
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Comma operator in PHP&lt;/h3&gt;
   &lt;p&gt;
     This ancient operator did not stand the test of time.
     Not many programming languages support it.
   &lt;/p&gt;
   &lt;p&gt;
-    PHP does not have a comma operator either... &lt;em&gt;except&lt;/em&gt; in for loop conditions.
+    PHP does not have a comma operator either... &lt;em&gt;except&lt;/em&gt; in for loop conditions!
     For some strange reason, in for loop conditions the comma operator is correctly evaluated.
     Weird!
   &lt;/p&gt;
   &lt;p&gt;
-    Thus, the expression &lt;code class=&quot;highlighter-rouge&quot;&gt;$i &lt; 3, $j &lt; 2&lt;/code&gt; is equivalent to &lt;code class=&quot;highlighter-rouge&quot;&gt;$j &lt; 2&lt;/code&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;$i &lt; 3&lt;/code&gt; is evaluated but disregarded).
+    So, the expression &lt;code class=&quot;highlighter-rouge&quot;&gt;$i &lt; 3, $j &lt; 2&lt;/code&gt; is equivalent to &lt;code class=&quot;highlighter-rouge&quot;&gt;$j &lt; 2&lt;/code&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;$i &lt; 3&lt;/code&gt; is evaluated but disregarded).
     The loop will only iterate twice.
   &lt;/p&gt;
 &lt;/section&gt;
