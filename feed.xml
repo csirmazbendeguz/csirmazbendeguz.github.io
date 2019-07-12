@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-07-10T22:53:11+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-07-12T22:07:02+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on March 20, 2019.&lt;/p&gt;
   
   &lt;ul&gt;
@@ -45,6 +45,8 @@
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;PHP Quiz - Part 3 - associativity&lt;/h2&gt;
+  &lt;p&gt;This post was inspired by Upwork's incorrect &lt;a href=&quot;https://www.upwork.com/i/interview-questions/php/&quot;&gt;PHP interview question&lt;/a&gt;.&lt;/p&gt;
+  &lt;p&gt;Let's take a look at a lesser known attribute of PHP operators:&lt;/p&gt;
   &lt;script&gt;(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src='https://embed.playbuzz.com/sdk.js';fjs.parentNode.insertBefore(js,fjs);}(document,'script','playbuzz-sdk'));&lt;/script&gt;
   &lt;div class=&quot;playbuzz&quot; data-id=&quot;32755ffb-b138-488c-82e8-07fde3506236&quot; data-show-share=&quot;false&quot; data-show-info=&quot;false&quot;&gt;&lt;/div&gt;
 &lt;/section&gt;
@@ -72,7 +74,11 @@
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;Associativity&lt;/h2&gt;
+  &lt;h2&gt;Explanation&lt;/h2&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Operator associativity&lt;/h3&gt;
   &lt;p&gt;Operator associativity decides how operators of equal precedence are grouped.&lt;/p&gt;
   &lt;table&gt;
     &lt;thead&gt;
@@ -179,6 +185,8 @@
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;PHP Quiz - Part 4 - hoisting&lt;/h2&gt;
+  &lt;p&gt;Developing modern object oriented applications kept me in blissful ignorance of PHP's less used features. :((&lt;/p&gt;
+  &lt;p&gt;The following may come as a surprise to the unsuspecting programmer (such as myself):&lt;/p&gt;
   &lt;script&gt;(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src='https://embed.playbuzz.com/sdk.js';fjs.parentNode.insertBefore(js,fjs);}(document,'script','playbuzz-sdk'));&lt;/script&gt;
   &lt;div class=&quot;playbuzz&quot; data-id=&quot;06d3e30b-9cd9-45ef-839a-4f590b48f35c&quot; data-show-share=&quot;false&quot; data-show-info=&quot;false&quot;&gt;&lt;/div&gt;
 &lt;/section&gt;
@@ -203,12 +211,18 @@
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;Hoisting&lt;/h2&gt;
+  &lt;h2&gt;Explanation&lt;/h2&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Hoisting&lt;/h3&gt;
   &lt;p&gt;
     Similarly to JavaScript, function declarations are resolved at compile time.
     By the time the interpreter calls our function, it will have been already defined.
+    The program will run without any problems.
   &lt;/p&gt;
 
+  &lt;h3&gt;Restrictions on hoisting&lt;/h3&gt;
   &lt;p&gt;
     When the function is defined conditionally, this is not the case.
     For hoisting to work, it has to be defined on the top level.
@@ -225,7 +239,10 @@
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello World!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/section&gt;
 
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Includes&lt;/h3&gt;
   &lt;p&gt;What about includes?&lt;/p&gt;
   &lt;p&gt;
     Naturally, they are only resolved at runtime.
@@ -296,6 +313,12 @@
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;PHP Quiz - Part 5 - constructors&lt;/h2&gt;
+  &lt;p&gt;This post was inspired by an inaccurate &lt;a href=&quot;https://en.wikipedia.org/wiki/Talk:Covariance_and_contravariance_(computer_science)#Inaccurate_PHP_example&quot;&gt;Wikipedia article&lt;/a&gt;.&lt;/p&gt;
+  &lt;p&gt;
+    Okay!
+    We have only seen weird edge cases so far.
+    This one is actually pretty important:
+  &lt;/p&gt;
   &lt;script&gt;(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src='https://embed.playbuzz.com/sdk.js';fjs.parentNode.insertBefore(js,fjs);}(document,'script','playbuzz-sdk'));&lt;/script&gt;
   &lt;div class=&quot;playbuzz&quot; data-id=&quot;a47ba42f-794b-4909-94da-58d9b84769b4&quot; data-show-share=&quot;false&quot; data-show-info=&quot;false&quot;&gt;&lt;/div&gt;
 &lt;/section&gt;
@@ -328,7 +351,8 @@
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;Signatures&lt;/h2&gt;
+  &lt;h2&gt;Explanation&lt;/h2&gt;
+  &lt;h3&gt;Constructor signatures&lt;/h3&gt;
   &lt;p&gt;PHP constructors can be overridden with &lt;em&gt;any&lt;/em&gt; signature...&lt;/p&gt;
   &lt;p&gt;... even if the types are not related:&lt;/p&gt;
 
@@ -427,6 +451,11 @@
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;PHP Quiz - Part 6 - covariance&lt;/h2&gt;
+  &lt;p&gt;
+    In &lt;a href=&quot;/2019/06/16/php-quiz-part-5-constructors.html&quot;&gt;PHP Quiz - Part 5 - constructors&lt;/a&gt; we've seen that constructors can be safely overridden.
+    What about functions?
+    Brace yourselves: this is one of my favorite topics:
+  &lt;/p&gt;
   &lt;script&gt;(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src='https://embed.playbuzz.com/sdk.js';fjs.parentNode.insertBefore(js,fjs);}(document,'script','playbuzz-sdk'));&lt;/script&gt;
   &lt;div class=&quot;playbuzz&quot; data-id=&quot;fff1f1fb-e715-497c-b6ac-9c8be1ef3879&quot; data-show-share=&quot;false&quot; data-show-info=&quot;false&quot;&gt;&lt;/div&gt;
 &lt;/section&gt;
@@ -546,7 +575,8 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Covariance, contravariance and PHP&lt;/h2&gt;
   &lt;p&gt;
-    PHP does &lt;em&gt;not&lt;/em&gt; support covariance/contravariance (yet).
+    PHP does &lt;em&gt;not&lt;/em&gt; support covariance/contravariance.
+    It's an invariant language.
     However, as always, there are a few exceptions:
   &lt;/p&gt;
 &lt;/section&gt;
