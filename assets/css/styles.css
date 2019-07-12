@@ -214,6 +214,13 @@ dd {
   color: #ffffff;
   font-style: italic; }
 
+.icons {
+  margin-left: 8px; }
+  .icons a {
+    color: #ffffff; }
+  .icons a:hover {
+    color: gray; }
+
 .teaser {
   margin-bottom: 24px; }
   .teaser:last-child {
@@ -229,13 +236,11 @@ dd {
 .teaser__text {
   margin: 0; }
 
-.company-info {
-  border-bottom: 1px solid black; }
-  .company-info td:first-child {
-    font-style: italic;
-    /* Fit the cell to content width. */
-    width: 1%;
-    white-space: nowrap; }
+.company-info td:first-child {
+  font-style: italic;
+  /* Fit the cell to content width. */
+  width: 1%;
+  white-space: nowrap; }
 
 .compare-table {
   overflow-x: auto;
