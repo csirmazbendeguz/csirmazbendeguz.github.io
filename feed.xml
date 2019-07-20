@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-07-13T11:43:20+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-07-20T14:03:34+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on March 20, 2019.&lt;/p&gt;
   
   &lt;ul&gt;
@@ -870,8 +870,9 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;PHP Quiz - Part 1 - for loops&lt;/h2&gt;
   &lt;p&gt;
-    &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; loops: one of the most fundamental and ubiquitous control flow statements.
-    I never would have thought I could learn anything new about them... and here we are:
+    For loops: one of the most fundamental and ubiquitous control flow statements.
+    I never would have thought I could learn anything new about them.
+    I was wrong:
   &lt;/p&gt;
   &lt;script&gt;(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src='https://embed.playbuzz.com/sdk.js';fjs.parentNode.insertBefore(js,fjs);}(document,'script','playbuzz-sdk'));&lt;/script&gt;
   &lt;div class=&quot;playbuzz&quot; data-id=&quot;be7fa8ae-6b22-44bc-a397-c0bec2ce5d08&quot; data-show-share=&quot;false&quot; data-show-info=&quot;false&quot;&gt;&lt;/div&gt;
@@ -902,7 +903,7 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;section class=&quot;section&quot;&gt;
   &lt;h3&gt;Comma operator&lt;/h3&gt;
   &lt;p&gt;
-    In C, the &lt;a href=&quot;https://en.wikipedia.org/wiki/Comma_operator&quot;&gt;comma operator&lt;/a&gt; is an operator that evaluates two expressions, and returns the result of the second one.
+    In C, the &lt;a href=&quot;https://en.wikipedia.org/wiki/Comma_operator&quot;&gt;comma operator&lt;/a&gt; is an operator that evaluates two expressions and returns the result of the second one.
     For example:
   &lt;/p&gt;
 
@@ -917,12 +918,57 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
     Not many programming languages support it.
   &lt;/p&gt;
   &lt;p&gt;
-    PHP does not have a comma operator either... &lt;em&gt;except&lt;/em&gt; in for loop conditions!
+    PHP is no exception.
+    The comma operator is not listed in the &lt;a href=&quot;https://www.php.net/manual/en/language.operators.precedence.php&quot;&gt;precedence table&lt;/a&gt; and using it will generally result in a syntax error:
+  &lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;php&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Parse error: syntax error, unexpected ',' in ...&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;For loop conditions&lt;/h3&gt;
+  &lt;p&gt;However, there is an exception to the rule: for loop conditions.&lt;/p&gt;
+  &lt;p&gt;
     For some strange reason, in for loop conditions the comma operator is correctly evaluated.
     Weird!
   &lt;/p&gt;
-  &lt;p&gt;So, the expression &lt;code class=&quot;highlighter-rouge&quot;&gt;$i &lt; 3, $j &lt; 2&lt;/code&gt; is equivalent to &lt;code class=&quot;highlighter-rouge&quot;&gt;$j &lt; 2&lt;/code&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;$i &lt; 3&lt;/code&gt; is evaluated but disregarded).&lt;/p&gt;
+  &lt;div class=&quot;compare-table&quot;&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;p&gt;
+    In this case, the expression &lt;code class=&quot;highlighter-rouge&quot;&gt;$i &lt; 3, $j &lt; 2&lt;/code&gt; has the same effect as &lt;code class=&quot;highlighter-rouge&quot;&gt;$j &lt; 2&lt;/code&gt;.
+    The first operand is evaluated, but its result is disregarded.
+  &lt;/p&gt;
   &lt;p&gt;The loop will only iterate twice.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h2&gt;Conclusion&lt;/h2&gt;
+  &lt;p&gt;
+    PHP is an exceptional language.
+    Literally.
+    It has a lot of exceptions and special cases.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Fortunately, you don't really need to know about them.
+    There are not many great uses of the comma operator.
+    In fact, it's better if you just forget about it.
+  &lt;/p&gt;
+  &lt;p&gt;Anyway, if you happen to know the rationale behind this design decision, please let me know in the comments.&lt;/p&gt;
+  &lt;p&gt;In the next post we will continue looking at weird commas in a different context.&lt;/p&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;question-paginator&quot;&gt;
