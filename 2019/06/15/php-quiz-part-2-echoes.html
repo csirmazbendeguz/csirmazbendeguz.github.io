@@ -102,8 +102,8 @@
 <section class="section">
   <h2>PHP Quiz - Part 2 - echoes</h2>
   <p>
-    <code class="highlighter-rouge">echo</code> was the first PHP statement I learned.
-    It went great: I echoed '<em>Hello World!</em>' to the screen and quickly moved on to more challenging problems.
+    Echo was the first PHP statement I learned.
+    It went great: I printed 'Hello, World!' to the screen and quickly moved on to more challenging problems.
   </p>
   <p>It took me years to notice there is something unusual about its behaviour:</p>
   <script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src='https://embed.playbuzz.com/sdk.js';fjs.parentNode.insertBefore(js,fjs);}(document,'script','playbuzz-sdk'));</script>
@@ -138,43 +138,27 @@
 <section class="section">
   <h3>Evaluation strategy</h3>
   <p>
-    The arguments are not evaluated eagerly...
-    they are evaluated one by one!
+    Arguments are usually evaluated before they're passed to a function.
+    This is called <a href="https://en.wikipedia.org/wiki/Eager_evaluation">eager evaluation</a>.
   </p>
   <p>
-    It's quite logical, actually.
-    The trick is to think about them as seperate <code class="highlighter-rouge">echo</code> statements:
+    Echo works a little differently.
+    The arguments are not evaluated eagerly (in which case the answer would be "abac"), but one by one.
   </p>
-
-  <div class="compare-table">
-    <table>
-      <tbody>
-        <tr>
-          <td>
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">echo</span> <span class="s1">'b'</span><span class="p">,</span> <span class="nx">a</span><span class="p">(),</span> <span class="s2">"c</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span></code></pre></figure>
-          </td>
-          <td>
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">echo</span> <span class="s1">'b'</span><span class="p">;</span>
-<span class="k">echo</span> <span class="nx">a</span><span class="p">();</span>
-<span class="k">echo</span> <span class="s2">"c</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span></code></pre></figure>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <p>
+    Calm down!!
+    There is a reason for this.
+    It's quite logical, actually.
+  </p>
 </section>
 
 <section class="section">
-  <h3>Language constructs</h3>
+  <h3>Variable declarations</h3>
   <p>
-    This happens because <code class="highlighter-rouge">echo</code> is not a function.
-    It's a language construct.
+    Many programming languages allow multiple variable declarations in one line.
+    It's considered a bad practice in all of them.
   </p>
-  <p>
-    Similarly to other language constructs (namely variable declarations), it can be "<em>stacked</em>" this way.
-    For example:
-  </p>
-
+  <p>In PHP, variable declarations can be shortened the following way:</p>
   <div class="compare-table">
     <table>
       <tbody>
@@ -212,9 +196,45 @@
   </div>
 
   <p>
-    Using commas in variable declarations is essentially the same as writing consecutive statements.
+    As you can see, using commas is essentially the same as writing consecutive statements.
     It is legal in PHP, albeit discouraged because of readability reasons.
   </p>
+</section>
+
+<section class="section">
+  <h3>Language constructs</h3>
+  <p>
+    Echo is not a function.
+    It's a language construct, like 'public', 'global' and 'static'.
+  </p>
+  <p>Although it doesn't have much in common with variable declarations, it handles multiple arguments in a very similar way:</p>
+  <div class="compare-table">
+    <table>
+      <tbody>
+      <tr>
+        <td>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">echo</span> <span class="s1">'b'</span><span class="p">,</span> <span class="nx">a</span><span class="p">(),</span> <span class="s2">"c</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span></code></pre></figure>
+        </td>
+        <td>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">echo</span> <span class="s1">'b'</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nx">a</span><span class="p">();</span>
+<span class="k">echo</span> <span class="s2">"c</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span></code></pre></figure>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Passing multiple arguments to echo is the same as writing separate, consecutive echo statements.</p>
+</section>
+
+<section class="section">
+  <h2>Conclusion</h2>
+  <p>In modern PHP development echo statements are buried in the depths of template systems.</p>
+  <p>
+    It might be rarely needed in one's day-to-day work, but it's still one of the most fundamental PHP statements.
+    It's worth knowing how they work.
+  </p>
+  <p>In the next post we'll learn about operator associativity.</p>
 </section>
 
 <section class="question-paginator">
