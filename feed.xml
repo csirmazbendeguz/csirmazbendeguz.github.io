@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-07-21T14:49:50+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-07-21T15:35:53+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on March 20, 2019.&lt;/p&gt;
   
   &lt;ul&gt;
@@ -386,11 +386,10 @@
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;PHP Quiz - Part 5 - constructors&lt;/h2&gt;
-  &lt;p&gt;This post was inspired by an inaccurate &lt;a href=&quot;https://en.wikipedia.org/wiki/Talk:Covariance_and_contravariance_(computer_science)#Inaccurate_PHP_example&quot;&gt;Wikipedia article&lt;/a&gt;.&lt;/p&gt;
   &lt;p&gt;
     Okay!
     We have only seen weird edge cases so far.
-    This one is actually pretty important:
+    This one is actually pretty important.
   &lt;/p&gt;
   &lt;script&gt;(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src='https://embed.playbuzz.com/sdk.js';fjs.parentNode.insertBefore(js,fjs);}(document,'script','playbuzz-sdk'));&lt;/script&gt;
   &lt;div class=&quot;playbuzz&quot; data-id=&quot;a47ba42f-794b-4909-94da-58d9b84769b4&quot; data-show-share=&quot;false&quot; data-show-info=&quot;false&quot;&gt;&lt;/div&gt;
@@ -425,11 +424,16 @@
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Explanation&lt;/h2&gt;
-  &lt;h3&gt;Constructor signatures&lt;/h3&gt;
-  &lt;p&gt;PHP constructors can be overridden with &lt;em&gt;any&lt;/em&gt; signature...&lt;/p&gt;
-  &lt;p&gt;... even if the types are not related:&lt;/p&gt;
+  &lt;h3&gt;Overriding constructors&lt;/h3&gt;
+  &lt;p&gt;PHP constructors can be overridden with &lt;em&gt;any&lt;/em&gt; signature.&lt;/p&gt;
+  &lt;p&gt;Their parameters can be changed freely and without consequence.&lt;/p&gt;
+&lt;/section&gt;
 
-  &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Unrelated types&lt;/h3&gt;
+  &lt;p&gt;They can be overridden even if the parameter types are not related.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
@@ -439,10 +443,13 @@
   &lt;span class=&quot;c1&quot;&gt;// Works fine!&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Closure&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/section&gt;
 
-  &lt;p&gt;... or the number of parameters is different:&lt;/p&gt;
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;More/less parameters&lt;/h3&gt;
+  &lt;p&gt;They can be overridden even if the number of parameters differ.&lt;/p&gt;
 
-  &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
@@ -452,8 +459,11 @@
   &lt;span class=&quot;c1&quot;&gt;// This is OK too.&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/section&gt;
 
-  &lt;p&gt;Were they not constructors, PHP would issue a warning:&lt;/p&gt;
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Overriding functions&lt;/h3&gt;
+  &lt;p&gt;Were they not constructors, PHP would issue a warning.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
 
@@ -466,8 +476,16 @@
   &lt;span class=&quot;c1&quot;&gt;// compatible with A::abc(LogicException $l)&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;abc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/section&gt;
 
-  &lt;p&gt;More on this in the next post!&lt;/p&gt;
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h2&gt;Conclusion&lt;/h2&gt;
+  &lt;p&gt;This post was inspired by an inaccurate &lt;a href=&quot;https://en.wikipedia.org/wiki/Talk:Covariance_and_contravariance_(computer_science)#Inaccurate_PHP_example&quot;&gt;Wikipedia article&lt;/a&gt;.&lt;/p&gt;
+  &lt;p&gt;
+    I'm sure most PHP developers have already used constructor overriding, even if they didn't realize it.
+    It's virtually impossible to create object oriented applications without it.
+  &lt;/p&gt;
+  &lt;p&gt;We'll take a look at overriding regular methods next.&lt;/p&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;question-paginator&quot;&gt;
