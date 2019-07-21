@@ -270,3 +270,28 @@ dd {
       margin-right: 0; }
     .question-paginator a:hover {
       opacity: 0.75; }
+
+.answers {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row; }
+
+.answer {
+  display: flex;
+  align-items: center;
+  margin-right: 16px; }
+
+.answer-letter {
+  background-color: #00284d;
+  color: #ffffff;
+  padding: 16px 24px;
+  margin-right: 8px;
+  font-weight: bold;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px; }
+
+#answer {
+  display: none; }
