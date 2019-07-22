@@ -1,41 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-07-22T22:43:44+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-07-22T23:04:17+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz - part 3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz - part 3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on March 20, 2019.&lt;/p&gt;
   
   &lt;ul&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/14/php-quiz-part-1-for-loops.html&quot;&gt;PHP Quiz - Part 1 - for loops&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/14/php-quiz-part-1-for-loops.html&quot;&gt;PHP quiz - part 1 - for loop conditions&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/15/php-quiz-part-2-echoes.html&quot;&gt;PHP Quiz - Part 2 - echoes&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/15/php-quiz-part-2-echoes.html&quot;&gt;PHP quiz - part 2 - echo arguments&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;strong&gt;PHP Quiz - Part 3 - associativity&lt;/strong&gt;
+      &lt;strong&gt;PHP quiz - part 3 - operator associativity&lt;/strong&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/16/php-quiz-part-4-hoisting.html&quot;&gt;PHP Quiz - Part 4 - hoisting&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/16/php-quiz-part-4-hoisting.html&quot;&gt;PHP quiz - part 4 - hoisting&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/16/php-quiz-part-5-constructors.html&quot;&gt;PHP Quiz - Part 5 - constructors&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/16/php-quiz-part-5-constructors.html&quot;&gt;PHP quiz - part 5 - constructor overriding&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/16/php-quiz-part-6-covariance.html&quot;&gt;PHP Quiz - Part 6 - covariance&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/16/php-quiz-part-6-covariance.html&quot;&gt;PHP quiz - part 6 - covariance, contravariance and PHP&lt;/a&gt;
       
     &lt;/li&gt;
     
@@ -44,12 +44,9 @@
 
 
 &lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;PHP Quiz - Part 3 - associativity&lt;/h2&gt;
-  &lt;p&gt;
-    Operators are the building blocks of computer programs.
-    You might think you know them, but the devil is in the details.
-    After all these years of programming, I still find myself revisiting the precedence table every once in a while.
-  &lt;/p&gt;
+  &lt;h2&gt;PHP quiz - part 3 - operator associativity&lt;/h2&gt;
+  &lt;p&gt;Operators are the building blocks of computer programs. You might think you know them, but the devil is in the details. After all these years, I still find myself revisiting the precedence table every once in a while.
+&lt;/p&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
@@ -95,9 +92,6 @@
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Explanation&lt;/h2&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
   &lt;h3&gt;Operator associativity&lt;/h3&gt;
   &lt;p&gt;Operator associativity decides how operators of equal precedence are grouped.&lt;/p&gt;
   &lt;table&gt;
@@ -197,44 +191,44 @@
   &lt;a href=&quot;/2019/06/16/php-quiz-part-4-hoisting.html&quot;&gt;
     &lt;h2&gt;next &amp;gt;&amp;gt;&lt;/h2&gt;
   &lt;/a&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">Some thoughts about operator associativity.</summary></entry><entry><title type="html">PHP Quiz - Part 4 - hoisting</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-4-hoisting.html" rel="alternate" type="text/html" title="PHP Quiz - Part 4 - hoisting" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-4-hoisting</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-4-hoisting.html">&lt;section class=&quot;section&quot;&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">Operators are the building blocks of computer programs. You might think you know them, but the devil is in the details. After all these years, I still find myself revisiting the precedence table every once in a while.</summary></entry><entry><title type="html">PHP quiz - part 4 - hoisting</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-4-hoisting.html" rel="alternate" type="text/html" title="PHP quiz - part 4 - hoisting" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-4-hoisting</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-4-hoisting.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on March 20, 2019.&lt;/p&gt;
   
   &lt;ul&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/14/php-quiz-part-1-for-loops.html&quot;&gt;PHP Quiz - Part 1 - for loops&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/14/php-quiz-part-1-for-loops.html&quot;&gt;PHP quiz - part 1 - for loop conditions&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/15/php-quiz-part-2-echoes.html&quot;&gt;PHP Quiz - Part 2 - echoes&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/15/php-quiz-part-2-echoes.html&quot;&gt;PHP quiz - part 2 - echo arguments&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/16/php-quiz-part-3-associativity.html&quot;&gt;PHP Quiz - Part 3 - associativity&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/16/php-quiz-part-3-associativity.html&quot;&gt;PHP quiz - part 3 - operator associativity&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;strong&gt;PHP Quiz - Part 4 - hoisting&lt;/strong&gt;
+      &lt;strong&gt;PHP quiz - part 4 - hoisting&lt;/strong&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/16/php-quiz-part-5-constructors.html&quot;&gt;PHP Quiz - Part 5 - constructors&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/16/php-quiz-part-5-constructors.html&quot;&gt;PHP quiz - part 5 - constructor overriding&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/16/php-quiz-part-6-covariance.html&quot;&gt;PHP Quiz - Part 6 - covariance&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/16/php-quiz-part-6-covariance.html&quot;&gt;PHP quiz - part 6 - covariance, contravariance and PHP&lt;/a&gt;
       
     &lt;/li&gt;
     
@@ -243,9 +237,9 @@
 
 
 &lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;PHP Quiz - Part 4 - hoisting&lt;/h2&gt;
-  &lt;p&gt;Developing modern object oriented applications kept me in blissful ignorance of PHP's less used features.&lt;/p&gt;
-  &lt;p&gt;The following may come as a surprise to unsuspecting programmers (such as myself).&lt;/p&gt;
+  &lt;h2&gt;PHP quiz - part 4 - hoisting&lt;/h2&gt;
+  &lt;p&gt;Developing modern object oriented applications kept me in blissful ignorance of PHP's less used features. The following may come as a surprise to unsuspecting programmers (such as myself).
+&lt;/p&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
@@ -291,9 +285,6 @@
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Explanation&lt;/h2&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
   &lt;h3&gt;Hoisting&lt;/h3&gt;
   &lt;p&gt;
     Similarly to JavaScript, function declarations are resolved at compile time.
@@ -386,44 +377,44 @@
   &lt;a href=&quot;/2019/06/16/php-quiz-part-5-constructors.html&quot;&gt;
     &lt;h2&gt;next &amp;gt;&amp;gt;&lt;/h2&gt;
   &lt;/a&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">Hoisting in PHP.</summary></entry><entry><title type="html">PHP Quiz - Part 5 - constructors</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html" rel="alternate" type="text/html" title="PHP Quiz - Part 5 - constructors" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html">&lt;section class=&quot;section&quot;&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">Developing modern object oriented applications kept me in blissful ignorance of PHP's less used features. The following may come as a surprise to unsuspecting programmers (such as myself).</summary></entry><entry><title type="html">PHP quiz - part 5 - constructor overriding</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html" rel="alternate" type="text/html" title="PHP quiz - part 5 - constructor overriding" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on March 20, 2019.&lt;/p&gt;
   
   &lt;ul&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/14/php-quiz-part-1-for-loops.html&quot;&gt;PHP Quiz - Part 1 - for loops&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/14/php-quiz-part-1-for-loops.html&quot;&gt;PHP quiz - part 1 - for loop conditions&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/15/php-quiz-part-2-echoes.html&quot;&gt;PHP Quiz - Part 2 - echoes&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/15/php-quiz-part-2-echoes.html&quot;&gt;PHP quiz - part 2 - echo arguments&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/16/php-quiz-part-3-associativity.html&quot;&gt;PHP Quiz - Part 3 - associativity&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/16/php-quiz-part-3-associativity.html&quot;&gt;PHP quiz - part 3 - operator associativity&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/16/php-quiz-part-4-hoisting.html&quot;&gt;PHP Quiz - Part 4 - hoisting&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/16/php-quiz-part-4-hoisting.html&quot;&gt;PHP quiz - part 4 - hoisting&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;strong&gt;PHP Quiz - Part 5 - constructors&lt;/strong&gt;
+      &lt;strong&gt;PHP quiz - part 5 - constructor overriding&lt;/strong&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/16/php-quiz-part-6-covariance.html&quot;&gt;PHP Quiz - Part 6 - covariance&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/16/php-quiz-part-6-covariance.html&quot;&gt;PHP quiz - part 6 - covariance, contravariance and PHP&lt;/a&gt;
       
     &lt;/li&gt;
     
@@ -432,12 +423,9 @@
 
 
 &lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;PHP Quiz - Part 5 - constructors&lt;/h2&gt;
-  &lt;p&gt;
-    Okay!
-    We have only seen weird edge cases so far.
-    This one is actually pretty important.
-  &lt;/p&gt;
+  &lt;h2&gt;PHP quiz - part 5 - constructor overriding&lt;/h2&gt;
+  &lt;p&gt;Okay! We have only seen weird edge cases so far. This one is actually pretty important.
+&lt;/p&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
@@ -562,44 +550,44 @@
   &lt;a href=&quot;/2019/06/16/php-quiz-part-6-covariance.html&quot;&gt;
     &lt;h2&gt;next &amp;gt;&amp;gt;&lt;/h2&gt;
   &lt;/a&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">A (not at all obvious) difference between constructors and functions.</summary></entry><entry><title type="html">PHP Quiz - Part 6 - covariance</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html" rel="alternate" type="text/html" title="PHP Quiz - Part 6 - covariance" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html">&lt;section class=&quot;section&quot;&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">Okay! We have only seen weird edge cases so far. This one is actually pretty important.</summary></entry><entry><title type="html">PHP quiz - part 6 - covariance, contravariance and PHP</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html" rel="alternate" type="text/html" title="PHP quiz - part 6 - covariance, contravariance and PHP" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on March 20, 2019.&lt;/p&gt;
   
   &lt;ul&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/14/php-quiz-part-1-for-loops.html&quot;&gt;PHP Quiz - Part 1 - for loops&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/14/php-quiz-part-1-for-loops.html&quot;&gt;PHP quiz - part 1 - for loop conditions&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/15/php-quiz-part-2-echoes.html&quot;&gt;PHP Quiz - Part 2 - echoes&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/15/php-quiz-part-2-echoes.html&quot;&gt;PHP quiz - part 2 - echo arguments&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/16/php-quiz-part-3-associativity.html&quot;&gt;PHP Quiz - Part 3 - associativity&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/16/php-quiz-part-3-associativity.html&quot;&gt;PHP quiz - part 3 - operator associativity&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/16/php-quiz-part-4-hoisting.html&quot;&gt;PHP Quiz - Part 4 - hoisting&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/16/php-quiz-part-4-hoisting.html&quot;&gt;PHP quiz - part 4 - hoisting&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/16/php-quiz-part-5-constructors.html&quot;&gt;PHP Quiz - Part 5 - constructors&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/16/php-quiz-part-5-constructors.html&quot;&gt;PHP quiz - part 5 - constructor overriding&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;strong&gt;PHP Quiz - Part 6 - covariance&lt;/strong&gt;
+      &lt;strong&gt;PHP quiz - part 6 - covariance, contravariance and PHP&lt;/strong&gt;
       
     &lt;/li&gt;
     
@@ -608,12 +596,9 @@
 
 
 &lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;PHP Quiz - Part 6 - covariance&lt;/h2&gt;
-  &lt;p&gt;
-    In &lt;a href=&quot;/2019/06/16/php-quiz-part-5-constructors.html&quot;&gt;PHP Quiz - Part 5 - constructors&lt;/a&gt; we've seen that constructors can be safely overridden.
-    What about functions?
-    Brace yourselves, this is one of my favorite topics:
-  &lt;/p&gt;
+  &lt;h2&gt;PHP quiz - part 6 - covariance, contravariance and PHP&lt;/h2&gt;
+  &lt;p&gt;In the previous post we've seen that constructors can be safely overridden. What about functions? Brace yourselves, this is one of my favorite topics.
+&lt;/p&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
@@ -825,44 +810,44 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
   &lt;a href=&quot;/2019/06/16/php-quiz-part-5-constructors.html&quot;&gt;
     &lt;h2&gt;&amp;lt;&amp;lt; previous&lt;/h2&gt;
   &lt;/a&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">Covariance, contravariance and PHP.</summary></entry><entry><title type="html">PHP Quiz - Part 2 - echoes</title><link href="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html" rel="alternate" type="text/html" title="PHP Quiz - Part 2 - echoes" /><published>2019-06-15T00:00:00+02:00</published><updated>2019-06-15T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html">&lt;section class=&quot;section&quot;&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">In the previous post we've seen that constructors can be safely overridden. What about functions? Brace yourselves, this is one of my favorite topics.</summary></entry><entry><title type="html">PHP quiz - part 2 - echo arguments</title><link href="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html" rel="alternate" type="text/html" title="PHP quiz - part 2 - echo arguments" /><published>2019-06-15T00:00:00+02:00</published><updated>2019-06-15T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on March 20, 2019.&lt;/p&gt;
   
   &lt;ul&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/14/php-quiz-part-1-for-loops.html&quot;&gt;PHP Quiz - Part 1 - for loops&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/14/php-quiz-part-1-for-loops.html&quot;&gt;PHP quiz - part 1 - for loop conditions&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;strong&gt;PHP Quiz - Part 2 - echoes&lt;/strong&gt;
+      &lt;strong&gt;PHP quiz - part 2 - echo arguments&lt;/strong&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/16/php-quiz-part-3-associativity.html&quot;&gt;PHP Quiz - Part 3 - associativity&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/16/php-quiz-part-3-associativity.html&quot;&gt;PHP quiz - part 3 - operator associativity&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/16/php-quiz-part-4-hoisting.html&quot;&gt;PHP Quiz - Part 4 - hoisting&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/16/php-quiz-part-4-hoisting.html&quot;&gt;PHP quiz - part 4 - hoisting&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/16/php-quiz-part-5-constructors.html&quot;&gt;PHP Quiz - Part 5 - constructors&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/16/php-quiz-part-5-constructors.html&quot;&gt;PHP quiz - part 5 - constructor overriding&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/16/php-quiz-part-6-covariance.html&quot;&gt;PHP Quiz - Part 6 - covariance&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/16/php-quiz-part-6-covariance.html&quot;&gt;PHP quiz - part 6 - covariance, contravariance and PHP&lt;/a&gt;
       
     &lt;/li&gt;
     
@@ -871,12 +856,9 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 &lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;PHP Quiz - Part 2 - echoes&lt;/h2&gt;
-  &lt;p&gt;
-    Echo was the first PHP statement I learned.
-    It went great: I printed 'Hello, World!' to the screen and quickly moved on to more challenging problems.
-    I wish everything in programming was this easy.
-  &lt;/p&gt;
+  &lt;h2&gt;PHP quiz - part 2 - echo arguments&lt;/h2&gt;
+  &lt;p&gt;Echo was the first PHP statement I learned. It went great: I printed 'Hello, World!' to the screen and quickly moved on to more challenging problems. If only everything in programming was this easy.
+&lt;/p&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
@@ -926,9 +908,6 @@ a&lt;/pre&gt;
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Explanation&lt;/h2&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
   &lt;h3&gt;Evaluation strategy&lt;/h3&gt;
   &lt;p&gt;
     Arguments are usually evaluated before they're passed to a function.
@@ -1043,44 +1022,44 @@ a&lt;/pre&gt;
   &lt;a href=&quot;/2019/06/16/php-quiz-part-3-associativity.html&quot;&gt;
     &lt;h2&gt;next &amp;gt;&amp;gt;&lt;/h2&gt;
   &lt;/a&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">How exactly do echo arguments work?</summary></entry><entry><title type="html">PHP Quiz - Part 1 - for loops</title><link href="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html" rel="alternate" type="text/html" title="PHP Quiz - Part 1 - for loops" /><published>2019-06-14T00:00:00+02:00</published><updated>2019-06-14T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html">&lt;section class=&quot;section&quot;&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">Echo was the first PHP statement I learned. It went great: I printed 'Hello, World!' to the screen and quickly moved on to more challenging problems. If only everything in programming was this easy.</summary></entry><entry><title type="html">PHP quiz - part 1 - for loop conditions</title><link href="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html" rel="alternate" type="text/html" title="PHP quiz - part 1 - for loop conditions" /><published>2019-06-14T00:00:00+02:00</published><updated>2019-06-14T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on March 20, 2019.&lt;/p&gt;
   
   &lt;ul&gt;
     
     &lt;li&gt;
       
-      &lt;strong&gt;PHP Quiz - Part 1 - for loops&lt;/strong&gt;
+      &lt;strong&gt;PHP quiz - part 1 - for loop conditions&lt;/strong&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/15/php-quiz-part-2-echoes.html&quot;&gt;PHP Quiz - Part 2 - echoes&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/15/php-quiz-part-2-echoes.html&quot;&gt;PHP quiz - part 2 - echo arguments&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/16/php-quiz-part-3-associativity.html&quot;&gt;PHP Quiz - Part 3 - associativity&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/16/php-quiz-part-3-associativity.html&quot;&gt;PHP quiz - part 3 - operator associativity&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/16/php-quiz-part-4-hoisting.html&quot;&gt;PHP Quiz - Part 4 - hoisting&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/16/php-quiz-part-4-hoisting.html&quot;&gt;PHP quiz - part 4 - hoisting&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/16/php-quiz-part-5-constructors.html&quot;&gt;PHP Quiz - Part 5 - constructors&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/16/php-quiz-part-5-constructors.html&quot;&gt;PHP quiz - part 5 - constructor overriding&lt;/a&gt;
       
     &lt;/li&gt;
     
     &lt;li&gt;
       
-      &lt;a href=&quot;/2019/06/16/php-quiz-part-6-covariance.html&quot;&gt;PHP Quiz - Part 6 - covariance&lt;/a&gt;
+      &lt;a href=&quot;/2019/06/16/php-quiz-part-6-covariance.html&quot;&gt;PHP quiz - part 6 - covariance, contravariance and PHP&lt;/a&gt;
       
     &lt;/li&gt;
     
@@ -1089,12 +1068,9 @@ a&lt;/pre&gt;
 
 
 &lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;PHP Quiz - Part 1 - for loops&lt;/h2&gt;
-  &lt;p&gt;
-    For loops: one of the most fundamental and ubiquitous control flow statements.
-    I never would have thought I could learn anything new about them.
-    I was wrong.
-  &lt;/p&gt;
+  &lt;h2&gt;PHP quiz - part 1 - for loop conditions&lt;/h2&gt;
+  &lt;p&gt;For loops: one of the most fundamental and ubiquitous control flow statements. I never would have thought I could learn anything new about them. I was wrong.
+&lt;/p&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
@@ -1218,4 +1194,4 @@ a&lt;/pre&gt;
   &lt;a href=&quot;/2019/06/15/php-quiz-part-2-echoes.html&quot;&gt;
     &lt;h2&gt;next &amp;gt;&amp;gt;&lt;/h2&gt;
   &lt;/a&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">Everyone knows for loops... right?</summary></entry></feed>
+&lt;/section&gt;</content><author><name></name></author><summary type="html">For loops: one of the most fundamental and ubiquitous control flow statements. I never would have thought I could learn anything new about them. I was wrong.</summary></entry></feed>

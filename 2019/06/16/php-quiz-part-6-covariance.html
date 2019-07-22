@@ -8,22 +8,22 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
-    <title>PHP Quiz - Part 6 - covariance - Bendegúz Csirmaz</title>
+    <title>PHP quiz - part 6 - covariance, contravariance and PHP - Bendegúz Csirmaz</title>
     <script src="https://kit.fontawesome.com/a607672ce1.js"></script>
     <link type="application/atom+xml" rel="alternate" href="https://csirmazbendeguz.net/feed.xml" />
     <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>PHP Quiz - Part 6 - covariance</title>
+<title>PHP quiz - part 6 - covariance, contravariance and PHP</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="PHP Quiz - Part 6 - covariance" />
+<meta property="og:title" content="PHP quiz - part 6 - covariance, contravariance and PHP" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Covariance, contravariance and PHP." />
-<meta property="og:description" content="Covariance, contravariance and PHP." />
+<meta name="description" content="In the previous post we’ve seen that constructors can be safely overridden. What about functions? Brace yourselves, this is one of my favorite topics." />
+<meta property="og:description" content="In the previous post we’ve seen that constructors can be safely overridden. What about functions? Brace yourselves, this is one of my favorite topics." />
 <link rel="canonical" href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html" />
 <meta property="og:url" content="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-06-16T00:00:00+02:00" />
 <script type="application/ld+json">
-{"description":"Covariance, contravariance and PHP.","@type":"BlogPosting","headline":"PHP Quiz - Part 6 - covariance","dateModified":"2019-06-16T00:00:00+02:00","datePublished":"2019-06-16T00:00:00+02:00","url":"https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html"},"@context":"https://schema.org"}</script>
+{"description":"In the previous post we’ve seen that constructors can be safely overridden. What about functions? Brace yourselves, this is one of my favorite topics.","@type":"BlogPosting","headline":"PHP quiz - part 6 - covariance, contravariance and PHP","dateModified":"2019-06-16T00:00:00+02:00","datePublished":"2019-06-16T00:00:00+02:00","url":"https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -61,37 +61,37 @@
     
     <li>
       
-      <a href="/2019/06/14/php-quiz-part-1-for-loops.html">PHP Quiz - Part 1 - for loops</a>
+      <a href="/2019/06/14/php-quiz-part-1-for-loops.html">PHP quiz - part 1 - for loop conditions</a>
       
     </li>
     
     <li>
       
-      <a href="/2019/06/15/php-quiz-part-2-echoes.html">PHP Quiz - Part 2 - echoes</a>
+      <a href="/2019/06/15/php-quiz-part-2-echoes.html">PHP quiz - part 2 - echo arguments</a>
       
     </li>
     
     <li>
       
-      <a href="/2019/06/16/php-quiz-part-3-associativity.html">PHP Quiz - Part 3 - associativity</a>
+      <a href="/2019/06/16/php-quiz-part-3-associativity.html">PHP quiz - part 3 - operator associativity</a>
       
     </li>
     
     <li>
       
-      <a href="/2019/06/16/php-quiz-part-4-hoisting.html">PHP Quiz - Part 4 - hoisting</a>
+      <a href="/2019/06/16/php-quiz-part-4-hoisting.html">PHP quiz - part 4 - hoisting</a>
       
     </li>
     
     <li>
       
-      <a href="/2019/06/16/php-quiz-part-5-constructors.html">PHP Quiz - Part 5 - constructors</a>
+      <a href="/2019/06/16/php-quiz-part-5-constructors.html">PHP quiz - part 5 - constructor overriding</a>
       
     </li>
     
     <li>
       
-      <strong>PHP Quiz - Part 6 - covariance</strong>
+      <strong>PHP quiz - part 6 - covariance, contravariance and PHP</strong>
       
     </li>
     
@@ -100,12 +100,9 @@
 
 
 <section class="section">
-  <h2>PHP Quiz - Part 6 - covariance</h2>
-  <p>
-    In <a href="/2019/06/16/php-quiz-part-5-constructors.html">PHP Quiz - Part 5 - constructors</a> we've seen that constructors can be safely overridden.
-    What about functions?
-    Brace yourselves, this is one of my favorite topics:
-  </p>
+  <h2>PHP quiz - part 6 - covariance, contravariance and PHP</h2>
+  <p>In the previous post we've seen that constructors can be safely overridden. What about functions? Brace yourselves, this is one of my favorite topics.
+</p>
 </section>
 
 <section class="section">
@@ -329,7 +326,7 @@ obj.method(new T’());</code></pre></figure>
    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
   var disqus_config = function () {
-  this.page.title = 'PHP Quiz - Part 6 - covariance';
+  this.page.title = 'PHP quiz - part 6 - covariance, contravariance and PHP';
   this.page.url = 'https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html';  // Replace PAGE_URL with your page's canonical URL variable
   this.page.identifier = '/2019/06/16/php-quiz-part-6-covariance'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
   };
