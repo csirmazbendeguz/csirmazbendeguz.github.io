@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-07-22T23:04:17+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz - part 3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz - part 3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-07-22T23:09:26+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz - part 3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz - part 3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on March 20, 2019.&lt;/p&gt;
   
   &lt;ul&gt;
@@ -84,9 +84,11 @@
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Answer&lt;/h2&gt;
   &lt;a id=&quot;show-answer&quot; href=&quot;#&quot;&gt;Show the answer&lt;/a&gt;
-  &lt;div id=&quot;answer&quot; class=&quot;answer&quot;&gt;
-    &lt;span class=&quot;answer-letter&quot;&gt;A&lt;/span&gt;
-    &lt;pre&gt;Syntax error&lt;/pre&gt;
+  &lt;div id=&quot;answer&quot;&gt;
+    &lt;div class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;A&lt;/span&gt;
+      &lt;pre&gt;Syntax error&lt;/pre&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/section&gt;
 
@@ -277,9 +279,11 @@
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Answer&lt;/h2&gt;
   &lt;a id=&quot;show-answer&quot; href=&quot;#&quot;&gt;Show the answer&lt;/a&gt;
-  &lt;div id=&quot;answer&quot; class=&quot;answer&quot;&gt;
-    &lt;span class=&quot;answer-letter&quot;&gt;C&lt;/span&gt;
-    &lt;pre&gt;Hello World!&lt;/pre&gt;
+  &lt;div id=&quot;answer&quot;&gt;
+    &lt;div class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;C&lt;/span&gt;
+      &lt;pre&gt;Hello World!&lt;/pre&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/section&gt;
 
@@ -471,9 +475,11 @@
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Answer&lt;/h2&gt;
   &lt;a id=&quot;show-answer&quot; href=&quot;#&quot;&gt;Show the answer&lt;/a&gt;
-  &lt;div id=&quot;answer&quot; class=&quot;answer&quot;&gt;
-    &lt;span class=&quot;answer-letter&quot;&gt;B&lt;/span&gt;
-    &lt;pre&gt;B&lt;/pre&gt;
+  &lt;div id=&quot;answer&quot;&gt;
+    &lt;div class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;B&lt;/span&gt;
+      &lt;pre&gt;B&lt;/pre&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/section&gt;
 
@@ -899,9 +905,11 @@ a&lt;/pre&gt;
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Answer&lt;/h2&gt;
   &lt;a id=&quot;show-answer&quot; href=&quot;#&quot;&gt;Show the answer&lt;/a&gt;
-  &lt;div id=&quot;answer&quot; class=&quot;answer&quot;&gt;
-    &lt;span class=&quot;answer-letter&quot;&gt;B&lt;/span&gt;
-    &lt;pre&gt;baac&lt;/pre&gt;
+  &lt;div id=&quot;answer&quot;&gt;
+    &lt;div class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;B&lt;/span&gt;
+      &lt;pre&gt;baac&lt;/pre&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/section&gt;
 
@@ -1111,10 +1119,12 @@ a&lt;/pre&gt;
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Answer&lt;/h2&gt;
   &lt;a id=&quot;show-answer&quot; href=&quot;#&quot;&gt;Show the answer&lt;/a&gt;
-  &lt;div id=&quot;answer&quot; class=&quot;answer&quot;&gt;
-    &lt;span class=&quot;answer-letter&quot;&gt;C&lt;/span&gt;
-    &lt;pre&gt;0,0
+  &lt;div id=&quot;answer&quot;&gt;
+    &lt;div class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;C&lt;/span&gt;
+      &lt;pre&gt;0,0
 1,1&lt;/pre&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/section&gt;
 
