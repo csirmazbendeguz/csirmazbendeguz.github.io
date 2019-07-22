@@ -103,8 +103,6 @@
   <h2>PHP Quiz - Part 4 - hoisting</h2>
   <p>Developing modern object oriented applications kept me in blissful ignorance of PHP's less used features.</p>
   <p>The following may come as a surprise to unsuspecting programmers (such as myself).</p>
-  <script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src='https://embed.playbuzz.com/sdk.js';fjs.parentNode.insertBefore(js,fjs);}(document,'script','playbuzz-sdk'));</script>
-  <div class="playbuzz" data-id="06d3e30b-9cd9-45ef-839a-4f590b48f35c" data-show-share="false" data-show-info="false"></div>
 </section>
 
 <section class="section">
@@ -118,12 +116,34 @@
 <span class="k">function</span> <span class="nf">helloWorld</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">return</span> <span class="s2">"Hello World!</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
+
+  <ul class="answers">
+    <li class="answer">
+      <span class="answer-letter">A</span>
+      <span>Fatal error: Uncaught Error: Call to undefined function helloWorld()</span>
+    </li>
+    <li class="answer">
+      <span class="answer-letter">B</span>
+      <span>Nothing</span>
+    </li>
+    <li class="answer">
+      <span class="answer-letter">C</span>
+      <span>Hello World!</span>
+    </li>
+    <li class="answer">
+      <span class="answer-letter">D</span>
+      <span>Warning + "helloWorld()"</span>
+    </li>
+  </ul>
 </section>
 
 <section class="section">
   <h2>Answer</h2>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">Hello World!</code></pre></figure>
+  <a id="show-answer" href="#">Show the answer</a>
+  <div id="answer" class="answer">
+    <span class="answer-letter">C</span>
+    <pre>Hello World!</pre>
+  </div>
 </section>
 
 <section class="section">
