@@ -106,8 +106,6 @@
     We have only seen weird edge cases so far.
     This one is actually pretty important.
   </p>
-  <script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src='https://embed.playbuzz.com/sdk.js';fjs.parentNode.insertBefore(js,fjs);}(document,'script','playbuzz-sdk'));</script>
-  <div class="playbuzz" data-id="a47ba42f-794b-4909-94da-58d9b84769b4" data-show-share="false" data-show-info="false"></div>
 </section>
 
 <section class="section">
@@ -129,12 +127,34 @@
 <span class="p">}</span>
 
 <span class="k">new</span> <span class="nx">B</span><span class="p">(</span><span class="k">new</span> <span class="nx">Exception</span><span class="p">(</span><span class="s1">'Exception!'</span><span class="p">));</span></code></pre></figure>
+
+  <ul class="answers">
+    <li class="answer">
+      <span class="answer-letter">A</span>
+      <span>Warning: Declaration of B::__construct(Exception $e) should be compatible with A::__construct(LogicException $l)</span>
+    </li>
+    <li class="answer">
+      <span class="answer-letter">B</span>
+      <pre>B</pre>
+    </li>
+    <li class="answer">
+      <span class="answer-letter">C</span>
+      <pre>AB</pre>
+    </li>
+    <li class="answer">
+      <span class="answer-letter">C</span>
+      <span>Fatal error: Uncaught Exception: Exception!</span>
+    </li>
+  </ul>
 </section>
 
 <section class="section">
   <h2>Answer</h2>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">B</code></pre></figure>
+  <a id="show-answer" href="#">Show the answer</a>
+  <div id="answer" class="answer">
+    <span class="answer-letter">B</span>
+    <pre>B</pre>
+  </div>
 </section>
 
 <section class="section">
