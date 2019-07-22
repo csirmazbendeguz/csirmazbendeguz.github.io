@@ -301,4 +301,5 @@ dd {
   margin-right: 8px; }
 
 #answer {
-  display: none; }
+  display: none;
+  flex-direction: column; }

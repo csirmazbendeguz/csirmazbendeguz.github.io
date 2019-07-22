@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-07-22T22:35:08+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-07-22T22:43:44+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on March 20, 2019.&lt;/p&gt;
   
   &lt;ul&gt;
@@ -614,8 +614,6 @@
     What about functions?
     Brace yourselves, this is one of my favorite topics:
   &lt;/p&gt;
-  &lt;script&gt;(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src='https://embed.playbuzz.com/sdk.js';fjs.parentNode.insertBefore(js,fjs);}(document,'script','playbuzz-sdk'));&lt;/script&gt;
-  &lt;div class=&quot;playbuzz&quot; data-id=&quot;fff1f1fb-e715-497c-b6ac-9c8be1ef3879&quot; data-show-share=&quot;false&quot; data-show-info=&quot;false&quot;&gt;&lt;/div&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
@@ -631,12 +629,29 @@
 &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ClassB&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ClassA&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;iterable&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+  &lt;ul class=&quot;answers&quot;&gt;
+    &lt;li class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;A&lt;/span&gt;
+      &lt;span&gt;Yes&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;B&lt;/span&gt;
+      &lt;pre&gt;No&lt;/pre&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Answer&lt;/h2&gt;
-  &lt;p&gt;No, it won't.&lt;/p&gt;
-  &lt;p&gt;There are a few cases where functions can be overridden with certain signatures.&lt;/p&gt;
+  &lt;a id=&quot;show-answer&quot; href=&quot;#&quot;&gt;Show the answer&lt;/a&gt;
+  &lt;div id=&quot;answer&quot;&gt;
+    &lt;div class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;B&lt;/span&gt;
+      &lt;span&gt;No&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;p&gt;There are a few cases where functions can be overridden with certain signatures.&lt;/p&gt;
+  &lt;/div&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
