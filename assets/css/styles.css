@@ -286,12 +286,16 @@ dd {
 .answer-letter {
   background-color: #00284d;
   color: #ffffff;
-  padding: 16px 24px;
-  margin-right: 8px;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
-  border-radius: 100px; }
+  border-radius: 100px;
+  margin-right: 8px; }
 
 #answer {
   display: none; }

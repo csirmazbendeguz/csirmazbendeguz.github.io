@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-07-21T22:17:22+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-07-22T21:27:18+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on March 20, 2019.&lt;/p&gt;
   
   &lt;ul&gt;
@@ -793,10 +793,8 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
   &lt;p&gt;
     Echo was the first PHP statement I learned.
     It went great: I printed 'Hello, World!' to the screen and quickly moved on to more challenging problems.
-    I wish everything was this easy.
+    I wish everything in programming was this easy.
   &lt;/p&gt;
-  &lt;script&gt;(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src='https://embed.playbuzz.com/sdk.js';fjs.parentNode.insertBefore(js,fjs);}(document,'script','playbuzz-sdk'));&lt;/script&gt;
-  &lt;div class=&quot;playbuzz&quot; data-id=&quot;8257959d-b525-4b92-ad19-e36aa259a293&quot; data-show-share=&quot;false&quot; data-show-info=&quot;false&quot;&gt;&lt;/div&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
@@ -811,12 +809,36 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'b'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;c&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+  &lt;ul class=&quot;answers&quot;&gt;
+    &lt;li class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;A&lt;/span&gt;
+      &lt;pre&gt;bac
+a&lt;/pre&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;B&lt;/span&gt;
+      &lt;pre&gt;baac&lt;/pre&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;C&lt;/span&gt;
+      &lt;pre&gt;abac&lt;/pre&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;D&lt;/span&gt;
+      &lt;pre&gt;abc
+a&lt;/pre&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Answer&lt;/h2&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;baac&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;a id=&quot;show-answer&quot; href=&quot;#&quot;&gt;Show the answer&lt;/a&gt;
+  &lt;div id=&quot;answer&quot; class=&quot;answer&quot;&gt;
+    &lt;span class=&quot;answer-letter&quot;&gt;B&lt;/span&gt;
+    &lt;pre&gt;baac&lt;/pre&gt;
+  &lt;/div&gt;
 &lt;/section&gt;
 
 
@@ -920,14 +942,14 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Conclusion&lt;/h2&gt;
-  &lt;p&gt;In modern PHP development echo statements are buried in the depths of template systems.&lt;/p&gt;
+  &lt;p&gt;In modern PHP applications echo statements are buried in the depths of template systems.&lt;/p&gt;
   &lt;p&gt;
-    It might be rarely needed in one's day-to-day work, but it's still one of the most fundamental PHP statements.
+    They might be rarely needed in one's day-to-day work, but they're still one of the most fundamental PHP statements.
     It's worth knowing how they work.
   &lt;/p&gt;
   &lt;p&gt;
     Alright!
-    We've learned enough about language constructs (for, echo) for now.
+    We've learned enough about language constructs for now.
     In the next post we'll take a look at operator associativity.
   &lt;/p&gt;
 &lt;/section&gt;
