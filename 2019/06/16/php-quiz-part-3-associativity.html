@@ -101,9 +101,11 @@
 
 <section class="section">
   <h2>PHP Quiz - Part 3 - associativity</h2>
-  <p>Let's take a look at a lesser known attribute of PHP operators!</p>
-  <script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src='https://embed.playbuzz.com/sdk.js';fjs.parentNode.insertBefore(js,fjs);}(document,'script','playbuzz-sdk'));</script>
-  <div class="playbuzz" data-id="32755ffb-b138-488c-82e8-07fde3506236" data-show-share="false" data-show-info="false"></div>
+  <p>
+    Operators are the building blocks of computer programs.
+    You might think you know them, but the devil is in the details.
+    After all these years of programming, I still find myself revisiting the precedence table every once in a while.
+  </p>
 </section>
 
 <section class="section">
@@ -121,11 +123,30 @@
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
   <span class="k">echo</span> <span class="s1">'false'</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
+
+  <ul class="answers">
+    <li class="answer">
+      <span class="answer-letter">A</span>
+      <pre>Syntax error</pre>
+    </li>
+    <li class="answer">
+      <span class="answer-letter">B</span>
+      <pre>true</pre>
+    </li>
+    <li class="answer">
+      <span class="answer-letter">C</span>
+      <pre>false</pre>
+    </li>
+  </ul>
 </section>
 
 <section class="section">
   <h2>Answer</h2>
-  <p>It will output a syntax error.</p>
+  <a id="show-answer" href="#">Show the answer</a>
+  <div id="answer" class="answer">
+    <span class="answer-letter">A</span>
+    <pre>Syntax error</pre>
+  </div>
 </section>
 
 <section class="section">
@@ -190,8 +211,10 @@
 
 <section class="section">
   <h3>Other languages</h3>
-  <p>Most programming languages do not allow the <a href="https://en.wikipedia.org/wiki/Relational_operator#Operator_chaining">chaining of relational operators</a>.</p>
-  <p>The desired result is usually achieved with something like <code class="highlighter-rouge">$z > $y && $y > $x</code>.</p>
+  <p>
+    Most programming languages do not allow the <a href="https://en.wikipedia.org/wiki/Relational_operator#Operator_chaining">chaining of relational operators</a>.
+    The desired result is usually achieved with something like <code class="highlighter-rouge">$z > $y && $y > $x</code>.
+  </p>
   <p>
     A notable exception is Python.
     It evaluates chained relational operators the way someone less scarred by programming would expect.
@@ -212,10 +235,14 @@
 <section class="section">
   <h2>Conclusion</h2>
   <p>
-    There is a reason why you never see comparison operators chained like this in PHP code.
+    There is a reason why you've never seen comparison operators chained like this in PHP code.
     It's because it's not legal.
   </p>
-  <p>You might not recognize the problem immediately, but as a rule of thumb, if a test question seems fishy, it's probably trying to trick you.</p>
+  <p>
+    Exam questions often try to trick you like this.
+    When I notice something fishy and the problem isn't completely obvious, as a rule of thumb, I always consider the 'syntax error' answers first.
+    Trust your intuition!
+  </p>
   <p>This post was inspired by Upwork's incorrect <a href="https://www.upwork.com/i/interview-questions/php/">PHP interview questions</a> (question #10).</p>
 </section>
 

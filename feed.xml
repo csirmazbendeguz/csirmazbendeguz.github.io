@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-07-22T21:27:18+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-07-22T22:06:24+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP Quiz - Part 3 - associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP Quiz - Part 3 - associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;p&gt;This post is part of a series based on a presentation I gave at &lt;a href=&quot;https://cheppers.com&quot;&gt;Cheppers&lt;/a&gt; on March 20, 2019.&lt;/p&gt;
   
   &lt;ul&gt;
@@ -45,9 +45,11 @@
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;PHP Quiz - Part 3 - associativity&lt;/h2&gt;
-  &lt;p&gt;Let's take a look at a lesser known attribute of PHP operators!&lt;/p&gt;
-  &lt;script&gt;(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src='https://embed.playbuzz.com/sdk.js';fjs.parentNode.insertBefore(js,fjs);}(document,'script','playbuzz-sdk'));&lt;/script&gt;
-  &lt;div class=&quot;playbuzz&quot; data-id=&quot;32755ffb-b138-488c-82e8-07fde3506236&quot; data-show-share=&quot;false&quot; data-show-info=&quot;false&quot;&gt;&lt;/div&gt;
+  &lt;p&gt;
+    Operators are the building blocks of computer programs.
+    You might think you know them, but the devil is in the details.
+    After all these years of programming, I still find myself revisiting the precedence table every once in a while.
+  &lt;/p&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
@@ -65,11 +67,30 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'false'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+  &lt;ul class=&quot;answers&quot;&gt;
+    &lt;li class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;A&lt;/span&gt;
+      &lt;pre&gt;Syntax error&lt;/pre&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;B&lt;/span&gt;
+      &lt;pre&gt;true&lt;/pre&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;C&lt;/span&gt;
+      &lt;pre&gt;false&lt;/pre&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Answer&lt;/h2&gt;
-  &lt;p&gt;It will output a syntax error.&lt;/p&gt;
+  &lt;a id=&quot;show-answer&quot; href=&quot;#&quot;&gt;Show the answer&lt;/a&gt;
+  &lt;div id=&quot;answer&quot; class=&quot;answer&quot;&gt;
+    &lt;span class=&quot;answer-letter&quot;&gt;A&lt;/span&gt;
+    &lt;pre&gt;Syntax error&lt;/pre&gt;
+  &lt;/div&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
@@ -134,8 +155,10 @@
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h3&gt;Other languages&lt;/h3&gt;
-  &lt;p&gt;Most programming languages do not allow the &lt;a href=&quot;https://en.wikipedia.org/wiki/Relational_operator#Operator_chaining&quot;&gt;chaining of relational operators&lt;/a&gt;.&lt;/p&gt;
-  &lt;p&gt;The desired result is usually achieved with something like &lt;code class=&quot;highlighter-rouge&quot;&gt;$z &gt; $y &amp;&amp; $y &gt; $x&lt;/code&gt;.&lt;/p&gt;
+  &lt;p&gt;
+    Most programming languages do not allow the &lt;a href=&quot;https://en.wikipedia.org/wiki/Relational_operator#Operator_chaining&quot;&gt;chaining of relational operators&lt;/a&gt;.
+    The desired result is usually achieved with something like &lt;code class=&quot;highlighter-rouge&quot;&gt;$z &gt; $y &amp;&amp; $y &gt; $x&lt;/code&gt;.
+  &lt;/p&gt;
   &lt;p&gt;
     A notable exception is Python.
     It evaluates chained relational operators the way someone less scarred by programming would expect.
@@ -156,10 +179,14 @@
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Conclusion&lt;/h2&gt;
   &lt;p&gt;
-    There is a reason why you never see comparison operators chained like this in PHP code.
+    There is a reason why you've never seen comparison operators chained like this in PHP code.
     It's because it's not legal.
   &lt;/p&gt;
-  &lt;p&gt;You might not recognize the problem immediately, but as a rule of thumb, if a test question seems fishy, it's probably trying to trick you.&lt;/p&gt;
+  &lt;p&gt;
+    Exam questions often try to trick you like this.
+    When I notice something fishy and the problem isn't completely obvious, as a rule of thumb, I always consider the 'syntax error' answers first.
+    Trust your intuition!
+  &lt;/p&gt;
   &lt;p&gt;This post was inspired by Upwork's incorrect &lt;a href=&quot;https://www.upwork.com/i/interview-questions/php/&quot;&gt;PHP interview questions&lt;/a&gt; (question #10).&lt;/p&gt;
 &lt;/section&gt;
 
