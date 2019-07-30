@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-07-29T22:57:35+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-07-30T20:51:57+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
 
@@ -782,11 +782,19 @@ a&lt;/pre&gt;
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Explanation&lt;/h2&gt;
-  &lt;h3&gt;Comma operator&lt;/h3&gt;
+  &lt;p&gt;First of all, I'd like to clarify that it is perfectly legal to initialize and update multiple variables in for statements.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// OK&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
   &lt;p&gt;
-    In C, the &lt;a href=&quot;https://en.wikipedia.org/wiki/Comma_operator&quot;&gt;comma operator&lt;/a&gt; is an operator that evaluates two expressions and returns the result of the second one.
-    For example:
+    The question refers to the loop's condition.
+    Does a comma make sense here?
+    How?
   &lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// ?&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Comma operator&lt;/h3&gt;
+  &lt;p&gt;In C, the &lt;a href=&quot;https://en.wikipedia.org/wiki/Comma_operator&quot;&gt;comma operator&lt;/a&gt; is an operator that evaluates two expressions and returns the result of the second one.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/* prints &quot;Hello World!” and assigns 3 to 'a' */&lt;/span&gt;
 &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -800,7 +808,7 @@ a&lt;/pre&gt;
   &lt;/p&gt;
   &lt;p&gt;
     PHP is no exception.
-    The comma operator is not listed in the &lt;a href=&quot;https://www.php.net/manual/en/language.operators.precedence.php&quot;&gt;precedence table&lt;/a&gt; and using it will generally result in a syntax error:
+    The comma operator is not listed in the &lt;a href=&quot;https://www.php.net/manual/en/language.operators.precedence.php&quot;&gt;precedence table&lt;/a&gt; and using it will generally result in a syntax error.
   &lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;php&lt;/span&gt;
 
@@ -810,7 +818,7 @@ a&lt;/pre&gt;
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h3&gt;For loop conditions&lt;/h3&gt;
-  &lt;p&gt;There is an exception to the rule: for loop conditions.&lt;/p&gt;
+  &lt;p&gt;However, there is an exception to the rule: for loop conditions.&lt;/p&gt;
   &lt;p&gt;
     For some strange reason, in for loop conditions the comma operator is correctly evaluated.
     Weird!
@@ -830,7 +838,7 @@ a&lt;/pre&gt;
     &lt;/table&gt;
   &lt;/div&gt;
   &lt;p&gt;
-    In this loop, the expression &lt;code class=&quot;highlighter-rouge&quot;&gt;$i &lt; 3, $j &lt; 2&lt;/code&gt; has the same effect as &lt;code class=&quot;highlighter-rouge&quot;&gt;$j &lt; 2&lt;/code&gt;.
+    In this case, the expression &lt;code class=&quot;highlighter-rouge&quot;&gt;$i &lt; 3, $j &lt; 2&lt;/code&gt; has the same effect as &lt;code class=&quot;highlighter-rouge&quot;&gt;$j &lt; 2&lt;/code&gt;.
     The first operand is evaluated, but its result is disregarded.
   &lt;/p&gt;
   &lt;p&gt;The loop will only iterate twice.&lt;/p&gt;
@@ -844,9 +852,9 @@ a&lt;/pre&gt;
     It has a lot of exceptions and special cases.
   &lt;/p&gt;
   &lt;p&gt;
-    Fortunately, you don't really need to know about them.
+    Fortunately, you don't need to memorize them.
     There are not many great uses of the comma operator.
-    In fact, it's better if you just forget about it.
+    In fact, it's better if you just forget it.
   &lt;/p&gt;
   &lt;p&gt;Anyway, if you happen to know the rationale behind including this operator in PHP, please let me know in the comments.&lt;/p&gt;
   &lt;p&gt;In the next post we will continue looking at weird commas, but in a different context.&lt;/p&gt;

@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-  <title>PHP quiz #1 - for loop conditions - Bendegúz Csirmaz</title>
-  <link rel="stylesheet" type="text/css" href="/assets/css/post.css">
-  <script src="https://kit.fontawesome.com/a607672ce1.js"></script>
-  <link type="application/atom+xml" rel="alternate" href="https://csirmazbendeguz.net/feed.xml" />
-  <!-- Begin Jekyll SEO tag v2.6.1 -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <title>PHP quiz #1 - for loop conditions - Bendegúz Csirmaz</title>
+    <script src="https://kit.fontawesome.com/a607672ce1.js"></script>
+    <link type="application/atom+xml" rel="alternate" href="https://csirmazbendeguz.net/feed.xml" />
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>PHP quiz #1 - for loop conditions</title>
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="PHP quiz #1 - for loop conditions" />
@@ -24,9 +23,11 @@
 {"description":"For loops: one of the most fundamental and ubiquitous control flow statements. I never would have thought I could learn anything new about them. I was wrong.","@type":"BlogPosting","headline":"PHP quiz #1 - for loop conditions","dateModified":"2019-06-14T00:00:00+02:00","datePublished":"2019-06-14T00:00:00+02:00","url":"https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-</head>
-<body>
-<div class="wrapper">
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+  </head>
+  <body>
+    <div class="post-wrapper">
   <header class="header">
     <span class="breadcrumbs">
       <a href="/" class="breadcrumb-link">blog</a>
@@ -136,11 +137,19 @@
 
 <section class="section">
   <h2>Explanation</h2>
-  <h3>Comma operator</h3>
+  <p>First of all, I'd like to clarify that it is perfectly legal to initialize and update multiple variables in for statements.</p>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">$j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">...</span><span class="p">;</span> <span class="o">++</span><span class="nv">$i</span><span class="p">,</span> <span class="o">++</span><span class="nv">$j</span><span class="p">)</span> <span class="c1">// OK</span></code></pre></figure>
   <p>
-    In C, the <a href="https://en.wikipedia.org/wiki/Comma_operator">comma operator</a> is an operator that evaluates two expressions and returns the result of the second one.
-    For example:
+    The question refers to the loop's condition.
+    Does a comma make sense here?
+    How?
   </p>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">for</span> <span class="p">(</span><span class="o">...</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">$j</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="o">...</span><span class="p">)</span> <span class="c1">// ?</span></code></pre></figure>
+</section>
+
+<section class="section">
+  <h3>Comma operator</h3>
+  <p>In C, the <a href="https://en.wikipedia.org/wiki/Comma_operator">comma operator</a> is an operator that evaluates two expressions and returns the result of the second one.</p>
 
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cm">/* prints "Hello World!” and assigns 3 to 'a' */</span>
 <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">printf</span><span class="p">(</span><span class="s">"Hello World!</span><span class="se">\n</span><span class="s">"</span><span class="p">),</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">);</span></code></pre></figure>
@@ -154,7 +163,7 @@
   </p>
   <p>
     PHP is no exception.
-    The comma operator is not listed in the <a href="https://www.php.net/manual/en/language.operators.precedence.php">precedence table</a> and using it will generally result in a syntax error:
+    The comma operator is not listed in the <a href="https://www.php.net/manual/en/language.operators.precedence.php">precedence table</a> and using it will generally result in a syntax error.
   </p>
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="o">&lt;?</span><span class="n">php</span>
 
@@ -164,7 +173,7 @@
 
 <section class="section">
   <h3>For loop conditions</h3>
-  <p>There is an exception to the rule: for loop conditions.</p>
+  <p>However, there is an exception to the rule: for loop conditions.</p>
   <p>
     For some strange reason, in for loop conditions the comma operator is correctly evaluated.
     Weird!
@@ -184,7 +193,7 @@
     </table>
   </div>
   <p>
-    In this loop, the expression <code class="highlighter-rouge">$i < 3, $j < 2</code> has the same effect as <code class="highlighter-rouge">$j < 2</code>.
+    In this case, the expression <code class="highlighter-rouge">$i < 3, $j < 2</code> has the same effect as <code class="highlighter-rouge">$j < 2</code>.
     The first operand is evaluated, but its result is disregarded.
   </p>
   <p>The loop will only iterate twice.</p>
@@ -198,9 +207,9 @@
     It has a lot of exceptions and special cases.
   </p>
   <p>
-    Fortunately, you don't really need to know about them.
+    Fortunately, you don't need to memorize them.
     There are not many great uses of the comma operator.
-    In fact, it's better if you just forget about it.
+    In fact, it's better if you just forget it.
   </p>
   <p>Anyway, if you happen to know the rationale behind including this operator in PHP, please let me know in the comments.</p>
   <p>In the next post we will continue looking at weird commas, but in a different context.</p>
@@ -217,7 +226,10 @@
 </section>
 
 
-    
+<script src="/assets/js/show-answer.js"></script>
+
+  </main>
+  
 <div id="disqus_thread"></div>
 <script>
   /**
@@ -238,7 +250,6 @@
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
-  </main>
   <footer class="footer">
   <span>Copyright&nbsp;©&nbsp;<span class="current-year">2019</span>&nbsp;Bendegúz&nbsp;Csirmaz</span>
   <ul class="icons">
@@ -249,11 +260,11 @@
     </li>
   </ul>
 </footer>
+<script src="/assets/js/current-year.js"></script>
 
 </div>
-<script src="/assets/js/show-answer.js"></script>
-<script src="/assets/js/current-year.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142286966-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -263,5 +274,5 @@
   gtag('config', 'UA-142286966-1');
 </script>
 
-</body>
+  </body>
 </html>
