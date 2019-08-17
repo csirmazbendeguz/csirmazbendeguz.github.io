@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-08-17T21:07:12+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-08-17T22:13:32+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
 
@@ -786,8 +786,7 @@ a&lt;/pre&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// OK&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
   &lt;p&gt;
     The question refers to the loop's condition.
-    Does a comma make sense here?
-    How?
+    What does it mean to define multiple conditions?
   &lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// ?&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;/section&gt;
@@ -807,8 +806,8 @@ a&lt;/pre&gt;
     Not many programming languages support it.
   &lt;/p&gt;
   &lt;p&gt;
-    PHP is no exception.
-    The comma operator is not listed in the &lt;a href=&quot;https://www.php.net/manual/en/language.operators.precedence.php&quot;&gt;precedence table&lt;/a&gt; and using it will generally result in a syntax error.
+    There is no comma operator in PHP either.
+    It is not listed in the &lt;a href=&quot;https://www.php.net/manual/en/language.operators.precedence.php&quot;&gt;precedence table&lt;/a&gt; and using it will generally result in a syntax error.
   &lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;php&lt;/span&gt;
 
@@ -848,14 +847,12 @@ a&lt;/pre&gt;
   &lt;h2&gt;Conclusion&lt;/h2&gt;
   &lt;p&gt;
     PHP is an exceptional language.
-    Literally.
-    It has a lot of exceptions and special cases.
+    Literally: it has a lot of exceptions and special cases.
   &lt;/p&gt;
   &lt;p&gt;
-    Fortunately, you don't need to memorize them.
-    There are not many great uses of the comma operator.
+    Fortunately, there are not many great uses of the comma operator.
     In fact, it's better if you just forget it.
   &lt;/p&gt;
-  &lt;p&gt;Anyway, if you happen to know the rationale behind including this operator in PHP, please let me know in the comments.&lt;/p&gt;
+  &lt;p&gt;If you happen to know the rationale behind this feature, please let me know in the comments below.&lt;/p&gt;
   &lt;p&gt;In the next post we will continue looking at weird commas, but in a different context.&lt;/p&gt;
 &lt;/section&gt;</content><author><name></name></author><summary type="html">For loops: one of the most fundamental and ubiquitous control flow statements. I never would have thought I could learn anything new about them. I was wrong.</summary></entry></feed>

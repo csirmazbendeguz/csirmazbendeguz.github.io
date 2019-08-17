@@ -140,8 +140,7 @@
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">$j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">...</span><span class="p">;</span> <span class="o">++</span><span class="nv">$i</span><span class="p">,</span> <span class="o">++</span><span class="nv">$j</span><span class="p">)</span> <span class="c1">// OK</span></code></pre></figure>
   <p>
     The question refers to the loop's condition.
-    Does a comma make sense here?
-    How?
+    What does it mean to define multiple conditions?
   </p>
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">for</span> <span class="p">(</span><span class="o">...</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">$j</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="o">...</span><span class="p">)</span> <span class="c1">// ?</span></code></pre></figure>
 </section>
@@ -161,8 +160,8 @@
     Not many programming languages support it.
   </p>
   <p>
-    PHP is no exception.
-    The comma operator is not listed in the <a href="https://www.php.net/manual/en/language.operators.precedence.php">precedence table</a> and using it will generally result in a syntax error.
+    There is no comma operator in PHP either.
+    It is not listed in the <a href="https://www.php.net/manual/en/language.operators.precedence.php">precedence table</a> and using it will generally result in a syntax error.
   </p>
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="o">&lt;?</span><span class="n">php</span>
 
@@ -202,15 +201,13 @@
   <h2>Conclusion</h2>
   <p>
     PHP is an exceptional language.
-    Literally.
-    It has a lot of exceptions and special cases.
+    Literally: it has a lot of exceptions and special cases.
   </p>
   <p>
-    Fortunately, you don't need to memorize them.
-    There are not many great uses of the comma operator.
+    Fortunately, there are not many great uses of the comma operator.
     In fact, it's better if you just forget it.
   </p>
-  <p>Anyway, if you happen to know the rationale behind including this operator in PHP, please let me know in the comments.</p>
+  <p>If you happen to know the rationale behind this feature, please let me know in the comments below.</p>
   <p>In the next post we will continue looking at weird commas, but in a different context.</p>
 </section>
 
