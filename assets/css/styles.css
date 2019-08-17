@@ -161,38 +161,6 @@ dd {
     font-weight: normal;
     margin: 8px 0; }
 
-.navigation {
-  text-align: left;
-  border-top: 1px solid #e6f3ff; }
-  .navigation ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    list-style-type: none;
-    padding-left: 32px; }
-    .navigation ul li {
-      position: relative;
-      height: 100%;
-      margin-right: 32px; }
-      .navigation ul li a {
-        display: block;
-        padding: 12px 0;
-        color: #ffffff;
-        transition: all 0.3s;
-        text-decoration: none; }
-        .navigation ul li a:after {
-          transition: height .2s ease-in-out 0s;
-          position: absolute;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          display: block;
-          height: 0;
-          content: "";
-          background-color: #e6f3ff; }
-      .navigation ul li a.active:after, .navigation ul li a:hover:after {
-        height: 3px; }
-
 .content {
   padding: 32px;
   background-color: #ffffff;
@@ -210,6 +178,15 @@ dd {
       margin-top: 0; }
     .section p:last-child {
       margin-bottom: 0; }
+
+@media screen and (min-width: 992px) {
+  .wrapper .heading, .wrapper .content, .wrapper .footer {
+    padding-left: 10%;
+    padding-right: 10%; } }
+@media screen and (min-width: 1281px) {
+  .wrapper .heading, .wrapper .content, .wrapper .footer {
+    padding-left: 25%;
+    padding-right: 25%; } }
 
 .footer {
   padding: 8px 32px;
@@ -340,3 +317,44 @@ dd {
     font-size: 2.3em; }
 .post-wrapper .post__date {
   font-style: italic; }
+
+.navigation {
+  text-align: left;
+  border-top: 1px solid #e6f3ff; }
+  .navigation ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    list-style-type: none;
+    padding-left: 0; }
+    .navigation ul li {
+      position: relative;
+      height: 100%;
+      margin-right: 32px; }
+      .navigation ul li a {
+        display: block;
+        padding: 12px 0;
+        color: #ffffff;
+        transition: all 0.3s;
+        text-decoration: none; }
+        .navigation ul li a:after {
+          transition: height .2s ease-in-out 0s;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          display: block;
+          height: 0;
+          content: "";
+          background-color: #e6f3ff; }
+      .navigation ul li a.active:after, .navigation ul li a:hover:after {
+        height: 3px; }
+
+@media screen and (min-width: 992px) {
+  .navigation {
+    padding-left: 10%;
+    padding-right: 10%; } }
+@media screen and (min-width: 1281px) {
+  .navigation {
+    padding-left: 25%;
+    padding-right: 25%; } }
