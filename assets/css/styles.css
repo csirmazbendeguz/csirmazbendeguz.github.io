@@ -108,6 +108,9 @@ a:link {
 a:visited {
   color: #551a8b; }
 
+.content a:hover {
+  opacity: 0.75; }
+
 h1, h2, h3 {
   font-weight: bold; }
 
@@ -231,9 +234,6 @@ dd {
   .teaser:last-child {
     margin-bottom: 0; }
 
-.teaser__title a:hover {
-  opacity: 0.75; }
-
 .teaser__date {
   display: block;
   font-style: italic; }
@@ -277,8 +277,6 @@ dd {
       margin-right: 16px; }
     .quiz-paginator a:last-child {
       margin-right: 0; }
-    .quiz-paginator a:hover {
-      opacity: 0.75; }
 
 .answers {
   list-style-type: none;
@@ -322,12 +320,9 @@ dd {
     font-size: 1.5em;
     color: #ffffff;
     text-decoration: none; }
-  .post-wrapper .header .breadcrumbs .breadcrumb-separator {
-    margin: 0 8px; }
-    .post-wrapper .header .breadcrumbs .breadcrumb-separator:after {
-      color: #ffffff;
-      font-size: 1em;
-      content: "//"; }
+    .post-wrapper .header .breadcrumbs .breadcrumb-link:before {
+      margin-right: 8px;
+      content: "<"; }
   .post-wrapper .header .site-name {
     font-size: 1.5em;
     font-weight: normal; }
