@@ -138,11 +138,14 @@
   <h2>Explanation</h2>
   <p>First of all, I'd like to clarify that it is perfectly legal to initialize and update multiple variables in for statements.</p>
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">$j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">...</span><span class="p">;</span> <span class="o">++</span><span class="nv">$i</span><span class="p">,</span> <span class="o">++</span><span class="nv">$j</span><span class="p">)</span> <span class="c1">// OK</span></code></pre></figure>
-  <p>
-    The question refers to the loop's condition.
-    What does it mean to define multiple conditions?
-  </p>
+  <p>The question actually refers to the loop's condition.</p>
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">for</span> <span class="p">(</span><span class="o">...</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">$j</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="o">...</span><span class="p">)</span> <span class="c1">// ?</span></code></pre></figure>
+  <p>
+    At first glance, it might seem like multiple conditions are defined.
+    This is not the case.
+    <code class="highlighter-rouge">$i < 3, $j < 2</code> is a single expression.
+    The question is, what does it evaluate to?
+  </p>
 </section>
 
 <section class="section">
@@ -201,13 +204,13 @@
   <h2>Conclusion</h2>
   <p>
     PHP is an exceptional language.
-    Literally: it has a lot of exceptions and special cases.
+    Literally: it has a lot of exceptions and weird rules, comma operators in for loop conditions being one of them.
   </p>
   <p>
-    Fortunately, there are not many great uses of the comma operator.
+    Fortunately, there are not many great uses of this operator - not even in other languages.
     In fact, it's better if you just forget it.
   </p>
-  <p>If you happen to know the rationale behind this feature, please let me know in the comments below.</p>
+  <p>If you happen to know the rationale behind adding this feature to PHP, please let me know in the comments below.</p>
   <p>In the next post we will continue looking at weird commas, but in a different context.</p>
 </section>
 
