@@ -218,11 +218,14 @@ dd {
 .teaser__text {
   margin: 0; }
 
-.company-info td:first-child {
-  font-style: italic;
+.company--info td:first-child {
   /* Fit the cell to content width. */
   width: 1%;
-  white-space: nowrap; }
+  white-space: nowrap;
+  padding-right: 16px; }
+
+.company--date {
+  font-style: italic; }
 
 #disqus_thread {
   background-color: #f2f2f2;
