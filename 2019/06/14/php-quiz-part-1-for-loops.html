@@ -13,14 +13,14 @@
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="PHP quiz #1 - for loop conditions" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="For loops: one of the most fundamental and ubiquitous control flow statements. I never would have thought I could learn anything new about them. I was wrong." />
-<meta property="og:description" content="For loops: one of the most fundamental and ubiquitous control flow statements. I never would have thought I could learn anything new about them. I was wrong." />
+<meta name="description" content="For loops are one of the most fundamental and ubiquitous control flow statements. They are so essential to day-to-day programming, you would expect every developer to know them inside out. As for me, I never would have thought I could learn anything new about them - I was wrong." />
+<meta property="og:description" content="For loops are one of the most fundamental and ubiquitous control flow statements. They are so essential to day-to-day programming, you would expect every developer to know them inside out. As for me, I never would have thought I could learn anything new about them - I was wrong." />
 <link rel="canonical" href="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html" />
 <meta property="og:url" content="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-06-14T00:00:00+02:00" />
 <script type="application/ld+json">
-{"description":"For loops: one of the most fundamental and ubiquitous control flow statements. I never would have thought I could learn anything new about them. I was wrong.","@type":"BlogPosting","headline":"PHP quiz #1 - for loop conditions","dateModified":"2019-06-14T00:00:00+02:00","datePublished":"2019-06-14T00:00:00+02:00","url":"https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html"},"@context":"https://schema.org"}</script>
+{"description":"For loops are one of the most fundamental and ubiquitous control flow statements. They are so essential to day-to-day programming, you would expect every developer to know them inside out. As for me, I never would have thought I could learn anything new about them - I was wrong.","@type":"BlogPosting","headline":"PHP quiz #1 - for loop conditions","dateModified":"2019-06-14T00:00:00+02:00","datePublished":"2019-06-14T00:00:00+02:00","url":"https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
@@ -83,7 +83,7 @@
 <section class="section">
   <h1>PHP quiz #1 - for loop conditions</h1>
   <span class="post__date">June 14, 2019</span>
-  <p>For loops: one of the most fundamental and ubiquitous control flow statements. I never would have thought I could learn anything new about them. I was wrong.
+  <p>For loops are one of the most fundamental and ubiquitous control flow statements. They are so essential to day-to-day programming, you would expect every developer to know them inside out. As for me, I never would have thought I could learn anything new about them - I was wrong.
 </p>
 </section>
 
@@ -136,49 +136,67 @@
 
 <section class="section">
   <h2>Explanation</h2>
-  <p>First of all, I'd like to clarify that it is perfectly legal to initialize and update multiple variables in for statements.</p>
+  <p>It is perfectly legal to initialize and update multiple variables in for statements.</p>
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">$j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">...</span><span class="p">;</span> <span class="o">++</span><span class="nv">$i</span><span class="p">,</span> <span class="o">++</span><span class="nv">$j</span><span class="p">)</span> <span class="c1">// OK</span></code></pre></figure>
-  <p>The question actually refers to the loop's condition.</p>
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">for</span> <span class="p">(</span><span class="o">...</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">$j</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="o">...</span><span class="p">)</span> <span class="c1">// ?</span></code></pre></figure>
   <p>
-    At first glance, it might seem like multiple conditions are being defined.
-    This is not the case.
+    This code does what you would expect:
+    it introduces two variables, <code class="highlighter-rouge">$i</code> and <code class="highlighter-rouge">$j</code>
+    with the initial value of <code class="highlighter-rouge">0</code>, and increments them by one at the end of each iteration.
+  </p>
+  <p>No trickery here.</p>
+  <p>The difficulty lies in the loop's condition instead.</p>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">for</span> <span class="p">(</span><span class="o">...</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">$j</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="o">...</span><span class="p">)</span> <span class="c1">// ???</span></code></pre></figure>
+  <p>Although it might not be immediately obvious what effect does this code have on the loop, I can assure you, <em>it is syntactically correct</em>.</p>
+  <p>
+    At first glance, it might seem like the loop defines multiple conditions that are ANDed or ORed together to decide when to terminate.
+    This is a fair guess and it is not without reason.
+    Haskell does something similar - it ANDs together multiple predicates in list comprehensions.
+  </p>
+  <p>This is not the case here.</p>
+  <p>
+    PHP has its roots in the C language.
+    As such, it has a few weird historical remains that at first may sound completely counterintuitive.
+  </p>
+  <p>
     <code class="highlighter-rouge">$i < 3, $j < 2</code> is a single expression.
-    The question is, what does it evaluate to?
+    Let's see what it evaluates to.
   </p>
 </section>
 
 <section class="section">
-  <h3>Comma operator</h3>
-  <p>In C, the <a href="https://en.wikipedia.org/wiki/Comma_operator">comma operator</a> is an operator that evaluates two expressions and returns the result of the second one.</p>
+  <h3>Comma operator (C)</h3>
+  <p>In C, the <a href="https://en.wikipedia.org/wiki/Comma_operator">comma operator</a> (<code class="highlighter-rouge">,</code>) is an operator that evaluates two expressions and returns the result of the second one.</p>
 
-<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cm">/* prints "Hello World!” and assigns 3 to 'a' */</span>
-<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">printf</span><span class="p">(</span><span class="s">"Hello World!</span><span class="se">\n</span><span class="s">"</span><span class="p">),</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">printf</span><span class="p">(</span><span class="s">"Hello World!</span><span class="se">\n</span><span class="s">"</span><span class="p">),</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">);</span></code></pre></figure>
+
+  <p>
+    The above code prints <code class="highlighter-rouge">Hello World!</code> to the screen and assigns <code class="highlighter-rouge">3</code> to variable <code class="highlighter-rouge">a</code>.
+    Both expressions are evaluated (<code class="highlighter-rouge">printf</code> gets called), but only the result of the second one is returned (which is <code class="highlighter-rouge">3</code>).
+  </p>
+  <p>
+    Notice the parentheses around the expression in question.
+    They are not mere ornaments.
+    In C, the comma operator has the lowest precedence of all operators - that is to say,
+    if we want to assign the result of a comma operator expression to a variable, we have to use parentheses.
+  </p>
 </section>
 
 <section class="section">
-  <h3>Comma operator in PHP</h3>
+  <h3>Comma operator (PHP)</h3>
   <p>
     This ancient operator did not stand the test of time.
     Not many programming languages support it.
   </p>
   <p>
-    There is no comma operator in PHP either.
+    PHP does not do either.
     It is not listed in the <a href="https://www.php.net/manual/en/language.operators.precedence.php">precedence table</a> and using it will generally result in a syntax error.
   </p>
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="o">&lt;?</span><span class="n">php</span>
 
 <span class="c1">// Parse error: syntax error, unexpected ',' in ...</span>
 <span class="err">$</span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span></code></pre></figure>
-</section>
-
-<section class="section">
-  <h3>For loop conditions</h3>
-  <p>However, there is an exception to the rule: for loop conditions.</p>
-  <p>
-    For some strange reason, in for loop conditions the comma operator is correctly evaluated.
-    Weird!
-  </p>
+  <p>Surprisingly, there is an exception to the rule: for loop conditions.</p>
+  <p>For some strange reason, in for loop conditions the comma operator is correctly evaluated.</p>
   <div class="compare-table">
     <table>
       <tbody>
@@ -207,10 +225,9 @@
     Literally: it has a lot of exceptions and weird rules, comma operators in for loop conditions being one of them.
   </p>
   <p>
-    Fortunately, there are not many great uses of this operator - not even in other languages.
-    In fact, it's better if you just forget it.
+    Fortunately, there are not many great uses of this operator.
+    It's just a curiosity.
   </p>
-  <p>If you happen to know the rationale behind adding this feature to PHP, please let me know in the comments below.</p>
   <p>In the next post we will continue looking at weird commas, but in a different context.</p>
 </section>
 

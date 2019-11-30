@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-09-19T23:27:01+02:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-11-30T22:46:52+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
 
@@ -782,49 +782,67 @@ a&lt;/pre&gt;
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Explanation&lt;/h2&gt;
-  &lt;p&gt;First of all, I'd like to clarify that it is perfectly legal to initialize and update multiple variables in for statements.&lt;/p&gt;
+  &lt;p&gt;It is perfectly legal to initialize and update multiple variables in for statements.&lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// OK&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-  &lt;p&gt;The question actually refers to the loop's condition.&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// ?&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
   &lt;p&gt;
-    At first glance, it might seem like multiple conditions are being defined.
-    This is not the case.
+    This code does what you would expect:
+    it introduces two variables, &lt;code class=&quot;highlighter-rouge&quot;&gt;$i&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;$j&lt;/code&gt;
+    with the initial value of &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;, and increments them by one at the end of each iteration.
+  &lt;/p&gt;
+  &lt;p&gt;No trickery here.&lt;/p&gt;
+  &lt;p&gt;The difficulty lies in the loop's condition instead.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// ???&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;p&gt;Although it might not be immediately obvious what effect does this code have on the loop, I can assure you, &lt;em&gt;it is syntactically correct&lt;/em&gt;.&lt;/p&gt;
+  &lt;p&gt;
+    At first glance, it might seem like the loop defines multiple conditions that are ANDed or ORed together to decide when to terminate.
+    This is a fair guess and it is not without reason.
+    Haskell does something similar - it ANDs together multiple predicates in list comprehensions.
+  &lt;/p&gt;
+  &lt;p&gt;This is not the case here.&lt;/p&gt;
+  &lt;p&gt;
+    PHP has its roots in the C language.
+    As such, it has a few weird historical remains that at first may sound completely counterintuitive.
+  &lt;/p&gt;
+  &lt;p&gt;
     &lt;code class=&quot;highlighter-rouge&quot;&gt;$i &lt; 3, $j &lt; 2&lt;/code&gt; is a single expression.
-    The question is, what does it evaluate to?
+    Let's see what it evaluates to.
   &lt;/p&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
-  &lt;h3&gt;Comma operator&lt;/h3&gt;
-  &lt;p&gt;In C, the &lt;a href=&quot;https://en.wikipedia.org/wiki/Comma_operator&quot;&gt;comma operator&lt;/a&gt; is an operator that evaluates two expressions and returns the result of the second one.&lt;/p&gt;
+  &lt;h3&gt;Comma operator (C)&lt;/h3&gt;
+  &lt;p&gt;In C, the &lt;a href=&quot;https://en.wikipedia.org/wiki/Comma_operator&quot;&gt;comma operator&lt;/a&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;,&lt;/code&gt;) is an operator that evaluates two expressions and returns the result of the second one.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/* prints &quot;Hello World!” and assigns 3 to 'a' */&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+  &lt;p&gt;
+    The above code prints &lt;code class=&quot;highlighter-rouge&quot;&gt;Hello World!&lt;/code&gt; to the screen and assigns &lt;code class=&quot;highlighter-rouge&quot;&gt;3&lt;/code&gt; to variable &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt;.
+    Both expressions are evaluated (&lt;code class=&quot;highlighter-rouge&quot;&gt;printf&lt;/code&gt; gets called), but only the result of the second one is returned (which is &lt;code class=&quot;highlighter-rouge&quot;&gt;3&lt;/code&gt;).
+  &lt;/p&gt;
+  &lt;p&gt;
+    Notice the parentheses around the expression in question.
+    They are not mere ornaments.
+    In C, the comma operator has the lowest precedence of all operators - that is to say,
+    if we want to assign the result of a comma operator expression to a variable, we have to use parentheses.
+  &lt;/p&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
-  &lt;h3&gt;Comma operator in PHP&lt;/h3&gt;
+  &lt;h3&gt;Comma operator (PHP)&lt;/h3&gt;
   &lt;p&gt;
     This ancient operator did not stand the test of time.
     Not many programming languages support it.
   &lt;/p&gt;
   &lt;p&gt;
-    There is no comma operator in PHP either.
+    PHP does not do either.
     It is not listed in the &lt;a href=&quot;https://www.php.net/manual/en/language.operators.precedence.php&quot;&gt;precedence table&lt;/a&gt; and using it will generally result in a syntax error.
   &lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;php&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;// Parse error: syntax error, unexpected ',' in ...&lt;/span&gt;
 &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
-  &lt;h3&gt;For loop conditions&lt;/h3&gt;
-  &lt;p&gt;However, there is an exception to the rule: for loop conditions.&lt;/p&gt;
-  &lt;p&gt;
-    For some strange reason, in for loop conditions the comma operator is correctly evaluated.
-    Weird!
-  &lt;/p&gt;
+  &lt;p&gt;Surprisingly, there is an exception to the rule: for loop conditions.&lt;/p&gt;
+  &lt;p&gt;For some strange reason, in for loop conditions the comma operator is correctly evaluated.&lt;/p&gt;
   &lt;div class=&quot;compare-table&quot;&gt;
     &lt;table&gt;
       &lt;tbody&gt;
@@ -853,9 +871,8 @@ a&lt;/pre&gt;
     Literally: it has a lot of exceptions and weird rules, comma operators in for loop conditions being one of them.
   &lt;/p&gt;
   &lt;p&gt;
-    Fortunately, there are not many great uses of this operator - not even in other languages.
-    In fact, it's better if you just forget it.
+    Fortunately, there are not many great uses of this operator.
+    It's just a curiosity.
   &lt;/p&gt;
-  &lt;p&gt;If you happen to know the rationale behind adding this feature to PHP, please let me know in the comments below.&lt;/p&gt;
   &lt;p&gt;In the next post we will continue looking at weird commas, but in a different context.&lt;/p&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">For loops: one of the most fundamental and ubiquitous control flow statements. I never would have thought I could learn anything new about them. I was wrong.</summary></entry></feed>
+&lt;/section&gt;</content><author><name></name></author><summary type="html">For loops are one of the most fundamental and ubiquitous control flow statements. They are so essential to day-to-day programming, you would expect every developer to know them inside out. As for me, I never would have thought I could learn anything new about them - I was wrong.</summary></entry></feed>
