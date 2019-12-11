@@ -292,20 +292,13 @@ dd {
   flex-direction: column; }
 
 .post-wrapper .header {
-  padding: 8px 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; }
-  .post-wrapper .header .breadcrumbs .breadcrumb-link {
-    font-size: 1.5em;
-    color: #ffffff;
-    text-decoration: none; }
-    .post-wrapper .header .breadcrumbs .breadcrumb-link:before {
-      margin-right: 8px;
-      content: "<"; }
+  padding: 8px 32px; }
   .post-wrapper .header .site-name {
     font-size: 1.5em;
     font-weight: normal; }
+    .post-wrapper .header .site-name a {
+      color: #ffffff;
+      text-decoration: none; }
 @media screen and (min-width: 992px) {
   .post-wrapper .header, .post-wrapper .content, .post-wrapper .footer, .post-wrapper #disqus_thread {
     padding-left: 10%;
