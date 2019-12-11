@@ -7,20 +7,20 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <title>PHP quiz #1 - for loop conditions - Bendegúz Csirmaz</title>
     <script src="https://kit.fontawesome.com/a607672ce1.js"></script>
-    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" />
+    <link type="application/atom+xml" rel="alternate" href="https://csirmazbendeguz.net/feed.xml" />
     <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>PHP quiz #1 - for loop conditions</title>
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="PHP quiz #1 - for loop conditions" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="For loops are one of the most fundamental and ubiquitous control flow statements. They are so essential to day-to-day programming, you would expect every developer to know them inside out. As for me, I never would have thought I could learn anything new about them - I was wrong." />
-<meta property="og:description" content="For loops are one of the most fundamental and ubiquitous control flow statements. They are so essential to day-to-day programming, you would expect every developer to know them inside out. As for me, I never would have thought I could learn anything new about them - I was wrong." />
-<link rel="canonical" href="http://localhost:4000/2019/06/14/php-quiz-part-1-for-loops.html" />
-<meta property="og:url" content="http://localhost:4000/2019/06/14/php-quiz-part-1-for-loops.html" />
+<meta name="description" content="For loops are one of the most fundamental and ubiquitous control flow statements. They are so essential to computer programming, you would expect every developer to know them inside out. As for me, I never would have thought I could learn anything new about them - I was wrong." />
+<meta property="og:description" content="For loops are one of the most fundamental and ubiquitous control flow statements. They are so essential to computer programming, you would expect every developer to know them inside out. As for me, I never would have thought I could learn anything new about them - I was wrong." />
+<link rel="canonical" href="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html" />
+<meta property="og:url" content="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-06-14T00:00:00+02:00" />
 <script type="application/ld+json">
-{"description":"For loops are one of the most fundamental and ubiquitous control flow statements. They are so essential to day-to-day programming, you would expect every developer to know them inside out. As for me, I never would have thought I could learn anything new about them - I was wrong.","@type":"BlogPosting","headline":"PHP quiz #1 - for loop conditions","dateModified":"2019-06-14T00:00:00+02:00","datePublished":"2019-06-14T00:00:00+02:00","url":"http://localhost:4000/2019/06/14/php-quiz-part-1-for-loops.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/06/14/php-quiz-part-1-for-loops.html"},"@context":"https://schema.org"}</script>
+{"description":"For loops are one of the most fundamental and ubiquitous control flow statements. They are so essential to computer programming, you would expect every developer to know them inside out. As for me, I never would have thought I could learn anything new about them - I was wrong.","@type":"BlogPosting","headline":"PHP quiz #1 - for loop conditions","dateModified":"2019-06-14T00:00:00+02:00","datePublished":"2019-06-14T00:00:00+02:00","url":"https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
@@ -34,55 +34,10 @@
     </h1>
   </header>
   <main class="content">
-    <section class="section php-quizzes">
-  <p class="php-quiz-intro">This post is part of a series based on a presentation I gave at <a href="https://cheppers.com">Cheppers</a> on March 20, 2019.</p>
-  
-  <ul class="php-quiz-list">
-    
-    <li>
-      
-      <strong>PHP quiz #1 - for loop conditions</strong>
-      
-    </li>
-    
-    <li>
-      
-      <a href="/2019/06/15/php-quiz-part-2-echoes.html">PHP quiz #2 - echo arguments</a>
-      
-    </li>
-    
-    <li>
-      
-      <a href="/2019/06/16/php-quiz-part-3-associativity.html">PHP quiz #3 - operator associativity</a>
-      
-    </li>
-    
-    <li>
-      
-      <a href="/2019/06/16/php-quiz-part-4-hoisting.html">PHP quiz #4 - hoisting</a>
-      
-    </li>
-    
-    <li>
-      
-      <a href="/2019/06/16/php-quiz-part-5-constructors.html">PHP quiz #5 - constructor overriding</a>
-      
-    </li>
-    
-    <li>
-      
-      <a href="/2019/06/16/php-quiz-part-6-covariance.html">PHP quiz #6 - covariance, contravariance and PHP</a>
-      
-    </li>
-    
-  </ul>
-</section>
-
-
-<section class="section">
+    <section class="section">
   <h1>PHP quiz #1 - for loop conditions</h1>
   <span class="post__date">June 14, 2019</span>
-  <p>For loops are one of the most fundamental and ubiquitous control flow statements. They are so essential to day-to-day programming, you would expect every developer to know them inside out. As for me, I never would have thought I could learn anything new about them - I was wrong.
+  <p>For loops are one of the most fundamental and ubiquitous control flow statements. They are so essential to computer programming, you would expect every developer to know them inside out. As for me, I never would have thought I could learn anything new about them - I was wrong.
 </p>
 </section>
 
@@ -135,27 +90,37 @@
 
 <section class="section">
   <h2>Explanation</h2>
-  <p>It is perfectly legal to initialize and update multiple variables in for statements.</p>
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">$j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">...</span><span class="p">;</span> <span class="o">++</span><span class="nv">$i</span><span class="p">,</span> <span class="o">++</span><span class="nv">$j</span><span class="p">)</span> <span class="c1">// OK</span></code></pre></figure>
+  <h3>The for loop header</h3>
   <p>
-    This code does what you would expect:
-    it introduces two variables, <code class="highlighter-rouge">$i</code> and <code class="highlighter-rouge">$j</code>
-    with the initial value of <code class="highlighter-rouge">0</code>, and increments them by one at the end of each iteration.
+    Similarly to other languages, it is perfectly legal to initialize and update multiple variables in for loop headers.
+    Consider the following:
+  </p>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">$j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">...</span><span class="p">;</span> <span class="o">++</span><span class="nv">$i</span><span class="p">,</span> <span class="o">++</span><span class="nv">$j</span><span class="p">)</span> <span class="c1">// OK!</span></code></pre></figure>
+  <p>
+    This is a valid PHP code snippet, and it does exactly what you would expect:
+    it introduces two variables, <code class="highlighter-rouge">$i</code> and <code class="highlighter-rouge">$j</code>,
+    with the initial value of <code class="highlighter-rouge">0</code>,
+    and it increments them by one at the end of each iteration.
   </p>
   <p>No trickery here.</p>
-  <p>The difficulty lies in the loop's condition instead.</p>
+  <p>The difficulty lies in the loop's condition instead:</p>
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">for</span> <span class="p">(</span><span class="o">...</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">$j</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="o">...</span><span class="p">)</span> <span class="c1">// ???</span></code></pre></figure>
-  <p>Although it might not be immediately obvious what effect does this code have on the loop, I can assure you, <em>it is syntactically correct</em>.</p>
   <p>
-    At first glance, it might seem like the loop defines multiple conditions that are ANDed or ORed together to decide when to terminate.
-    This is a fair guess and it is not without reason.
-    Haskell does something similar - it ANDs together multiple predicates in list comprehensions.
+    Although it might not be immediately obvious what effect does this code have on the loop,
+    it is <strong>syntactically correct</strong>, so it won't throw any syntax errors.
   </p>
-  <p>This is not the case here.</p>
-  <p>
-    PHP has its roots in the C language.
-    As such, it has a few weird historical remains that at first may sound completely counterintuitive.
-  </p>
+  <aside class="comment">
+    <p>
+      At first glance, it might seem like the loop defines multiple conditions that are eventually <em>AND</em>ed together.
+      This is a fair guess and it is not without reason.
+      Haskell does something similar - it <em>AND</em>s together multiple predicates in list comprehensions.
+    </p>
+    <p>This is not the case here.</p>
+    <p>
+      PHP has its roots in C.
+      As such, it has a few weird historical remains that at first may sound completely counterintuitive.
+    </p>
+  </aside>
   <p>
     <code class="highlighter-rouge">$i < 3, $j < 2</code> is a single expression.
     Let's see what it evaluates to.
@@ -169,15 +134,29 @@
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">printf</span><span class="p">(</span><span class="s">"Hello World!</span><span class="se">\n</span><span class="s">"</span><span class="p">),</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">);</span></code></pre></figure>
 
   <p>
-    The above code prints <code class="highlighter-rouge">Hello World!</code> to the screen and assigns <code class="highlighter-rouge">3</code> to variable <code class="highlighter-rouge">a</code>.
-    Both expressions are evaluated (<code class="highlighter-rouge">printf</code> gets called), but only the result of the second one is returned (which is <code class="highlighter-rouge">3</code>).
+    The above code prints <code class="highlighter-rouge">Hello World!</code> and assigns
+    <code class="highlighter-rouge">3</code> to variable <code class="highlighter-rouge">a</code>.
   </p>
   <p>
-    Notice the parentheses around the expression in question.
-    They are not mere ornaments.
-    In C, the comma operator has the lowest precedence of all operators - that is to say,
-    if we want to assign the result of a comma operator expression to a variable, we have to use parentheses.
+    Both expressions are evaluated (<code class="highlighter-rouge">printf</code> is called,
+    <code class="highlighter-rouge">1</code> and <code class="highlighter-rouge">2</code> are added together),
+    but only the result of the second expression is returned (which is <code class="highlighter-rouge">3</code>).
   </p>
+  <aside class="comment">
+    <p>
+      Notice the parentheses around the expression in question.
+      They are there for a reason.
+    </p>
+    <p>
+      In C, the comma operator has the lowest precedence of all operators.
+      Its precedence is even lower than the assignment operator's (<code class="highlighter-rouge">=</code>)!
+    </p>
+    <p>That is to say, omitting the parentheses would result in the code being parsed like this:</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="n">printf</span><span class="p">(</span><span class="s">"Hello World!</span><span class="se">\n</span><span class="s">"</span><span class="p">)),</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span></code></pre></figure>
+
+    <p>Which, of course, would not make any sense.</p>
+  </aside>
 </section>
 
 <section class="section">
@@ -194,7 +173,7 @@
 
 <span class="c1">// Parse error: syntax error, unexpected ',' in ...</span>
 <span class="err">$</span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span></code></pre></figure>
-  <p>Surprisingly, there is an exception to the rule: for loop conditions.</p>
+  <p>However, surprisingly, there is an exception to the rule: for loop conditions.</p>
   <p>For some strange reason, in for loop conditions the comma operator is correctly evaluated.</p>
   <div class="compare-table">
     <table>
@@ -217,19 +196,6 @@
   <p>The loop will only iterate twice.</p>
 </section>
 
-<section class="section">
-  <h2>Conclusion</h2>
-  <p>
-    PHP is an exceptional language.
-    Literally: it has a lot of exceptions and weird rules, comma operators in for loop conditions being one of them.
-  </p>
-  <p>
-    Fortunately, there are not many great uses of this operator.
-    It's just a curiosity.
-  </p>
-  <p>In the next post we will continue looking at weird commas, but in a different context.</p>
-</section>
-
 
 <section class="quiz-paginator">
   
@@ -238,6 +204,50 @@
     <h2>next &gt;&gt;</h2>
   </a>
   
+</section>
+
+<section class="section php-quizzes">
+  <p class="php-quiz-intro">This post is part of a series based on a presentation I gave at <a href="https://cheppers.com">Cheppers</a> on March 20, 2019.</p>
+  
+  <ul class="php-quiz-list">
+    
+    <li>
+      
+      <strong>PHP quiz #1 - for loop conditions</strong>
+      
+    </li>
+    
+    <li>
+      
+      <a href="/2019/06/15/php-quiz-part-2-echoes.html">PHP quiz #2 - echo arguments</a>
+      
+    </li>
+    
+    <li>
+      
+      <a href="/2019/06/16/php-quiz-part-3-associativity.html">PHP quiz #3 - operator associativity</a>
+      
+    </li>
+    
+    <li>
+      
+      <a href="/2019/06/16/php-quiz-part-4-hoisting.html">PHP quiz #4 - hoisting</a>
+      
+    </li>
+    
+    <li>
+      
+      <a href="/2019/06/16/php-quiz-part-5-constructors.html">PHP quiz #5 - constructor overriding</a>
+      
+    </li>
+    
+    <li>
+      
+      <a href="/2019/06/16/php-quiz-part-6-covariance.html">PHP quiz #6 - covariance, contravariance and PHP</a>
+      
+    </li>
+    
+  </ul>
 </section>
 
 
@@ -252,7 +262,7 @@
    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
   var disqus_config = function () {
   this.page.title = 'PHP quiz #1 - for loop conditions';
-  this.page.url = 'http://localhost:4000/2019/06/14/php-quiz-part-1-for-loops.html';  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.url = 'https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html';  // Replace PAGE_URL with your page's canonical URL variable
   this.page.identifier = '/2019/06/14/php-quiz-part-1-for-loops'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
   };
   (function() { // DON'T EDIT BELOW THIS LINE
@@ -280,6 +290,16 @@
 </div>
 
     
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142286966-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142286966-1');
+</script>
+
 
   </body>
 </html>
