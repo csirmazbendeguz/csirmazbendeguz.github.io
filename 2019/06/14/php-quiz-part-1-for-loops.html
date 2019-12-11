@@ -103,16 +103,16 @@
     and it increments them by one at the end of each iteration.
   </p>
   <p>No trickery here.</p>
-  <p>The difficulty lies in the loop's condition instead:</p>
+  <p>The difficulty lies in the loop's condition:</p>
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">for</span> <span class="p">(</span><span class="o">...</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">$j</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="o">...</span><span class="p">)</span> <span class="c1">// ???</span></code></pre></figure>
   <p>
-    Although it might not be immediately obvious what effect does this code have on the loop,
-    it is <strong>syntactically correct</strong>, so it won't throw any syntax errors.
+    It might not be immediately obvious what effect does this code have on the loop.
+    One thing's for sure: it won't throw any syntax errors, it's syntactically correct.
   </p>
   <aside class="comment">
     <p>
       At first glance, it might seem like the loop defines multiple conditions that are eventually <em>AND</em>ed together.
-      This is a fair guess and it is not without reason.
+      This is a fair guess and it's not without reason.
       Haskell does something similar - it <em>AND</em>s together multiple predicates in list comprehensions.
     </p>
     <p>This is not the case here.</p>
@@ -122,8 +122,8 @@
     </p>
   </aside>
   <p>
-    <code class="highlighter-rouge">$i < 3, $j < 2</code> is a single expression.
-    Let's see what it evaluates to.
+    Surprising as it may seem, <code class="highlighter-rouge">$i < 3, $j < 2</code> is actually a
+    <strong>single expression</strong>, and as all expressions, it must evaluate to something.
   </p>
 </section>
 
