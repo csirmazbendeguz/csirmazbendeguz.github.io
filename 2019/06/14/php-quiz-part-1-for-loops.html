@@ -123,25 +123,27 @@
   </aside>
   <p>
     Surprising as it may seem, <code class="highlighter-rouge">$i < 3, $j < 2</code> is actually a
-    <strong>single expression</strong>, and as all expressions, it must evaluate to something.
+    <strong>single expression</strong>, and as all expressions, it evaluates to something.
   </p>
 </section>
 
 <section class="section">
   <h3>Comma operator (C)</h3>
   <p>In C, the <a href="https://en.wikipedia.org/wiki/Comma_operator">comma operator</a> (<code class="highlighter-rouge">,</code>) is an operator that evaluates two expressions and returns the result of the second one.</p>
-
+  <p>
+    For example, the following code prints the text <code class="highlighter-rouge">Hello World!</code> to stdout,
+    and assigns <code class="highlighter-rouge">3</code> to variable <code class="highlighter-rouge">a</code>:
+  </p>
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">printf</span><span class="p">(</span><span class="s">"Hello World!</span><span class="se">\n</span><span class="s">"</span><span class="p">),</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">);</span></code></pre></figure>
 
-  <p>
-    The above code prints <code class="highlighter-rouge">Hello World!</code> and assigns
-    <code class="highlighter-rouge">3</code> to variable <code class="highlighter-rouge">a</code>.
-  </p>
-  <p>
-    Both expressions are evaluated (<code class="highlighter-rouge">printf</code> is called,
-    <code class="highlighter-rouge">1</code> and <code class="highlighter-rouge">2</code> are added together),
-    but only the result of the second expression is returned (which is <code class="highlighter-rouge">3</code>).
-  </p>
+  <p>That's because the paranthesized expression is evaluated something like this:</p>
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cm">/* 0. */</span> <span class="n">printf</span><span class="p">(</span><span class="s">"Hello World!</span><span class="se">\n</span><span class="s">"</span><span class="p">),</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="cm">/* 1. */</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">3</span>
+<span class="cm">/* 2. */</span> <span class="mi">3</span></code></pre></figure>
+  <aside class="comment">
+    <code class="highlighter-rouge">printf</code> returns the number of characters
+    written (<code class="highlighter-rouge">13</code> in our case).
+  </aside>
   <aside class="comment">
     <p>
       Notice the parentheses around the expression in question.
@@ -155,19 +157,19 @@
 
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="n">printf</span><span class="p">(</span><span class="s">"Hello World!</span><span class="se">\n</span><span class="s">"</span><span class="p">)),</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span></code></pre></figure>
 
-    <p>Which, of course, would not make any sense.</p>
+    <p>Which, of course, wouldn't make any sense.</p>
   </aside>
 </section>
 
 <section class="section">
   <h3>Comma operator (PHP)</h3>
   <p>
-    This ancient operator did not stand the test of time.
-    Not many programming languages support it.
+    This ancient operator did not stand the test of time,
+    not many programming languages support it.
   </p>
   <p>
-    PHP does not do either.
-    It is not listed in the <a href="https://www.php.net/manual/en/language.operators.precedence.php">precedence table</a> and using it will generally result in a syntax error.
+    PHP doesn't do either.
+    It's not listed in the <a href="https://www.php.net/manual/en/language.operators.precedence.php">precedence table</a> and using it will generally result in a syntax error.
   </p>
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="o">&lt;?</span><span class="n">php</span>
 

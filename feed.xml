@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-12-11T19:54:57+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-12-22T15:23:10+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
 
@@ -815,25 +815,27 @@ a&lt;/pre&gt;
   &lt;/aside&gt;
   &lt;p&gt;
     Surprising as it may seem, &lt;code class=&quot;highlighter-rouge&quot;&gt;$i &lt; 3, $j &lt; 2&lt;/code&gt; is actually a
-    &lt;strong&gt;single expression&lt;/strong&gt;, and as all expressions, it must evaluate to something.
+    &lt;strong&gt;single expression&lt;/strong&gt;, and as all expressions, it evaluates to something.
   &lt;/p&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h3&gt;Comma operator (C)&lt;/h3&gt;
   &lt;p&gt;In C, the &lt;a href=&quot;https://en.wikipedia.org/wiki/Comma_operator&quot;&gt;comma operator&lt;/a&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;,&lt;/code&gt;) is an operator that evaluates two expressions and returns the result of the second one.&lt;/p&gt;
-
+  &lt;p&gt;
+    For example, the following code prints the text &lt;code class=&quot;highlighter-rouge&quot;&gt;Hello World!&lt;/code&gt; to stdout,
+    and assigns &lt;code class=&quot;highlighter-rouge&quot;&gt;3&lt;/code&gt; to variable &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt;:
+  &lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-  &lt;p&gt;
-    The above code prints &lt;code class=&quot;highlighter-rouge&quot;&gt;Hello World!&lt;/code&gt; and assigns
-    &lt;code class=&quot;highlighter-rouge&quot;&gt;3&lt;/code&gt; to variable &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt;.
-  &lt;/p&gt;
-  &lt;p&gt;
-    Both expressions are evaluated (&lt;code class=&quot;highlighter-rouge&quot;&gt;printf&lt;/code&gt; is called,
-    &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;2&lt;/code&gt; are added together),
-    but only the result of the second expression is returned (which is &lt;code class=&quot;highlighter-rouge&quot;&gt;3&lt;/code&gt;).
-  &lt;/p&gt;
+  &lt;p&gt;That's because the paranthesized expression is evaluated something like this:&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/* 0. */&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/* 1. */&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/* 2. */&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;aside class=&quot;comment&quot;&gt;
+    &lt;code class=&quot;highlighter-rouge&quot;&gt;printf&lt;/code&gt; returns the number of characters
+    written (&lt;code class=&quot;highlighter-rouge&quot;&gt;13&lt;/code&gt; in our case).
+  &lt;/aside&gt;
   &lt;aside class=&quot;comment&quot;&gt;
     &lt;p&gt;
       Notice the parentheses around the expression in question.
@@ -847,19 +849,19 @@ a&lt;/pre&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-    &lt;p&gt;Which, of course, would not make any sense.&lt;/p&gt;
+    &lt;p&gt;Which, of course, wouldn't make any sense.&lt;/p&gt;
   &lt;/aside&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h3&gt;Comma operator (PHP)&lt;/h3&gt;
   &lt;p&gt;
-    This ancient operator did not stand the test of time.
-    Not many programming languages support it.
+    This ancient operator did not stand the test of time,
+    not many programming languages support it.
   &lt;/p&gt;
   &lt;p&gt;
-    PHP does not do either.
-    It is not listed in the &lt;a href=&quot;https://www.php.net/manual/en/language.operators.precedence.php&quot;&gt;precedence table&lt;/a&gt; and using it will generally result in a syntax error.
+    PHP doesn't do either.
+    It's not listed in the &lt;a href=&quot;https://www.php.net/manual/en/language.operators.precedence.php&quot;&gt;precedence table&lt;/a&gt; and using it will generally result in a syntax error.
   &lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;php&lt;/span&gt;
 
