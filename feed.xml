@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-12-23T21:03:12+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-12-23T21:45:42+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
 
@@ -620,10 +620,7 @@ a&lt;/pre&gt;
     If you're like me, you've probably guessed &quot;abac&quot;, and under any other
     circumstances you would have been right.
   &lt;/p&gt;
-  &lt;p&gt;
-    Naturally, when calling a function, every argument is evaluated before
-    being passed as parameters to the function body.
-  &lt;/p&gt;
+  &lt;p&gt;When calling a function, every argument is evaluated before entering the function body.&lt;/p&gt;
   &lt;p style=&quot;text-align:center;&quot;&gt;
     &lt;img src=&quot;/assets/images/php-quiz-part-2/parameters-vs-arguments.png&quot; alt=&quot;Parameters vs Arguments&quot; title=&quot;Parameters vs Arguments&quot;/&gt;
   &lt;/p&gt;
@@ -638,7 +635,10 @@ a&lt;/pre&gt;
 &lt;section class=&quot;section&quot;&gt;
   &lt;h3&gt;Variable declarations&lt;/h3&gt;
   &lt;p&gt;
-    To understand the rationale behind echo's strange behaviour, consider variable declarations.
+    To understand the rationale behind echo's strange behaviour, consider
+    variable declarations as an example.
+  &lt;/p&gt;
+  &lt;p&gt;
     PHP allows declaring multiple variables in a single statement.
     The two code snippets below have the exact same effect:
   &lt;/p&gt;
@@ -701,7 +701,7 @@ a&lt;/pre&gt;
     That is, passing multiple arguments to echo is essentially the same as writing
     separate, consecutive echo statements.
   &lt;/p&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">When people get into PHP development, the first thing they learn is usually the echo statement. It's the simplest and most common way to write to stdout, making it an ideal introductory concept. Despite its elementary nature, I've found its handling of multiple arguments to be tricky, to say the least.</summary></entry><entry><title type="html">PHP quiz #1 - for loop</title><link href="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html" rel="alternate" type="text/html" title="PHP quiz #1 - for loop" /><published>2019-06-14T00:00:00+02:00</published><updated>2019-06-14T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html">&lt;section class=&quot;section&quot;&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">When people get into PHP development, the first thing they learn is usually the echo statement. Despite its elementary nature, I've found its handling of multiple arguments to be tricky, to say the least.</summary></entry><entry><title type="html">PHP quiz #1 - for loop</title><link href="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html" rel="alternate" type="text/html" title="PHP quiz #1 - for loop" /><published>2019-06-14T00:00:00+02:00</published><updated>2019-06-14T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
 
