@@ -94,17 +94,12 @@
 
 <section class="section">
   <h2>Explanation</h2>
-  <h3>Overriding constructors</h3>
   <p>In PHP, the only rule to overriding constructors is that <strong>there are no rules</strong>!</p>
   <p>
     Constructors can be overridden with <em>any</em> signature.
     Their parameters can be changed freely and without consequence.
   </p>
-</section>
-
-<section class="section">
-  <h3>Unrelated types</h3>
-  <p>They can be overridden even if the parameter types are not related:</p>
+  <p>They can be overridden with completely unrelated parameter types:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
@@ -116,11 +111,7 @@
   <span class="c1">// Works fine!</span>
   <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">Closure</span> <span class="nv">$c</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span></code></pre></figure>
-</section>
-
-<section class="section">
-  <h3>More/less parameters</h3>
-  <p>They can be overridden even if the number of parameters differ:</p>
+  <p>Parameters can also be omitted (or added):</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
@@ -137,7 +128,7 @@
 <section class="section">
   <h3>Overriding functions</h3>
   <p>
-    Note that this only applies to constructors.
+    Note that this kind of freedom only applies to constructors.
     Were these functions not constructors, PHP would issue a warning:
   </p>
 

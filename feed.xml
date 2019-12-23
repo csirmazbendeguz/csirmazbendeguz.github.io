@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-12-23T19:39:21+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-12-23T19:46:13+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
 
@@ -299,17 +299,12 @@
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Explanation&lt;/h2&gt;
-  &lt;h3&gt;Overriding constructors&lt;/h3&gt;
   &lt;p&gt;In PHP, the only rule to overriding constructors is that &lt;strong&gt;there are no rules&lt;/strong&gt;!&lt;/p&gt;
   &lt;p&gt;
     Constructors can be overridden with &lt;em&gt;any&lt;/em&gt; signature.
     Their parameters can be changed freely and without consequence.
   &lt;/p&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
-  &lt;h3&gt;Unrelated types&lt;/h3&gt;
-  &lt;p&gt;They can be overridden even if the parameter types are not related:&lt;/p&gt;
+  &lt;p&gt;They can be overridden with completely unrelated parameter types:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
 
@@ -321,11 +316,7 @@
   &lt;span class=&quot;c1&quot;&gt;// Works fine!&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Closure&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
-  &lt;h3&gt;More/less parameters&lt;/h3&gt;
-  &lt;p&gt;They can be overridden even if the number of parameters differ:&lt;/p&gt;
+  &lt;p&gt;Parameters can also be omitted (or added):&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
 
@@ -342,7 +333,7 @@
 &lt;section class=&quot;section&quot;&gt;
   &lt;h3&gt;Overriding functions&lt;/h3&gt;
   &lt;p&gt;
-    Note that this only applies to constructors.
+    Note that this kind of freedom only applies to constructors.
     Were these functions not constructors, PHP would issue a warning:
   &lt;/p&gt;
 
