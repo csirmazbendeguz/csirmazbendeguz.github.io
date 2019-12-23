@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-12-23T19:46:13+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-12-23T21:03:12+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
 
@@ -353,7 +353,7 @@
 &lt;section class=&quot;section&quot;&gt;
   &lt;h3&gt;Credits&lt;/h3&gt;
   &lt;p&gt;This post was inspired by an inaccurate &lt;a href=&quot;https://en.wikipedia.org/wiki/Talk:Covariance_and_contravariance_(computer_science)#Inaccurate_PHP_example&quot;&gt;Wikipedia article&lt;/a&gt;.&lt;/p&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">Most professional PHP developers probably have already used constructor overriding, as it would be virtually impossible to create object oriented applications without it. Still, many of them might not be familiar with the exact rules around the subject - I know I wasn't.</summary></entry><entry><title type="html">PHP quiz #6 - covariance, contravariance and PHP</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html" rel="alternate" type="text/html" title="PHP quiz #6 - covariance, contravariance and PHP" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html">&lt;section class=&quot;section&quot;&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">Most professional PHP developers probably have already used constructor overriding, as it would be virtually impossible to create object oriented applications without it. Still, many of them might not be familiar with the exact rules around the subject - I know I wasn't.</summary></entry><entry><title type="html">PHP quiz #6 - covariance</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html" rel="alternate" type="text/html" title="PHP quiz #6 - covariance" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;Will this code throw a warning (PHP 7.1)?&lt;/p&gt;
 
@@ -444,11 +444,16 @@
 
   &lt;p&gt;
     This is type safe!
-    Think about polymorphism to justify why (pseudocode):
+    I like to think about the following reasoning to justify why:
   &lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;ClassA obj = new ClassB();
-T retval = obj.method();&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+iterable retval = obj.method();&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+  &lt;p&gt;
+    Polymorphism allows us to use a subclass (ClassB) instance anywhere where a superclass (ClassA) instance is expected.
+    As long as the subclass's method returns an iterable (an array is an iterable!), there won't be any type errors.
+  &lt;/p&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
@@ -470,11 +475,17 @@ T retval = obj.method();&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
   &lt;p&gt;
     This is type safe too!
-    Again, think about polymorphism (pseudocode):
+    It's a bit harder to reason about, but here's my try:
   &lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;ClassA obj = new ClassB();
-obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+obj.method(new array());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+  &lt;p&gt;
+    Polymorphism allows us to use a subclass (ClassB) instance anywhere where a superclass (ClassA) instance is expected.
+    Therefore, the subclass's method must be able to receive an array type parameter.
+    Accepting all iterables (including arrays!) still satisfies this requirement.
+  &lt;/p&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
@@ -493,7 +504,7 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h3&gt;1. iterable&lt;/h3&gt;
-  &lt;p&gt;By now it shouldn't come as a surprise that &lt;code class=&quot;highlighter-rouge&quot;&gt;iterable&lt;/code&gt;, the subject of this blog post is indeed covariant/contravariant.&lt;/p&gt;
+  &lt;p&gt;By now it shouldn't come as a surprise that &lt;code class=&quot;highlighter-rouge&quot;&gt;iterable&lt;/code&gt; is indeed covariant/contravariant.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
 
@@ -556,7 +567,7 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
     PHP 7.4 is going to add support for real covariance/contravariance (&lt;a href=&quot;https://wiki.php.net/rfc/covariant-returns-and-contravariant-parameters&quot;&gt;rfc&lt;/a&gt;).
     It will be a great improvement to PHP's type system.
   &lt;/p&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">In the previous post we've seen that constructors can be safely overridden. What about functions? Brace yourselves, this is one of my favorite topics.</summary></entry><entry><title type="html">PHP quiz #2 - echo</title><link href="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html" rel="alternate" type="text/html" title="PHP quiz #2 - echo" /><published>2019-06-15T00:00:00+02:00</published><updated>2019-06-15T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html">&lt;section class=&quot;section&quot;&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">A complete guide to covariance and contravariance in PHP.</summary></entry><entry><title type="html">PHP quiz #2 - echo</title><link href="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html" rel="alternate" type="text/html" title="PHP quiz #2 - echo" /><published>2019-06-15T00:00:00+02:00</published><updated>2019-06-15T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
 
