@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-12-23T15:41:18+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-12-23T18:16:13+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
 
@@ -219,7 +219,7 @@
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h3&gt;Classes&lt;/h3&gt;
-  &lt;p&gt;Functions are not the only unit of code organization (thank god).&lt;/p&gt;
+  &lt;p&gt;Functions are not the only unit of code organization (thank God!).&lt;/p&gt;
   &lt;p&gt;
     Hoisting applies to class, interface and trait declarations too.
     More or less.
@@ -240,22 +240,13 @@
 &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;// Fatal error: Class 'B' not found in ...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;/section&gt;
 
-&lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;Conclusion&lt;/h2&gt;
-  &lt;p&gt;Avoiding top level functions and declaring one class per file is considered as best practice.&lt;/p&gt;
-  &lt;p&gt;This eliminates the possibility of ever relying on PHP to hoist your code.&lt;/p&gt;
+  &lt;p&gt;It's not that big of a problem though.&lt;/p&gt;
   &lt;p&gt;
-    There is no good reason to use hoisting anyways.
-    Not even if a situation (caused by poor design decisions) allows it.
+    Avoiding top level functions and declaring one class per file is considered as best practice.
+    This eliminates the possibility of ever relying on PHP to hoist your code.
   &lt;/p&gt;
-  &lt;p&gt;
-    The next post will be different.
-    We'll stop focusing on things you shouldn't do.
-    Instead, we'll learn about an important concept used in real world applications.
-  &lt;/p&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">Developing modern object oriented applications kept me in blissful ignorance of PHP's less used features. The following may come as a surprise to unsuspecting programmers (such as myself).</summary></entry><entry><title type="html">PHP quiz #5 - constructor overriding</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html" rel="alternate" type="text/html" title="PHP quiz #5 - constructor overriding" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html">&lt;section class=&quot;section&quot;&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">The term &quot;hoisting&quot; is used exclusively by JavaScript to describe its feature of moving variable and function declarations to the top of the current scope. I was quite surprised to discover features resembling hoisting in PHP, as it's something I've never used in real world applications.</summary></entry><entry><title type="html">PHP quiz #5 - constructor overriding</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html" rel="alternate" type="text/html" title="PHP quiz #5 - constructor overriding" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
 
@@ -704,7 +695,7 @@ a&lt;/pre&gt;
     &lt;/table&gt;
   &lt;/div&gt;
   &lt;p&gt;
-    In conclusion, passing multiple arguments to echo is essentially the same as writing
+    That is, passing multiple arguments to echo is essentially the same as writing
     separate, consecutive echo statements.
   &lt;/p&gt;
 &lt;/section&gt;</content><author><name></name></author><summary type="html">When people get into PHP development, the first thing they learn is usually the echo statement. It's the simplest and most common way to write to stdout, making it an ideal introductory concept. Despite its elementary nature, I've found its handling of multiple arguments to be tricky, to say the least.</summary></entry><entry><title type="html">PHP quiz #1 - for loop</title><link href="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html" rel="alternate" type="text/html" title="PHP quiz #1 - for loop" /><published>2019-06-14T00:00:00+02:00</published><updated>2019-06-14T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html">&lt;section class=&quot;section&quot;&gt;
