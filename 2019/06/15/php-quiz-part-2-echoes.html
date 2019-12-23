@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <title>PHP quiz #2 - echo arguments - Bendegúz Csirmaz</title>
+    <title>PHP quiz #2 - echo - Bendegúz Csirmaz</title>
     <script src="https://kit.fontawesome.com/a607672ce1.js"></script>
     <link type="application/atom+xml" rel="alternate" href="https://csirmazbendeguz.net/feed.xml" />
     <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>PHP quiz #2 - echo arguments</title>
+<title>PHP quiz #2 - echo</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="PHP quiz #2 - echo arguments" />
+<meta property="og:title" content="PHP quiz #2 - echo" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Echo was the first PHP statement I learned. It went great: I printed ‘Hello, World!’ to the screen and quickly moved on to more challenging problems. If only everything in programming was this easy." />
-<meta property="og:description" content="Echo was the first PHP statement I learned. It went great: I printed ‘Hello, World!’ to the screen and quickly moved on to more challenging problems. If only everything in programming was this easy." />
+<meta name="description" content="When people get into PHP development, the first thing they learn is usually the echo statement. It’s the simplest and most common way to write to stdout, making it an ideal introductory concept. Despite its elementary nature, I’ve found its handling of multiple arguments to be tricky, to say the least." />
+<meta property="og:description" content="When people get into PHP development, the first thing they learn is usually the echo statement. It’s the simplest and most common way to write to stdout, making it an ideal introductory concept. Despite its elementary nature, I’ve found its handling of multiple arguments to be tricky, to say the least." />
 <link rel="canonical" href="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html" />
 <meta property="og:url" content="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-06-15T00:00:00+02:00" />
 <script type="application/ld+json">
-{"description":"Echo was the first PHP statement I learned. It went great: I printed ‘Hello, World!’ to the screen and quickly moved on to more challenging problems. If only everything in programming was this easy.","@type":"BlogPosting","headline":"PHP quiz #2 - echo arguments","dateModified":"2019-06-15T00:00:00+02:00","datePublished":"2019-06-15T00:00:00+02:00","url":"https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html"},"@context":"https://schema.org"}</script>
+{"description":"When people get into PHP development, the first thing they learn is usually the echo statement. It’s the simplest and most common way to write to stdout, making it an ideal introductory concept. Despite its elementary nature, I’ve found its handling of multiple arguments to be tricky, to say the least.","@type":"BlogPosting","headline":"PHP quiz #2 - echo","dateModified":"2019-06-15T00:00:00+02:00","datePublished":"2019-06-15T00:00:00+02:00","url":"https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
@@ -35,9 +35,9 @@
   </header>
   <main class="content">
     <section class="section">
-  <h1>PHP quiz #2 - echo arguments</h1>
+  <h1>PHP quiz #2 - echo</h1>
   <span class="post__date">June 15, 2019</span>
-  <p>Echo was the first PHP statement I learned. It went great: I printed 'Hello, World!' to the screen and quickly moved on to more challenging problems. If only everything in programming was this easy.
+  <p>When people get into PHP development, the first thing they learn is usually the echo statement. It's the simplest and most common way to write to stdout, making it an ideal introductory concept. Despite its elementary nature, I've found its handling of multiple arguments to be tricky, to say the least.
 </p>
 </section>
 
@@ -90,30 +90,32 @@ a</pre>
 
 <section class="section">
   <h2>Explanation</h2>
-  <h3>Evaluation strategy</h3>
   <p>
-    Arguments are usually evaluated before they're passed to a function.
-    This is called <a href="https://en.wikipedia.org/wiki/Eager_evaluation">eager evaluation</a>.
+    If you're like me, you've probably guessed "abac", and under any other
+    circumstances you would have been right.
   </p>
   <p>
-    Echo works a little differently.
-    The arguments are not evaluated eagerly (in which case the answer would be "abac").
-    They are evaluated one by one.
+    Naturally, when calling a function, every argument is evaluated before
+    being passed as parameters to the function body.
+  </p>
+  <p style="text-align:center;">
+    <img src="/assets/images/php-quiz-part-2/parameters-vs-arguments.png" alt="Parameters vs Arguments" title="Parameters vs Arguments"/>
   </p>
   <p>
-    Calm down!!
-    There is a reason for this.
-    It's quite logical, actually.
+    The catch is, <strong>echo is not a function</strong>.
+    It's a language construct.
+    It has special meaning for the interpreter, and as such, it can get away with working a little differently.
   </p>
+  <p>Instead of evaluating all the arguments eagerly, it evaluates them <em>one by one</em>.</p>
 </section>
 
 <section class="section">
   <h3>Variable declarations</h3>
   <p>
-    Many programming languages allow multiple variable declarations in one line.
-    It's considered a bad practice in all of them.
+    To understand the rationale behind echo's strange behaviour, consider variable declarations.
+    PHP allows declaring multiple variables in a single statement.
+    The two code snippets below have the exact same effect:
   </p>
-  <p>In PHP, variable declarations can be shortened the following way:</p>
   <div class="compare-table">
     <table>
       <tbody>
@@ -149,21 +151,10 @@ a</pre>
       </tbody>
     </table>
   </div>
-
   <p>
-    As you can see, using commas is essentially the same as writing consecutive statements.
-    It is legal in PHP, albeit discouraged because of readability reasons.
+    Although echo doesn't have much in common with variable declarations conceptually,
+    it handles multiple arguments in a very similar way:
   </p>
-</section>
-
-<section class="section">
-  <h3>Language constructs</h3>
-  <p>
-    Echo is not a function.
-    It's a language construct, like 'public', 'global' and 'static'.
-    It has special meaning for the interpreter.
-  </p>
-  <p>Although it doesn't have much in common with variable declarations, it handles multiple arguments in a very similar way:</p>
   <div class="compare-table">
     <table>
       <tbody>
@@ -180,20 +171,9 @@ a</pre>
       </tbody>
     </table>
   </div>
-  <p>Passing multiple arguments to echo is the same as writing separate, consecutive echo statements.</p>
-</section>
-
-<section class="section">
-  <h2>Conclusion</h2>
-  <p>In modern PHP applications echo statements are buried in the depths of template systems.</p>
   <p>
-    They might be rarely needed in one's day-to-day work, but they're still one of the most fundamental PHP statements.
-    It's worth knowing how they work.
-  </p>
-  <p>
-    Alright!
-    We've learned enough about language constructs for now.
-    In the next post we'll take a look at operator associativity.
+    In conclusion, passing multiple arguments to echo is essentially the same as writing
+    separate, consecutive echo statements.
   </p>
 </section>
 
@@ -218,13 +198,13 @@ a</pre>
     
     <li>
       
-      <a href="/2019/06/14/php-quiz-part-1-for-loops.html">PHP quiz #1 - for loop conditions</a>
+      <a href="/2019/06/14/php-quiz-part-1-for-loops.html">PHP quiz #1 - for loop</a>
       
     </li>
     
     <li>
       
-      <strong>PHP quiz #2 - echo arguments</strong>
+      <strong>PHP quiz #2 - echo</strong>
       
     </li>
     
@@ -266,7 +246,7 @@ a</pre>
    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
   var disqus_config = function () {
-  this.page.title = 'PHP quiz #2 - echo arguments';
+  this.page.title = 'PHP quiz #2 - echo';
   this.page.url = 'https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html';  // Replace PAGE_URL with your page's canonical URL variable
   this.page.identifier = '/2019/06/15/php-quiz-part-2-echoes'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
   };

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-12-22T15:23:10+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-12-23T15:21:17+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
 
@@ -579,7 +579,7 @@ obj.method(new T’());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
     PHP 7.4 is going to add support for real covariance/contravariance (&lt;a href=&quot;https://wiki.php.net/rfc/covariant-returns-and-contravariant-parameters&quot;&gt;rfc&lt;/a&gt;).
     It will be a great improvement to PHP's type system.
   &lt;/p&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">In the previous post we've seen that constructors can be safely overridden. What about functions? Brace yourselves, this is one of my favorite topics.</summary></entry><entry><title type="html">PHP quiz #2 - echo arguments</title><link href="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html" rel="alternate" type="text/html" title="PHP quiz #2 - echo arguments" /><published>2019-06-15T00:00:00+02:00</published><updated>2019-06-15T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html">&lt;section class=&quot;section&quot;&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">In the previous post we've seen that constructors can be safely overridden. What about functions? Brace yourselves, this is one of my favorite topics.</summary></entry><entry><title type="html">PHP quiz #2 - echo</title><link href="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html" rel="alternate" type="text/html" title="PHP quiz #2 - echo" /><published>2019-06-15T00:00:00+02:00</published><updated>2019-06-15T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
 
@@ -628,30 +628,32 @@ a&lt;/pre&gt;
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Explanation&lt;/h2&gt;
-  &lt;h3&gt;Evaluation strategy&lt;/h3&gt;
   &lt;p&gt;
-    Arguments are usually evaluated before they're passed to a function.
-    This is called &lt;a href=&quot;https://en.wikipedia.org/wiki/Eager_evaluation&quot;&gt;eager evaluation&lt;/a&gt;.
+    If you're like me, you've probably guessed &quot;abac&quot;, and under any other
+    circumstances you would have been right.
   &lt;/p&gt;
   &lt;p&gt;
-    Echo works a little differently.
-    The arguments are not evaluated eagerly (in which case the answer would be &quot;abac&quot;).
-    They are evaluated one by one.
+    Naturally, when calling a function, every argument is evaluated before
+    being passed as parameters to the function body.
+  &lt;/p&gt;
+  &lt;p style=&quot;text-align:center;&quot;&gt;
+    &lt;img src=&quot;/assets/images/php-quiz-part-2/parameters-vs-arguments.png&quot; alt=&quot;Parameters vs Arguments&quot; title=&quot;Parameters vs Arguments&quot;/&gt;
   &lt;/p&gt;
   &lt;p&gt;
-    Calm down!!
-    There is a reason for this.
-    It's quite logical, actually.
+    The catch is, &lt;strong&gt;echo is not a function&lt;/strong&gt;.
+    It's a language construct.
+    It has special meaning for the interpreter, and as such, it can get away with working a little differently.
   &lt;/p&gt;
+  &lt;p&gt;Instead of evaluating all the arguments eagerly, it evaluates them &lt;em&gt;one by one&lt;/em&gt;.&lt;/p&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h3&gt;Variable declarations&lt;/h3&gt;
   &lt;p&gt;
-    Many programming languages allow multiple variable declarations in one line.
-    It's considered a bad practice in all of them.
+    To understand the rationale behind echo's strange behaviour, consider variable declarations.
+    PHP allows declaring multiple variables in a single statement.
+    The two code snippets below have the exact same effect:
   &lt;/p&gt;
-  &lt;p&gt;In PHP, variable declarations can be shortened the following way:&lt;/p&gt;
   &lt;div class=&quot;compare-table&quot;&gt;
     &lt;table&gt;
       &lt;tbody&gt;
@@ -687,21 +689,10 @@ a&lt;/pre&gt;
       &lt;/tbody&gt;
     &lt;/table&gt;
   &lt;/div&gt;
-
   &lt;p&gt;
-    As you can see, using commas is essentially the same as writing consecutive statements.
-    It is legal in PHP, albeit discouraged because of readability reasons.
+    Although echo doesn't have much in common with variable declarations conceptually,
+    it handles multiple arguments in a very similar way:
   &lt;/p&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
-  &lt;h3&gt;Language constructs&lt;/h3&gt;
-  &lt;p&gt;
-    Echo is not a function.
-    It's a language construct, like 'public', 'global' and 'static'.
-    It has special meaning for the interpreter.
-  &lt;/p&gt;
-  &lt;p&gt;Although it doesn't have much in common with variable declarations, it handles multiple arguments in a very similar way:&lt;/p&gt;
   &lt;div class=&quot;compare-table&quot;&gt;
     &lt;table&gt;
       &lt;tbody&gt;
@@ -718,22 +709,11 @@ a&lt;/pre&gt;
       &lt;/tbody&gt;
     &lt;/table&gt;
   &lt;/div&gt;
-  &lt;p&gt;Passing multiple arguments to echo is the same as writing separate, consecutive echo statements.&lt;/p&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;Conclusion&lt;/h2&gt;
-  &lt;p&gt;In modern PHP applications echo statements are buried in the depths of template systems.&lt;/p&gt;
   &lt;p&gt;
-    They might be rarely needed in one's day-to-day work, but they're still one of the most fundamental PHP statements.
-    It's worth knowing how they work.
+    In conclusion, passing multiple arguments to echo is essentially the same as writing
+    separate, consecutive echo statements.
   &lt;/p&gt;
-  &lt;p&gt;
-    Alright!
-    We've learned enough about language constructs for now.
-    In the next post we'll take a look at operator associativity.
-  &lt;/p&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">Echo was the first PHP statement I learned. It went great: I printed 'Hello, World!' to the screen and quickly moved on to more challenging problems. If only everything in programming was this easy.</summary></entry><entry><title type="html">PHP quiz #1 - for loop conditions</title><link href="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html" rel="alternate" type="text/html" title="PHP quiz #1 - for loop conditions" /><published>2019-06-14T00:00:00+02:00</published><updated>2019-06-14T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html">&lt;section class=&quot;section&quot;&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">When people get into PHP development, the first thing they learn is usually the echo statement. It's the simplest and most common way to write to stdout, making it an ideal introductory concept. Despite its elementary nature, I've found its handling of multiple arguments to be tricky, to say the least.</summary></entry><entry><title type="html">PHP quiz #1 - for loop</title><link href="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html" rel="alternate" type="text/html" title="PHP quiz #1 - for loop" /><published>2019-06-14T00:00:00+02:00</published><updated>2019-06-14T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
 
@@ -828,7 +808,7 @@ a&lt;/pre&gt;
   &lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-  &lt;p&gt;That's because the paranthesized expression is evaluated something like this:&lt;/p&gt;
+  &lt;p&gt;The paranthesized expression is evaluated something like this:&lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/* 0. */&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
 &lt;span class=&quot;cm&quot;&gt;/* 1. */&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
 &lt;span class=&quot;cm&quot;&gt;/* 2. */&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
