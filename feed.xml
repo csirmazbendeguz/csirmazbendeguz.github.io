@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-12-23T18:41:18+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-12-23T19:39:21+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
 
@@ -300,13 +300,16 @@
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Explanation&lt;/h2&gt;
   &lt;h3&gt;Overriding constructors&lt;/h3&gt;
-  &lt;p&gt;PHP constructors can be overridden with &lt;em&gt;any&lt;/em&gt; signature.&lt;/p&gt;
-  &lt;p&gt;Their parameters can be changed freely and without consequence.&lt;/p&gt;
+  &lt;p&gt;In PHP, the only rule to overriding constructors is that &lt;strong&gt;there are no rules&lt;/strong&gt;!&lt;/p&gt;
+  &lt;p&gt;
+    Constructors can be overridden with &lt;em&gt;any&lt;/em&gt; signature.
+    Their parameters can be changed freely and without consequence.
+  &lt;/p&gt;
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h3&gt;Unrelated types&lt;/h3&gt;
-  &lt;p&gt;They can be overridden even if the parameter types are not related.&lt;/p&gt;
+  &lt;p&gt;They can be overridden even if the parameter types are not related:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
 
@@ -322,7 +325,7 @@
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h3&gt;More/less parameters&lt;/h3&gt;
-  &lt;p&gt;They can be overridden even if the number of parameters differ.&lt;/p&gt;
+  &lt;p&gt;They can be overridden even if the number of parameters differ:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
 
@@ -338,7 +341,10 @@
 
 &lt;section class=&quot;section&quot;&gt;
   &lt;h3&gt;Overriding functions&lt;/h3&gt;
-  &lt;p&gt;Were they not constructors, PHP would issue a warning.&lt;/p&gt;
+  &lt;p&gt;
+    Note that this only applies to constructors.
+    Were these functions not constructors, PHP would issue a warning:
+  &lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
 
@@ -354,14 +360,9 @@
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;Conclusion&lt;/h2&gt;
+  &lt;h3&gt;Credits&lt;/h3&gt;
   &lt;p&gt;This post was inspired by an inaccurate &lt;a href=&quot;https://en.wikipedia.org/wiki/Talk:Covariance_and_contravariance_(computer_science)#Inaccurate_PHP_example&quot;&gt;Wikipedia article&lt;/a&gt;.&lt;/p&gt;
-  &lt;p&gt;
-    I'm sure most PHP developers have already used constructor overriding, even if they didn't realize it.
-    It's virtually impossible to create object oriented applications without it.
-  &lt;/p&gt;
-  &lt;p&gt;We'll take a look at overriding regular methods next.&lt;/p&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">Okay! We have only seen weird edge cases so far. This one is actually pretty important.</summary></entry><entry><title type="html">PHP quiz #6 - covariance, contravariance and PHP</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html" rel="alternate" type="text/html" title="PHP quiz #6 - covariance, contravariance and PHP" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html">&lt;section class=&quot;section&quot;&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">Most professional PHP developers probably have already used constructor overriding, as it would be virtually impossible to create object oriented applications without it. Still, many of them might not be familiar with the exact rules around the subject - I know I wasn't.</summary></entry><entry><title type="html">PHP quiz #6 - covariance, contravariance and PHP</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html" rel="alternate" type="text/html" title="PHP quiz #6 - covariance, contravariance and PHP" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;Will this code throw a warning (PHP 7.1)?&lt;/p&gt;
 

@@ -13,14 +13,14 @@
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="PHP quiz #5 - constructor overriding" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Okay! We have only seen weird edge cases so far. This one is actually pretty important." />
-<meta property="og:description" content="Okay! We have only seen weird edge cases so far. This one is actually pretty important." />
+<meta name="description" content="Most professional PHP developers probably have already used constructor overriding, as it would be virtually impossible to create object oriented applications without it. Still, many of them might not be familiar with the exact rules around the subject - I know I wasn’t." />
+<meta property="og:description" content="Most professional PHP developers probably have already used constructor overriding, as it would be virtually impossible to create object oriented applications without it. Still, many of them might not be familiar with the exact rules around the subject - I know I wasn’t." />
 <link rel="canonical" href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html" />
 <meta property="og:url" content="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-06-16T00:00:00+02:00" />
 <script type="application/ld+json">
-{"description":"Okay! We have only seen weird edge cases so far. This one is actually pretty important.","@type":"BlogPosting","headline":"PHP quiz #5 - constructor overriding","dateModified":"2019-06-16T00:00:00+02:00","datePublished":"2019-06-16T00:00:00+02:00","url":"https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html"},"@context":"https://schema.org"}</script>
+{"description":"Most professional PHP developers probably have already used constructor overriding, as it would be virtually impossible to create object oriented applications without it. Still, many of them might not be familiar with the exact rules around the subject - I know I wasn’t.","@type":"BlogPosting","headline":"PHP quiz #5 - constructor overriding","dateModified":"2019-06-16T00:00:00+02:00","datePublished":"2019-06-16T00:00:00+02:00","url":"https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
@@ -37,7 +37,7 @@
     <section class="section">
   <h1>PHP quiz #5 - constructor overriding</h1>
   <span class="post__date">June 16, 2019</span>
-  <p>Okay! We have only seen weird edge cases so far. This one is actually pretty important.
+  <p>Most professional PHP developers probably have already used constructor overriding, as it would be virtually impossible to create object oriented applications without it. Still, many of them might not be familiar with the exact rules around the subject - I know I wasn't.
 </p>
 </section>
 
@@ -95,13 +95,16 @@
 <section class="section">
   <h2>Explanation</h2>
   <h3>Overriding constructors</h3>
-  <p>PHP constructors can be overridden with <em>any</em> signature.</p>
-  <p>Their parameters can be changed freely and without consequence.</p>
+  <p>In PHP, the only rule to overriding constructors is that <strong>there are no rules</strong>!</p>
+  <p>
+    Constructors can be overridden with <em>any</em> signature.
+    Their parameters can be changed freely and without consequence.
+  </p>
 </section>
 
 <section class="section">
   <h3>Unrelated types</h3>
-  <p>They can be overridden even if the parameter types are not related.</p>
+  <p>They can be overridden even if the parameter types are not related:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
@@ -117,7 +120,7 @@
 
 <section class="section">
   <h3>More/less parameters</h3>
-  <p>They can be overridden even if the number of parameters differ.</p>
+  <p>They can be overridden even if the number of parameters differ:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
@@ -133,7 +136,10 @@
 
 <section class="section">
   <h3>Overriding functions</h3>
-  <p>Were they not constructors, PHP would issue a warning.</p>
+  <p>
+    Note that this only applies to constructors.
+    Were these functions not constructors, PHP would issue a warning:
+  </p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
@@ -149,13 +155,8 @@
 </section>
 
 <section class="section">
-  <h2>Conclusion</h2>
+  <h3>Credits</h3>
   <p>This post was inspired by an inaccurate <a href="https://en.wikipedia.org/wiki/Talk:Covariance_and_contravariance_(computer_science)#Inaccurate_PHP_example">Wikipedia article</a>.</p>
-  <p>
-    I'm sure most PHP developers have already used constructor overriding, even if they didn't realize it.
-    It's virtually impossible to create object oriented applications without it.
-  </p>
-  <p>We'll take a look at overriding regular methods next.</p>
 </section>
 
 
