@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-12-23T15:21:17+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2019-12-23T15:41:18+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
 
@@ -106,7 +106,7 @@
   &lt;/p&gt;
   &lt;p&gt;
     A notable exception is Python.
-    It evaluates chained relational operators the way someone less scarred by programming would expect.
+    It evaluates chained relational operators the way someone less scarred by programming would expect:
   &lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
@@ -122,17 +122,11 @@
 &lt;/section&gt;
 
 &lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;Conclusion&lt;/h2&gt;
-  &lt;p&gt;
-    There is a reason why you've never seen comparison operators chained like this in PHP code.
-    It's because it's not legal.
+  &lt;h3&gt;Credits&lt;/h3&gt;
+  &lt;p&gt;This post was inspired by Upwork's ridiculously incorrect &lt;a href=&quot;https://www.upwork.com/i/interview-questions/php/&quot;&gt;PHP interview question&lt;/a&gt;.&lt;/p&gt;
+  &lt;p style=&quot;text-align: center&quot;&gt;
+    &lt;img src=&quot;/assets/images/php-quiz-part-3/upwork-question.png&quot; alt=&quot;Upwork question&quot; title=&quot;Upwork question&quot; /&gt;
   &lt;/p&gt;
-  &lt;p&gt;
-    Exam questions often try to trick you like this.
-    When I notice something fishy and the problem isn't completely obvious, as a rule of thumb, I always consider the 'syntax error' answers first.
-    Trust your intuition!
-  &lt;/p&gt;
-  &lt;p&gt;This post was inspired by Upwork's incorrect &lt;a href=&quot;https://www.upwork.com/i/interview-questions/php/&quot;&gt;PHP interview questions&lt;/a&gt; (question #10).&lt;/p&gt;
 &lt;/section&gt;</content><author><name></name></author><summary type="html">Operators are the building blocks of computer programs. You might think you know them, but the devil is in the details. After all these years, I still find myself revisiting the precedence table every once in a while.</summary></entry><entry><title type="html">PHP quiz #4 - hoisting</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-4-hoisting.html" rel="alternate" type="text/html" title="PHP quiz #4 - hoisting" /><published>2019-06-16T00:00:00+02:00</published><updated>2019-06-16T00:00:00+02:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-4-hoisting</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-4-hoisting.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
