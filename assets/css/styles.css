@@ -147,6 +147,12 @@ dt {
 dd {
   padding: 8px 16px; }
 
+hr {
+  border: 0;
+  height: 1px;
+  background: #999;
+  margin: 32px 0; }
+
 .header {
   background-color: #00284d;
   color: #ffffff; }
@@ -247,16 +253,6 @@ dd {
       border-left: 0; }
     .compare-table table td:last-child {
       border-right: 0; }
-
-.quiz-paginator {
-  margin: 32px 0;
-  text-align: center; }
-  .quiz-paginator a {
-    display: inline-block; }
-    .quiz-paginator a:first-child {
-      margin-right: 16px; }
-    .quiz-paginator a:last-child {
-      margin-right: 0; }
 
 .answers {
   list-style-type: none;
