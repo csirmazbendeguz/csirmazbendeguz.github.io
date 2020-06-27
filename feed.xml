@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2020-04-30T08:53:07+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">Requests Session for OAuth 2 Client Credentials Flow with Authlib</title><link href="https://csirmazbendeguz.net/2020/04/04/oauth2-client-credentials-with-authlib.html" rel="alternate" type="text/html" title="Requests Session for OAuth 2 Client Credentials Flow with Authlib" /><published>2020-04-04T00:00:00+01:00</published><updated>2020-04-04T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2020/04/04/oauth2-client-credentials-with-authlib</id><content type="html" xml:base="https://csirmazbendeguz.net/2020/04/04/oauth2-client-credentials-with-authlib.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2020-06-27T13:08:32+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">Requests Session for OAuth 2 Client Credentials Flow with Authlib</title><link href="https://csirmazbendeguz.net/2020/04/04/oauth2-client-credentials-with-authlib.html" rel="alternate" type="text/html" title="Requests Session for OAuth 2 Client Credentials Flow with Authlib" /><published>2020-04-04T00:00:00+01:00</published><updated>2020-04-04T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2020/04/04/oauth2-client-credentials-with-authlib</id><content type="html" xml:base="https://csirmazbendeguz.net/2020/04/04/oauth2-client-credentials-with-authlib.html">&lt;section class=&quot;section&quot;&gt;
     &lt;h3&gt;Session&lt;/h3&gt;
     &lt;p&gt;The trick is using a Session object.&lt;/p&gt;
     &lt;p&gt;In Requests, Session objects allow you to abstract away things that are common to your API calls (such as authorization).&lt;/p&gt;
-    &lt;p&gt;Luckily for us, &lt;a href=&quot;https://docs.authlib.org&quot;&gt;Authlib&lt;/a&gt; comes with its own OAuth 2 Session included.&lt;/p&gt;
+    &lt;p&gt;Luckily for us, &lt;a href=&quot;https://docs.authlib.org&quot;&gt;Authlib&lt;/a&gt; comes with its own OAuth2Session class included.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;authlib.integrations.requests_client&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OAuth2Session&lt;/span&gt;
 
@@ -377,7 +377,7 @@
 &lt;section class=&quot;section&quot;&gt;
   &lt;h3&gt;Credits&lt;/h3&gt;
   &lt;p&gt;This post was inspired by an inaccurate &lt;a href=&quot;https://en.wikipedia.org/wiki/Talk:Covariance_and_contravariance_(computer_science)#Inaccurate_PHP_example&quot;&gt;Wikipedia article&lt;/a&gt;.&lt;/p&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">Most professional PHP developers probably have already used constructor overriding, as it would be virtually impossible to create object oriented applications without it. Still, many of them might not be familiar with the exact rules around the subject - I know I wasn't.</summary></entry><entry><title type="html">PHP quiz #6 - covariance</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html" rel="alternate" type="text/html" title="PHP quiz #6 - covariance" /><published>2019-06-16T00:00:00+01:00</published><updated>2019-06-16T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html">&lt;section class=&quot;section&quot;&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">Most PHP developers probably have already used constructor overriding, as it would be virtually impossible to create object oriented applications without it. Still, many of them might not be familiar with the exact rules around the subject - I know I wasn't.</summary></entry><entry><title type="html">PHP quiz #6 - covariance</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html" rel="alternate" type="text/html" title="PHP quiz #6 - covariance" /><published>2019-06-16T00:00:00+01:00</published><updated>2019-06-16T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;Will this code throw a warning (PHP 7.1)?&lt;/p&gt;
 
@@ -467,16 +467,20 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
   &lt;p&gt;
-    This is type safe!
-    I like to think about the following reasoning to justify why:
+    Note that this is type safe.
+    I like to think about the following pseudocode to justify why it works:
   &lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;ClassA obj = new ClassB();
 iterable retval = obj.method();&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
   &lt;p&gt;
-    Polymorphism allows us to use a subclass (ClassB) instance anywhere where a superclass (ClassA) instance is expected.
-    As long as the subclass's method returns an iterable (an array is an iterable!), there won't be any type errors.
+    Polymorphism allows us to use a subclass's (ClassB) instance anywhere where a superclass's (ClassA) instance is expected.
+    When a subclass overrides a method, it must respect the type constraints set by its parent.
+  &lt;/p&gt;
+  &lt;p&gt;
+    In other words, the overriding method must return an iterable.
+    Since an array is an iterable, this requirement is satisfied.
   &lt;/p&gt;
 &lt;/section&gt;
 
@@ -498,7 +502,7 @@ iterable retval = obj.method();&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
   &lt;p&gt;
-    This is type safe too!
+    This is type safe too.
     It's a bit harder to reason about, but here's my try:
   &lt;/p&gt;
 
@@ -506,9 +510,12 @@ iterable retval = obj.method();&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 obj.method(new array());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
   &lt;p&gt;
-    Polymorphism allows us to use a subclass (ClassB) instance anywhere where a superclass (ClassA) instance is expected.
-    Therefore, the subclass's method must be able to receive an array type parameter.
-    Accepting all iterables (including arrays!) still satisfies this requirement.
+    Polymorphism allows us to use a subclass's (ClassB) instance anywhere where a superclass's (ClassA) instance is expected.
+    When a subclass overrides a method, it must respect the type constraints set by its parent.
+  &lt;/p&gt;
+  &lt;p&gt;
+    In this case, the overriding method must be able to receive an array type parameter.
+    Accepting all iterables (including arrays) satisfies this requirement.
   &lt;/p&gt;
 &lt;/section&gt;
 
@@ -584,14 +591,14 @@ obj.method(new array());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;The future&lt;/h2&gt;
   &lt;p&gt;
-    PHP is mostly invariant... for now.
+    PHP is mostly invariant, for now.
     But there is progress!
   &lt;/p&gt;
   &lt;p&gt;
     PHP 7.4 is going to add support for real covariance/contravariance (&lt;a href=&quot;https://wiki.php.net/rfc/covariant-returns-and-contravariant-parameters&quot;&gt;rfc&lt;/a&gt;).
     It will be a great improvement to PHP's type system.
   &lt;/p&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">A complete guide to covariance and contravariance in PHP.</summary></entry><entry><title type="html">PHP quiz #2 - echo</title><link href="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html" rel="alternate" type="text/html" title="PHP quiz #2 - echo" /><published>2019-06-15T00:00:00+01:00</published><updated>2019-06-15T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html">&lt;section class=&quot;section&quot;&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">A complete guide to covariance and contravariance in PHP 7.1.</summary></entry><entry><title type="html">PHP quiz #2 - echo</title><link href="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html" rel="alternate" type="text/html" title="PHP quiz #2 - echo" /><published>2019-06-15T00:00:00+01:00</published><updated>2019-06-15T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
 
@@ -651,7 +658,7 @@ a&lt;/pre&gt;
   &lt;p&gt;
     The catch is, &lt;strong&gt;echo is not a function&lt;/strong&gt;.
     It's a language construct.
-    It has special meaning for the interpreter, and as such, it can get away with working a little differently.
+    It has special meaning for the interpreter, and as such, it works a little differently.
   &lt;/p&gt;
   &lt;p&gt;Instead of evaluating all the arguments eagerly, it evaluates them &lt;em&gt;one by one&lt;/em&gt;.&lt;/p&gt;
 &lt;/section&gt;
@@ -659,8 +666,7 @@ a&lt;/pre&gt;
 &lt;section class=&quot;section&quot;&gt;
   &lt;h3&gt;Variable declarations&lt;/h3&gt;
   &lt;p&gt;
-    To understand the rationale behind echo's strange behaviour, consider
-    variable declarations as an example.
+    To understand the rationale behind echo's strange behaviour, consider variable declarations.
   &lt;/p&gt;
   &lt;p&gt;
     PHP allows declaring multiple variables in a single statement.
@@ -725,7 +731,7 @@ a&lt;/pre&gt;
     That is, passing multiple arguments to echo is essentially the same as writing
     separate, consecutive echo statements.
   &lt;/p&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">When people get into PHP development, the first thing they learn is usually the echo statement. Despite its elementary nature, I've found its handling of multiple arguments to be tricky, to say the least.</summary></entry><entry><title type="html">PHP quiz #1 - for loop</title><link href="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html" rel="alternate" type="text/html" title="PHP quiz #1 - for loop" /><published>2019-06-14T00:00:00+01:00</published><updated>2019-06-14T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html">&lt;section class=&quot;section&quot;&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">When people get into PHP development, the first thing they learn is usually the echo statement. Despite its elementary nature, I've found its handling of multiple arguments to be quite tricky.</summary></entry><entry><title type="html">PHP quiz #1 - for loop</title><link href="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html" rel="alternate" type="text/html" title="PHP quiz #1 - for loop" /><published>2019-06-14T00:00:00+01:00</published><updated>2019-06-14T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
 
