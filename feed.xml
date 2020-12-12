@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2020-12-12T16:59:17+00:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">What programming language should I learn?</title><link href="https://csirmazbendeguz.net/2020/12/12/what-programming-language-should-i-learn.html" rel="alternate" type="text/html" title="What programming language should I learn?" /><published>2020-12-12T00:00:00+00:00</published><updated>2020-12-12T00:00:00+00:00</updated><id>https://csirmazbendeguz.net/2020/12/12/what-programming-language-should-i-learn</id><content type="html" xml:base="https://csirmazbendeguz.net/2020/12/12/what-programming-language-should-i-learn.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2020-12-12T18:02:00+00:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">What programming language should I learn?</title><link href="https://csirmazbendeguz.net/2020/12/12/what-programming-language-should-i-learn.html" rel="alternate" type="text/html" title="What programming language should I learn?" /><published>2020-12-12T00:00:00+00:00</published><updated>2020-12-12T00:00:00+00:00</updated><id>https://csirmazbendeguz.net/2020/12/12/what-programming-language-should-i-learn</id><content type="html" xml:base="https://csirmazbendeguz.net/2020/12/12/what-programming-language-should-i-learn.html">&lt;section class=&quot;section&quot;&gt;
     &lt;p&gt;The long answer is: it depends.&lt;/p&gt;
     &lt;p&gt;The short answer is: JavaScript.&lt;/p&gt;
 &lt;/section&gt;
@@ -34,7 +34,7 @@
     &lt;/ul&gt;
 
     &lt;p&gt;Are there any cons? Yes.&lt;/p&gt;
-    &lt;p&gt;JavaScript (and scripting languages in general) might not be the best for learn programming fundamentals.&lt;/p&gt;
+    &lt;p&gt;JavaScript (and scripting languages in general) might not be the best for learning programming fundamentals.&lt;/p&gt;
     &lt;p&gt;When I started out with PHP object-oriented programming was a confusing mystery to me. It only started to make sense when I learned Java.&lt;/p&gt;
 
     &lt;p&gt;Still, if you're looking for a solid career path, I think JavaScript development is a great one.&lt;/p&gt;
