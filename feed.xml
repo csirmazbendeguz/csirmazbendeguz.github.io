@@ -1,4 +1,285 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2020-12-13T09:21:32+00:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">What programming language should I learn?</title><link href="https://csirmazbendeguz.net/2020/12/12/what-programming-language-should-i-learn.html" rel="alternate" type="text/html" title="What programming language should I learn?" /><published>2020-12-12T00:00:00+00:00</published><updated>2020-12-12T00:00:00+00:00</updated><id>https://csirmazbendeguz.net/2020/12/12/what-programming-language-should-i-learn</id><content type="html" xml:base="https://csirmazbendeguz.net/2020/12/12/what-programming-language-should-i-learn.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2020-12-21T19:33:13+00:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">I wanna be the very best</title><link href="https://csirmazbendeguz.net/2020/12/21/i-wanna-be-the-very-best.html" rel="alternate" type="text/html" title="I wanna be the very best" /><published>2020-12-21T00:00:00+00:00</published><updated>2020-12-21T00:00:00+00:00</updated><id>https://csirmazbendeguz.net/2020/12/21/i-wanna-be-the-very-best</id><content type="html" xml:base="https://csirmazbendeguz.net/2020/12/21/i-wanna-be-the-very-best.html">&lt;section class=&quot;section&quot;&gt;
+    &lt;p style=&quot;text-align:center;&quot;&gt;
+        &lt;img
+            src=&quot;/assets/images/i-wanna-be-the-very-best/memgame.png&quot;
+            alt=&quot;A screenshot of the game&quot;
+            title=&quot;A screenshot of the game&quot;/&gt;
+    &lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+    &lt;h3&gt;Motivation&lt;/h3&gt;
+    &lt;p&gt;
+        My favorite course in school was Java development. It opened a whole new world for me.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I have learned other programming languages before, but Java was the first one I actually &lt;s&gt;mastered&lt;/s&gt; tried to master.
+        It solidifed my programming skills, and more importantly, it enabled me to build applications for virtually any platform.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Yes! I'm talking about &lt;strong&gt;video games&lt;/strong&gt;, for desktop. Go figure!
+    &lt;/p&gt;
+    &lt;p&gt;
+        Luckily for me, the curriculum included GUI programming. They taught us &lt;em&gt;Java Swing&lt;/em&gt;, an old graphics library from the 90s.
+        I particularly enjoyed one of the assignments: we had to build a memory game (also called &quot;&lt;em&gt;concentration&lt;/em&gt;&quot; - as I've learned lately).
+    &lt;/p&gt;
+    &lt;p&gt;
+        Apart from a few loose requirements, we were given the freedom to implement the game in whatever way we saw fit.
+        As a recovering Pokémon-addict (grew up watching the series), there was no question about what theme I will choose.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I built the game as well as I could. I even photoshopped artwork (that I got from the internet) to make it as perfect as possible.
+        I received the best possible grade and was so proud I eventually also uploaded it to GitHub - so the whole world can see my fine work.
+    &lt;/p&gt;
+    &lt;p&gt;This was in 2016...&lt;/p&gt;
+    &lt;p&gt;
+        In 2019 I decided to revisit my old GitHub repositories. Why?
+        Because for software developers, GitHub is like a portfolio.
+        And you don't want shitty projects on your portfolio.
+    &lt;/p&gt;
+    &lt;p&gt;
+        What I found there was staggering: past me had no idea how to develop good software.
+        Despite all the love I put into this game, it was a dumpster fire.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I ended up making most of my old repositories private, except this one. I decided to save it.
+    &lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+    &lt;h3&gt;The bane of GUI programming&lt;/h3&gt;
+    &lt;p&gt;
+        The codebase was a textbook example of bad practices.
+    &lt;/p&gt;
+    &lt;p&gt;
+        It was full of duplications, everything was hardcoded, and for some reason I thought committing executable files to Git was a good idea.
+        Fortunately, I managed to fix the obvious problems quite quickly.
+    &lt;/p&gt;
+    &lt;p&gt;
+        The the challenging part was not replacing tabs with spaces or renaming variables.
+        It was the architecture.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Java Swing is a GUI library with basic GUI components like buttons, labels, panels, etc.
+    &lt;/p&gt;
+    &lt;p style=&quot;text-align:center;&quot;&gt;
+        &lt;img src=&quot;/assets/images/i-wanna-be-the-very-best/memgame-components.png&quot;
+             alt=&quot;A screenshot with the game's graphical components highlighted&quot;
+             title=&quot;A screenshot with the game's graphical components highlighted&quot;/&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        There aren't many restrictions on how to organize code. The library doesn't care how you wire the components together.
+        It is the programmer's job to come up with a sufficiently decoupled and modularized architecture.
+    &lt;/p&gt;
+    &lt;p&gt;
+    In my opinion, anyone building an app with this toolkit will face the following two problems:
+        &lt;ul&gt;
+            &lt;li&gt;How do I make components talk to each other?&lt;/li&gt;
+            &lt;li&gt;How do I avoid tight coupling?&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        These are not easy problems. No wonder I couldn't tackle them when I was a beginner.
+        After doing some research I decided on the following solutions...
+    &lt;/p&gt;
+&lt;/section&gt;
+
+
+&lt;section class=&quot;section&quot;&gt;
+    &lt;h3&gt;Inversion of Control&lt;/h3&gt;
+    &lt;p&gt;
+        Let's say, the user restarts the game by clicking the restart button.
+    &lt;/p&gt;
+    &lt;p&gt;
+        We expect the following things to happen:
+        &lt;ul&gt;
+            &lt;li&gt;The board resets the memory cards.&lt;/li&gt;
+            &lt;li&gt;The timer resets to zero.&lt;/li&gt;
+            &lt;li&gt;The move counter resets to zero.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/p&gt;
+    &lt;p&gt;That's &lt;strong&gt;a lot&lt;/strong&gt; of responsibilities for a single button!&lt;/p&gt;
+    &lt;p&gt;A naive solution would look something like this:&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RestartButton&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;JButton&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ActionListener&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;BoardPanel&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;boardPanel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TimerLabel&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timerLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TriesLabel&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;triesLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;RestartButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;BoardPanel&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;boardPanel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TimerLabel&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timerLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TriesLabel&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;triesLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Restart&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;boardPanel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;boardPanel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;timerLabel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timerLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;triesLabel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;triesLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;actionPerformed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ActionEvent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;boardPanel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;reset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;timerLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;reset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;triesLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;reset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;p&gt;The problem with this approach is, the restart button should not communicate with other components directly.&lt;/p&gt;
+    &lt;p&gt;
+        It should not keep track of components handling game restarts, and it should not know how to call them.
+        That's not the button's responsibility.
+    &lt;/p&gt;
+    &lt;p&gt;
+        In other words, we should be able to add new objects handling game restarts without modifying the restart button itself.
+    &lt;/p&gt;
+    &lt;p&gt;To achieve this, we need to introduce a new layer of abstraction. We need &lt;strong&gt;inversion of control&lt;strong&gt;.&lt;/p&gt;
+&lt;/section&gt;
+
+
+&lt;section class=&quot;section&quot;&gt;
+    &lt;h3&gt;Event Bus&lt;/h3&gt;
+    &lt;p&gt;An event bus is a design pattern for building event-driven systems. It's pretty simple.&lt;/p&gt;
+    &lt;p style=&quot;text-align:center;&quot;&gt;
+        &lt;img src=&quot;/assets/images/i-wanna-be-the-very-best/crazybus.jpg&quot;
+             alt=&quot;A flying bus&quot;
+             title=&quot;A flying bus&quot;/&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        An event bus is a central object where you register all your event handlers (e.g. the timer component).
+        Then, when an event is created (e.g. the restart button is clicked), it is broadcasted to all the registered handlers.
+    &lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// RestartButton.java&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RestartButton&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;JButton&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ActionListener&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EventBus&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eventBus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;RestartButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;EventBus&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eventBus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Restart&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;eventBus&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eventBus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;actionPerformed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ActionEvent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;eventBus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;dispatch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RestartEvent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// TimerLabel.java&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TimerLabel&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;JLabel&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RestartListener&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;TimerLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;EventBus&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eventBus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;eventBus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;register&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;RestartListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;restarted&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;RestartEvent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// Reset timer.&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;p&gt;
+        Much better! The components do not depend on each other anymore.
+        They communicate via the event bus.
+    &lt;/p&gt;
+    &lt;p&gt;
+        How can the event bus figure out where to send the events?
+        I'll spare you the details, but the answer is: &lt;em&gt;reflection&lt;/em&gt; - if you're interested in the inner workings of the event system (I'm simplifying things a bit here), feel free to check out the &lt;a href=&quot;https://github.com/csirmazbendeguz/pokemon-memory-game&quot;&gt;source code&lt;/a&gt;.
+    &lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+    &lt;h3&gt;Decoupling with Dependency Injection&lt;/h3&gt;
+    &lt;p&gt;
+        In Java Swing, GUI components are defined in Java code, forming a tree-like structure.
+    &lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Buttons&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;JPanel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;Buttons&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// Add children.&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RestartButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ChangeDimensionButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;p&gt;
+        The problem is, what if we have to change something at the bottom of the tree?
+        Let's say, add the event bus to the restart button?
+    &lt;/p&gt;
+    &lt;p&gt;
+        Well... we would have to pass the event bus to every component in the hierarchy.
+        Even where it's not needed.
+    &lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Buttons&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;JPanel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;Buttons&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;EventBus&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eventBus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RestartButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eventBus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ChangeDimensionButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;p&gt;
+        It's a bit inconvenient. Also, it'll be hard to test (we want to write test... right?).
+    &lt;/p&gt;
+    &lt;p&gt;
+        In this case, the panel container doesn't need to know how to instantiate its child objects.
+        Let's make our lives a little easier and use &lt;strong&gt;dependency injection&lt;/strong&gt;.
+    &lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Buttons&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;JPanel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;Buttons&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;RestartButton&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;restartButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ChangeDimensionButton&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;changeDimensionButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;restartButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;changeDimensionButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;p&gt;
+        Great! We have pushed the responsibility of instantiating the child components one layer up in the hierarchy.
+    &lt;/p&gt;
+    &lt;p&gt;Like squeezing a toothpaste. We are making files slimmer by moving the complexity somewhere else.&lt;/p&gt;
+    &lt;p style=&quot;text-align:center;&quot;&gt;
+        &lt;img src=&quot;/assets/images/i-wanna-be-the-very-best/toothpaste.jpg&quot;
+             alt=&quot;A squeezed toothpaste&quot;
+             title=&quot;A squeezed toothpaste&quot;/&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        That sounds fantastic, but... when does it ever end? Will we have to instantiate everything at startup time? Yes. Kind of.
+    &lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+    &lt;h3&gt;Enter dependency injection frameworks!&lt;/h3&gt;
+    &lt;p&gt;To make the project as over-engineered as possible (gotta show off those skills!), I decided to use a framework that automatically instantiates and injects objects on demand.&lt;/p&gt;
+    &lt;p&gt;I picked &lt;a href=&quot;https://github.com/google/guice&quot;&gt;Guice&lt;/a&gt;.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// EventBus.java&lt;/span&gt;
+&lt;span class=&quot;nd&quot;&gt;@Singleton&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EventBus&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// RestartButton.java&lt;/span&gt;
+&lt;span class=&quot;nd&quot;&gt;@Singleton&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RestartButton&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;JButton&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ActionListener&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Inject&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;RestartButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;EventBus&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eventBus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//  ...&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Buttons.java&lt;/span&gt;
+&lt;span class=&quot;nd&quot;&gt;@Singleton&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Buttons&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;JPanel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Inject&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;Buttons&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;RestartButton&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;restartButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ChangeDimensionButton&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;changeDimensionButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;p&gt;
+        Marvelous! Guice can handle the creation and wiring of most GUI components out of the box. All you have to do is define some annotations.
+        Naturally, for dynamically generated components (e.g. the memory cards), we'll have to keep using &quot;new&quot;.
+    &lt;/p&gt;
+    &lt;p&gt;
+        It's also possible to go a bit further with reflection, and auto-discover/auto-register event handlers on startup.
+        In hindsight, I'm not sure it was my brightest idea - but it's definitely possible! The sky is the limit.
+    &lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+    &lt;h3&gt;Conclusion&lt;/h3&gt;
+    &lt;p&gt;
+        We have covered a lot of ground.
+        There's certainly a difference between understanding event-driven systems and dependency injection and making them work.
+        But, when it comes it these kind of apps, I believe it's the way to go.
+    &lt;/p&gt;
+    &lt;p&gt;I implemented the game in 1-2 weeks. Then I spent 1-2 months refactoring and polishing it.&lt;/p&gt;
+    &lt;p&gt;I'm not complaining, it was a fun intellectual exercise and learning experience.&lt;/p&gt;
+
+    &lt;p&gt;The game can be downloaded from the &lt;a href=&quot;https://github.com/csirmazbendeguz/pokemon-memory-game/releases&quot;&gt;releases page&lt;/a&gt; (requires Java 8).&lt;/p&gt;
+    &lt;p&gt;Thanks for reading!&lt;/p&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">What I learned from (re)writing a Pokémon-themed memory game</summary></entry><entry><title type="html">What programming language should I learn?</title><link href="https://csirmazbendeguz.net/2020/12/12/what-programming-language-should-i-learn.html" rel="alternate" type="text/html" title="What programming language should I learn?" /><published>2020-12-12T00:00:00+00:00</published><updated>2020-12-12T00:00:00+00:00</updated><id>https://csirmazbendeguz.net/2020/12/12/what-programming-language-should-i-learn</id><content type="html" xml:base="https://csirmazbendeguz.net/2020/12/12/what-programming-language-should-i-learn.html">&lt;section class=&quot;section&quot;&gt;
     &lt;p&gt;The long answer is: it depends.&lt;/p&gt;
     &lt;p&gt;The short answer is: JavaScript.&lt;/p&gt;
 &lt;/section&gt;
@@ -62,7 +343,255 @@
 
     &lt;p&gt;The difference is, the session will automatically fetch the access token and attach it to every subsequent request.&lt;/p&gt;
     &lt;p&gt;No need to add an Authorization header to every single API call anymore.&lt;/p&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">Lately I've been writing a lot of background jobs that need to interact with different OAuth 2 service providers. Not knowing any better, I coded my own authorization logic using the Requests library. This approach works, but there's a better solution.</summary></entry><entry><title type="html">PHP quiz #6 - covariance</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html" rel="alternate" type="text/html" title="PHP quiz #6 - covariance" /><published>2019-06-16T00:00:00+01:00</published><updated>2019-06-16T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html">&lt;section class=&quot;section&quot;&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">Lately I've been writing a lot of background jobs that need to interact with different OAuth 2 service providers. Not knowing any better, I coded my own authorization logic using the Requests library. This approach works, but there's a better solution.</summary></entry><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+01:00</published><updated>2019-06-16T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
+  &lt;h2&gt;Question&lt;/h2&gt;
+  &lt;p&gt;What will this code output?&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'true'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'false'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+  &lt;ul class=&quot;answers&quot;&gt;
+    &lt;li class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;A&lt;/span&gt;
+      &lt;pre&gt;Syntax error&lt;/pre&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;B&lt;/span&gt;
+      &lt;pre&gt;true&lt;/pre&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;C&lt;/span&gt;
+      &lt;pre&gt;false&lt;/pre&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h2&gt;Answer&lt;/h2&gt;
+  &lt;a id=&quot;show-answer&quot; href=&quot;#&quot;&gt;Show the answer&lt;/a&gt;
+  &lt;div id=&quot;answer&quot;&gt;
+    &lt;div class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;A&lt;/span&gt;
+      &lt;pre&gt;Syntax error&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h2&gt;Explanation&lt;/h2&gt;
+  &lt;h3&gt;Operator associativity&lt;/h3&gt;
+  &lt;p&gt;Operator associativity decides how operators of equal precedence are grouped.&lt;/p&gt;
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;operator&lt;/th&gt;
+        &lt;th&gt;associativity&lt;/th&gt;
+        &lt;th&gt;example&lt;/th&gt;
+        &lt;th&gt;result&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; (addition)&lt;/td&gt;
+        &lt;td&gt;left&lt;/td&gt;
+        &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1 + 2 + 3&lt;/code&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;(1 + 2) + 3&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;=&lt;/code&gt; (assignment)&lt;/td&gt;
+        &lt;td&gt;right&lt;/td&gt;
+        &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$a = $b = $c&lt;/code&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$a = ($b = $c)&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Non-associative operators&lt;/h3&gt;
+  &lt;p&gt;
+    In PHP, however, comparison operators are &lt;em&gt;non-associative&lt;/em&gt;.
+    They cannot be used next to each other.
+  &lt;/p&gt;
+  &lt;p&gt;The expression &lt;code class=&quot;highlighter-rouge&quot;&gt;$z &gt; $y &gt; $x&lt;/code&gt; is illegal.&lt;/p&gt;
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;operator&lt;/th&gt;
+        &lt;th&gt;associativity&lt;/th&gt;
+        &lt;th&gt;example&lt;/th&gt;
+        &lt;th&gt;result&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt; (greater-than)&lt;/td&gt;
+        &lt;td&gt;non-associative&lt;/td&gt;
+        &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$z &amp;gt; $y &amp;gt; $x&lt;/code&gt;&lt;/td&gt;
+        &lt;td&gt;syntax error&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Other languages&lt;/h3&gt;
+  &lt;p&gt;
+    Most programming languages do not allow the &lt;a href=&quot;https://en.wikipedia.org/wiki/Relational_operator#Operator_chaining&quot;&gt;chaining of relational operators&lt;/a&gt;.
+    The desired result is usually achieved with something like &lt;code class=&quot;highlighter-rouge&quot;&gt;$z &gt; $y &amp;&amp; $y &gt; $x&lt;/code&gt;.
+  &lt;/p&gt;
+  &lt;p&gt;
+    A notable exception is Python.
+    It evaluates chained relational operators the way someone less scarred by programming would expect:
+  &lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'true'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'false'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;p&gt;Awesome!&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Credits&lt;/h3&gt;
+  &lt;p&gt;This post was inspired by Upwork's ridiculously incorrect &lt;a href=&quot;https://www.upwork.com/i/interview-questions/php/&quot;&gt;PHP interview question&lt;/a&gt;.&lt;/p&gt;
+  &lt;p style=&quot;text-align: center&quot;&gt;
+    &lt;img src=&quot;/assets/images/php-quiz-part-3/upwork-question.png&quot; alt=&quot;Upwork question&quot; title=&quot;Upwork question&quot; /&gt;
+  &lt;/p&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">Operators are the building blocks of computer programs. You might think you know them, but the devil is in the details. After all these years, I still find myself revisiting the precedence table every once in a while.</summary></entry><entry><title type="html">PHP quiz #4 - hoisting</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-4-hoisting.html" rel="alternate" type="text/html" title="PHP quiz #4 - hoisting" /><published>2019-06-16T00:00:00+01:00</published><updated>2019-06-16T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-4-hoisting</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-4-hoisting.html">&lt;section class=&quot;section&quot;&gt;
+  &lt;h2&gt;Question&lt;/h2&gt;
+  &lt;p&gt;What will this code output?&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;helloWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;helloWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello World!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+  &lt;ul class=&quot;answers&quot;&gt;
+    &lt;li class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;A&lt;/span&gt;
+      &lt;span&gt;Fatal error: Uncaught Error: Call to undefined function helloWorld()&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;B&lt;/span&gt;
+      &lt;span&gt;Nothing&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;C&lt;/span&gt;
+      &lt;span&gt;Hello World!&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;D&lt;/span&gt;
+      &lt;span&gt;Warning + &quot;helloWorld()&quot;&lt;/span&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h2&gt;Answer&lt;/h2&gt;
+  &lt;a id=&quot;show-answer&quot; href=&quot;#&quot;&gt;Show the answer&lt;/a&gt;
+  &lt;div id=&quot;answer&quot;&gt;
+    &lt;div class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;C&lt;/span&gt;
+      &lt;pre&gt;Hello World!&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h2&gt;Explanation&lt;/h2&gt;
+  &lt;h3&gt;Hoisting&lt;/h3&gt;
+  &lt;p&gt;
+    Similarly to JavaScript, function declarations are resolved at compile time.
+    By the time the interpreter calls our function, it will have been already defined.
+    The program will run without any problems.
+  &lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Restrictions on hoisting&lt;/h3&gt;
+  &lt;p&gt;
+    When the function is defined conditionally, this is not the case.
+    For hoisting to work, it has to be defined on the top level.
+    The following will throw a fatal error:
+  &lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Fatal error: Uncaught Error: Call to undefined function helloWorld().&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;helloWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;helloWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello World!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Includes&lt;/h3&gt;
+  &lt;p&gt;What about includes?&lt;/p&gt;
+  &lt;p&gt;
+    Naturally, they are only resolved at runtime.
+    When including a function, the include statement must run before the function call.
+  &lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Fatal error: Uncaught Error: Call to undefined function helloWorld().&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;helloWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Includes the helloWorld function.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;helloWorld.php&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Classes&lt;/h3&gt;
+  &lt;p&gt;Functions are not the only unit of code organization (thank God!).&lt;/p&gt;
+  &lt;p&gt;
+    Hoisting applies to class, interface and trait declarations too.
+    More or less.
+  &lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// OK!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+  &lt;p&gt;It becomes less graceful when multiple levels of inheritance is introduced.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Fatal error: Class 'B' not found in ...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+  &lt;p&gt;It's not that big of a problem though.&lt;/p&gt;
+  &lt;p&gt;
+    Avoiding top level functions and declaring one class per file is considered as best practice.
+    This eliminates the possibility of ever relying on PHP to hoist your code.
+  &lt;/p&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">The term &quot;hoisting&quot; is used exclusively by JavaScript to describe its feature of moving variable and function declarations to the top of the current scope. Other languages have concepts resembling hoisting too, but for some reason they aren't discussed nearly as much as they should be.</summary></entry><entry><title type="html">PHP quiz #6 - covariance</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html" rel="alternate" type="text/html" title="PHP quiz #6 - covariance" /><published>2019-06-16T00:00:00+01:00</published><updated>2019-06-16T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;Will this code throw a warning (PHP 7.1)?&lt;/p&gt;
 
@@ -283,255 +812,7 @@ obj.method(new array());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
     PHP 7.4 is going to add support for real covariance/contravariance (&lt;a href=&quot;https://wiki.php.net/rfc/covariant-returns-and-contravariant-parameters&quot;&gt;rfc&lt;/a&gt;).
     It will be a great improvement to PHP's type system.
   &lt;/p&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">A complete guide to covariance and contravariance in PHP 7.1.</summary></entry><entry><title type="html">PHP quiz #4 - hoisting</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-4-hoisting.html" rel="alternate" type="text/html" title="PHP quiz #4 - hoisting" /><published>2019-06-16T00:00:00+01:00</published><updated>2019-06-16T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-4-hoisting</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-4-hoisting.html">&lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;Question&lt;/h2&gt;
-  &lt;p&gt;What will this code output?&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;helloWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;helloWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello World!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-  &lt;ul class=&quot;answers&quot;&gt;
-    &lt;li class=&quot;answer&quot;&gt;
-      &lt;span class=&quot;answer-letter&quot;&gt;A&lt;/span&gt;
-      &lt;span&gt;Fatal error: Uncaught Error: Call to undefined function helloWorld()&lt;/span&gt;
-    &lt;/li&gt;
-    &lt;li class=&quot;answer&quot;&gt;
-      &lt;span class=&quot;answer-letter&quot;&gt;B&lt;/span&gt;
-      &lt;span&gt;Nothing&lt;/span&gt;
-    &lt;/li&gt;
-    &lt;li class=&quot;answer&quot;&gt;
-      &lt;span class=&quot;answer-letter&quot;&gt;C&lt;/span&gt;
-      &lt;span&gt;Hello World!&lt;/span&gt;
-    &lt;/li&gt;
-    &lt;li class=&quot;answer&quot;&gt;
-      &lt;span class=&quot;answer-letter&quot;&gt;D&lt;/span&gt;
-      &lt;span&gt;Warning + &quot;helloWorld()&quot;&lt;/span&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;Answer&lt;/h2&gt;
-  &lt;a id=&quot;show-answer&quot; href=&quot;#&quot;&gt;Show the answer&lt;/a&gt;
-  &lt;div id=&quot;answer&quot;&gt;
-    &lt;div class=&quot;answer&quot;&gt;
-      &lt;span class=&quot;answer-letter&quot;&gt;C&lt;/span&gt;
-      &lt;pre&gt;Hello World!&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;Explanation&lt;/h2&gt;
-  &lt;h3&gt;Hoisting&lt;/h3&gt;
-  &lt;p&gt;
-    Similarly to JavaScript, function declarations are resolved at compile time.
-    By the time the interpreter calls our function, it will have been already defined.
-    The program will run without any problems.
-  &lt;/p&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
-  &lt;h3&gt;Restrictions on hoisting&lt;/h3&gt;
-  &lt;p&gt;
-    When the function is defined conditionally, this is not the case.
-    For hoisting to work, it has to be defined on the top level.
-    The following will throw a fatal error:
-  &lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// Fatal error: Uncaught Error: Call to undefined function helloWorld().&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;helloWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-
-  &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;helloWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello World!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
-  &lt;h3&gt;Includes&lt;/h3&gt;
-  &lt;p&gt;What about includes?&lt;/p&gt;
-  &lt;p&gt;
-    Naturally, they are only resolved at runtime.
-    When including a function, the include statement must run before the function call.
-  &lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Fatal error: Uncaught Error: Call to undefined function helloWorld().&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;helloWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Includes the helloWorld function.&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;helloWorld.php&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
-  &lt;h3&gt;Classes&lt;/h3&gt;
-  &lt;p&gt;Functions are not the only unit of code organization (thank God!).&lt;/p&gt;
-  &lt;p&gt;
-    Hoisting applies to class, interface and trait declarations too.
-    More or less.
-  &lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// OK!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-  &lt;p&gt;It becomes less graceful when multiple levels of inheritance is introduced.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Fatal error: Class 'B' not found in ...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-  &lt;p&gt;It's not that big of a problem though.&lt;/p&gt;
-  &lt;p&gt;
-    Avoiding top level functions and declaring one class per file is considered as best practice.
-    This eliminates the possibility of ever relying on PHP to hoist your code.
-  &lt;/p&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">The term &quot;hoisting&quot; is used exclusively by JavaScript to describe its feature of moving variable and function declarations to the top of the current scope. Other languages have concepts resembling hoisting too, but for some reason they aren't discussed nearly as much as they should be.</summary></entry><entry><title type="html">PHP quiz #3 - operator associativity</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html" rel="alternate" type="text/html" title="PHP quiz #3 - operator associativity" /><published>2019-06-16T00:00:00+01:00</published><updated>2019-06-16T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-3-associativity.html">&lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;Question&lt;/h2&gt;
-  &lt;p&gt;What will this code output?&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-
-&lt;span class=&quot;nv&quot;&gt;$x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'true'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'false'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-  &lt;ul class=&quot;answers&quot;&gt;
-    &lt;li class=&quot;answer&quot;&gt;
-      &lt;span class=&quot;answer-letter&quot;&gt;A&lt;/span&gt;
-      &lt;pre&gt;Syntax error&lt;/pre&gt;
-    &lt;/li&gt;
-    &lt;li class=&quot;answer&quot;&gt;
-      &lt;span class=&quot;answer-letter&quot;&gt;B&lt;/span&gt;
-      &lt;pre&gt;true&lt;/pre&gt;
-    &lt;/li&gt;
-    &lt;li class=&quot;answer&quot;&gt;
-      &lt;span class=&quot;answer-letter&quot;&gt;C&lt;/span&gt;
-      &lt;pre&gt;false&lt;/pre&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;Answer&lt;/h2&gt;
-  &lt;a id=&quot;show-answer&quot; href=&quot;#&quot;&gt;Show the answer&lt;/a&gt;
-  &lt;div id=&quot;answer&quot;&gt;
-    &lt;div class=&quot;answer&quot;&gt;
-      &lt;span class=&quot;answer-letter&quot;&gt;A&lt;/span&gt;
-      &lt;pre&gt;Syntax error&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;Explanation&lt;/h2&gt;
-  &lt;h3&gt;Operator associativity&lt;/h3&gt;
-  &lt;p&gt;Operator associativity decides how operators of equal precedence are grouped.&lt;/p&gt;
-  &lt;table&gt;
-    &lt;thead&gt;
-      &lt;tr&gt;
-        &lt;th&gt;operator&lt;/th&gt;
-        &lt;th&gt;associativity&lt;/th&gt;
-        &lt;th&gt;example&lt;/th&gt;
-        &lt;th&gt;result&lt;/th&gt;
-      &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-      &lt;tr&gt;
-        &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; (addition)&lt;/td&gt;
-        &lt;td&gt;left&lt;/td&gt;
-        &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1 + 2 + 3&lt;/code&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;(1 + 2) + 3&lt;/code&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;=&lt;/code&gt; (assignment)&lt;/td&gt;
-        &lt;td&gt;right&lt;/td&gt;
-        &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$a = $b = $c&lt;/code&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$a = ($b = $c)&lt;/code&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-    &lt;/tbody&gt;
-  &lt;/table&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
-  &lt;h3&gt;Non-associative operators&lt;/h3&gt;
-  &lt;p&gt;
-    In PHP, however, comparison operators are &lt;em&gt;non-associative&lt;/em&gt;.
-    They cannot be used next to each other.
-  &lt;/p&gt;
-  &lt;p&gt;The expression &lt;code class=&quot;highlighter-rouge&quot;&gt;$z &gt; $y &gt; $x&lt;/code&gt; is illegal.&lt;/p&gt;
-  &lt;table&gt;
-    &lt;thead&gt;
-      &lt;tr&gt;
-        &lt;th&gt;operator&lt;/th&gt;
-        &lt;th&gt;associativity&lt;/th&gt;
-        &lt;th&gt;example&lt;/th&gt;
-        &lt;th&gt;result&lt;/th&gt;
-      &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-      &lt;tr&gt;
-        &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt; (greater-than)&lt;/td&gt;
-        &lt;td&gt;non-associative&lt;/td&gt;
-        &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$z &amp;gt; $y &amp;gt; $x&lt;/code&gt;&lt;/td&gt;
-        &lt;td&gt;syntax error&lt;/td&gt;
-      &lt;/tr&gt;
-    &lt;/tbody&gt;
-  &lt;/table&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
-  &lt;h3&gt;Other languages&lt;/h3&gt;
-  &lt;p&gt;
-    Most programming languages do not allow the &lt;a href=&quot;https://en.wikipedia.org/wiki/Relational_operator#Operator_chaining&quot;&gt;chaining of relational operators&lt;/a&gt;.
-    The desired result is usually achieved with something like &lt;code class=&quot;highlighter-rouge&quot;&gt;$z &gt; $y &amp;&amp; $y &gt; $x&lt;/code&gt;.
-  &lt;/p&gt;
-  &lt;p&gt;
-    A notable exception is Python.
-    It evaluates chained relational operators the way someone less scarred by programming would expect:
-  &lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'true'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'false'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-  &lt;p&gt;Awesome!&lt;/p&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
-  &lt;h3&gt;Credits&lt;/h3&gt;
-  &lt;p&gt;This post was inspired by Upwork's ridiculously incorrect &lt;a href=&quot;https://www.upwork.com/i/interview-questions/php/&quot;&gt;PHP interview question&lt;/a&gt;.&lt;/p&gt;
-  &lt;p style=&quot;text-align: center&quot;&gt;
-    &lt;img src=&quot;/assets/images/php-quiz-part-3/upwork-question.png&quot; alt=&quot;Upwork question&quot; title=&quot;Upwork question&quot; /&gt;
-  &lt;/p&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">Operators are the building blocks of computer programs. You might think you know them, but the devil is in the details. After all these years, I still find myself revisiting the precedence table every once in a while.</summary></entry><entry><title type="html">PHP quiz #5 - constructor overriding</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html" rel="alternate" type="text/html" title="PHP quiz #5 - constructor overriding" /><published>2019-06-16T00:00:00+01:00</published><updated>2019-06-16T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html">&lt;section class=&quot;section&quot;&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">A complete guide to covariance and contravariance in PHP 7.1.</summary></entry><entry><title type="html">PHP quiz #5 - constructor overriding</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html" rel="alternate" type="text/html" title="PHP quiz #5 - constructor overriding" /><published>2019-06-16T00:00:00+01:00</published><updated>2019-06-16T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
 
