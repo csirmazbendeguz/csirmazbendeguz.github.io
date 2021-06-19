@@ -1,45 +1,567 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2021-01-17T19:05:40+00:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">My favorite movie</title><link href="https://csirmazbendeguz.net/2021/01/14/my-favorite-movie.html" rel="alternate" type="text/html" title="My favorite movie" /><published>2021-01-14T00:00:00+00:00</published><updated>2021-01-14T00:00:00+00:00</updated><id>https://csirmazbendeguz.net/2021/01/14/my-favorite-movie</id><content type="html" xml:base="https://csirmazbendeguz.net/2021/01/14/my-favorite-movie.html">&lt;section class=&quot;section&quot;&gt;
-    &lt;p&gt;
-        A couple years ago my workplace assessed the English skills of all employees.
-    &lt;/p&gt;
-    &lt;p&gt;
-        The teacher was really kind and professional.
-        When she interviewed me she started with an innocuous question: &lt;em&gt;What's your favorite movie?&lt;/em&gt;
-    &lt;/p&gt;
-    &lt;p&gt;
-        Sounds like an easy one! But not for me :( I was totally unprepared for personal questions like this at the time.
-    &lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2021-06-19T23:29:13+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">How to convert a matrix to a table in Google Sheets</title><link href="https://csirmazbendeguz.net/2021/06/19/how-to-convert-a-matrix-to-a-table-in-google-sheets.html" rel="alternate" type="text/html" title="How to convert a matrix to a table in Google Sheets" /><published>2021-06-19T00:00:00+01:00</published><updated>2021-06-19T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2021/06/19/how-to-convert-a-matrix-to-a-table-in-google-sheets</id><content type="html" xml:base="https://csirmazbendeguz.net/2021/06/19/how-to-convert-a-matrix-to-a-table-in-google-sheets.html">&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Motivation&lt;/h3&gt;
+  &lt;p&gt;
+    I came across an interesting problem while performing my data engineering duties at work.
+  &lt;/p&gt;
+  &lt;p&gt;
+    I had to import a spreadsheet's content into a relational database.
+    It may sound like a trivial task, but there was a catch: the data was defined in a matrix format.
+  &lt;/p&gt;
+  &lt;p&gt;
+    It looked something like this:
+  &lt;/p&gt;
+  &lt;p style=&quot;text-align:center;margin:18px 0;&quot;&gt;
+    &lt;img
+        src=&quot;/assets/images/how-to-convert-a-matrix-to-a-table-in-google-sheets/matrix.png&quot;
+        alt=&quot;The matrix&quot;
+        title=&quot;The matrix&quot;
+        style=&quot;max-width:900px;&quot;
+    /&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    The matrix defines the budget for each department for the first half of 2021.
+  &lt;/p&gt;
+  &lt;p&gt;
+    To import this data into an RDBMS, we need to convert it to a table first.
+  &lt;/p&gt;
+  &lt;p style=&quot;text-align:center;margin:18px 0;&quot;&gt;
+    &lt;img
+        src=&quot;/assets/images/how-to-convert-a-matrix-to-a-table-in-google-sheets/expected.png&quot;
+        alt=&quot;The table&quot;
+        title=&quot;The table&quot;
+        style=&quot;max-width:900px;max-height:500px;&quot;
+    /&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    The transformation should be dynamic, so when the matrix is updated,
+    the changes are automatically reflected in the table.
+  &lt;/p&gt;
+  &lt;p&gt;
+    I haven't found any articles on the subject, so I thought my solution is worth sharing.
+  &lt;/p&gt;
+&lt;/section&gt;
 
-    &lt;p&gt;
-        Here's a rough translation of what went through my mind:
-    &lt;/p&gt;
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Helper tables&lt;/h3&gt;
+  &lt;p&gt;
+    To make our lives easier, let's define two helper tables - one for the matrix rows and one for the matrix columns.
+  &lt;/p&gt;
+  &lt;p style=&quot;text-align:center;margin:18px 0;&quot;&gt;
+    &lt;img
+        src=&quot;/assets/images/how-to-convert-a-matrix-to-a-table-in-google-sheets/matrix-rows-table.png&quot;
+        alt=&quot;The matrix rows table&quot;
+        title=&quot;The matrix rows table&quot;
+        style=&quot;max-width:400px;max-height:300px;margin: 12px;&quot;
+    /&gt;
+    &lt;img
+        src=&quot;/assets/images/how-to-convert-a-matrix-to-a-table-in-google-sheets/matrix-columns-table.png&quot;
+        alt=&quot;The matrix columns table&quot;
+        title=&quot;The matrix columns table&quot;
+        style=&quot;max-width:300px;max-height:300px;margin: 12px;&quot;
+    /&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    Let's make them truly dynamic, so whenever a new row or column is added to the matrix, it automatically appears in
+    the helper table.
+  &lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Counting the matrix rows/columns&lt;/h3&gt;
+  &lt;p&gt;First, we need a way to count the number of rows/columns in the matrix.&lt;/p&gt;
+  &lt;p&gt;
+    Luckily for us, the &lt;a href=&quot;https://support.google.com/docs/answer/3093991?hl=en-GB&quot;&gt;COUNTA&lt;/a&gt; function
+    will cover 100% of our counting needs.
+  &lt;/p&gt;
+  &lt;p&gt;
+    It's a function that counts all non-empty cells inside a given range:
+  &lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;code class=&quot;highlighter-rouge&quot;&gt;counta(matrix!$A:$A)&lt;/code&gt; - count the number of rows (i.e. non-empty cells in &lt;em&gt;column A&lt;/em&gt;)
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;code class=&quot;highlighter-rouge&quot;&gt;counta(matrix!$1:$1)&lt;/code&gt; - count the number of columns (i.e. non-empty cells in &lt;em&gt;row 1&lt;/em&gt;)
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p style=&quot;text-align:center;margin:18px 0;&quot;&gt;
+    &lt;img
+        src=&quot;/assets/images/how-to-convert-a-matrix-to-a-table-in-google-sheets/count-items.png&quot;
+        alt=&quot;Counting the matrix rows/columns&quot;
+        title=&quot;Counting the matrix rows/columns&quot;
+        style=&quot;max-width:600px;max-height:300px;&quot;
+    /&gt;
+  &lt;/p&gt;
+  &lt;p&gt;In its current state, the matrix has 9 rows and 6 columns.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Copying the matrix rows&lt;/h3&gt;
+  &lt;p&gt;
+    To copy the matrix rows, we can use the
+    &lt;a href=&quot;https://support.google.com/docs/answer/3093275?hl=en-GB&quot;&gt;ARRAYFORMULA&lt;/a&gt; function.
+  &lt;/p&gt;
+  &lt;p style=&quot;text-align:center;margin:18px 0;&quot;&gt;
+    &lt;img
+        src=&quot;/assets/images/how-to-convert-a-matrix-to-a-table-in-google-sheets/copy-matrix-rows.png&quot;
+        alt=&quot;Copying the matrix rows&quot;
+        title=&quot;Copying the matrix rows&quot;
+        style=&quot;max-width:600px;max-height:300px;&quot;
+    /&gt;
+  &lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-escape&quot; data-lang=&quot;escape&quot;&gt;ARRAYFORMULA(INDIRECT(&quot;matrix!A2:A&quot; &amp;amp; (COUNTA(matrix!$A:$A) + 1)))&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;p&gt;
+    This formula:
     &lt;ul&gt;
-        &lt;li&gt;A favorite movie should be something I've watched multiple times&lt;/li&gt;
-        &lt;li&gt;Could it be a movie from my childhood? Disney movies sound like good candidates&lt;/li&gt;
-        &lt;li&gt;Nope, they aren't. What was the last time I've rewatched them? Not recently for sure&lt;/li&gt;
-        &lt;li&gt;There are some good movies I've seen recently but none that I've seen more than once&lt;/li&gt;
-        &lt;li&gt;Nothing comes to mind...&lt;/li&gt;
-        &lt;li&gt;Why can't I answer this simple question? Do I even know myself?&lt;/li&gt;
+      &lt;li&gt;
+        Builds the string &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;matrix!A2:A10&quot;&lt;/code&gt;.
+        This string represents the cell range of the matrix rows.
+      &lt;/li&gt;
+      &lt;li&gt;
+        If a new row is added to the matrix, the range is automatically increased by one row (because of the
+        &lt;code class=&quot;highlighter-rouge&quot;&gt;COUNTA&lt;/code&gt; function).
+      &lt;/li&gt;
+      &lt;li&gt;
+        Then, it converts the &lt;em&gt;cell range string&lt;/em&gt; to an actual &lt;em&gt;cell range reference&lt;/em&gt; with the
+        &lt;a href=&quot;https://support.google.com/docs/answer/3093377?hl=en-GB&quot;&gt;INDIRECT&lt;/a&gt; function.
+      &lt;/li&gt;
+      &lt;li&gt;
+        Finally, it copies the cell range reference to the current position with the &lt;em&gt;ARRAYFORMULA&lt;/em&gt; function.
+      &lt;/li&gt;
     &lt;/ul&gt;
+  &lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Generating ID numbers&lt;/h3&gt;
+  &lt;p&gt;
+    To generate ID numbers, we can use &lt;em&gt;ARRAYFORMULA&lt;/em&gt; combined with the
+    &lt;a href=&quot;https://support.google.com/docs/answer/3093316?hl=en-GB&quot;&gt;ROW&lt;/a&gt; function.
+  &lt;/p&gt;
+  &lt;p style=&quot;text-align:center;margin:18px 0;&quot;&gt;
+    &lt;img
+        src=&quot;/assets/images/how-to-convert-a-matrix-to-a-table-in-google-sheets/generating-id-numbers.png&quot;
+        alt=&quot;Generating ID numbers&quot;
+        title=&quot;Generating ID numbers&quot;
+        style=&quot;max-width:600px;max-height:300px;&quot;
+    /&gt;
+  &lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-escape&quot; data-lang=&quot;escape&quot;&gt;ARRAYFORMULA(ROW(INDIRECT(&quot;B2:B&quot; &amp;amp; (COUNTA($B:$B)))) - 2)&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;p&gt;
+    The idea is similar to copying cells.
+    &lt;ul&gt;
+      &lt;li&gt;
+        First, it builds the cell range string &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;B2:B10&quot;&lt;/code&gt;.
+        If a row is added/deleted, the range is automatically adjusted.
+      &lt;/li&gt;
+      &lt;li&gt;
+        Then, it converts the string to a &lt;em&gt;cell range reference&lt;/em&gt; with &lt;em&gt;INDIRECT&lt;/em&gt;.
+      &lt;/li&gt;
+      &lt;li&gt;
+        Next, it takes the row number of each cell (with &lt;em&gt;ROW&lt;/em&gt;) and subtracts two, so the resulting sequence
+        is zero-based. We'll see why this is important later.
+      &lt;/li&gt;
+      &lt;li&gt;
+        Finally, it copies the sequence to the given position with &lt;em&gt;ARRAYFORMULA&lt;/em&gt;.
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Calculating the last matrix column&lt;/h3&gt;
+  &lt;p&gt;
+    To calculate the last matrix column, we can use the
+    &lt;a href=&quot;https://support.google.com/docs/answer/3093308?hl=en-GB&quot;&gt;ADDRESS&lt;/a&gt; function.
+  &lt;/p&gt;
+  &lt;p style=&quot;text-align:center;margin:18px 0;&quot;&gt;
+    &lt;img
+        src=&quot;/assets/images/how-to-convert-a-matrix-to-a-table-in-google-sheets/getting-the-last-matrix-column.png&quot;
+        alt=&quot;Calculating the last matrix column&quot;
+        title=&quot;Calculating the last matrix column&quot;
+        style=&quot;max-width:450px;max-height:250px;&quot;
+    /&gt;
+  &lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-escape&quot; data-lang=&quot;escape&quot;&gt;address(1, counta(matrix!$1:$1) + 1, 4)&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;p&gt;
+    The address function takes a row and a column number, and returns a cell reference string.
+  &lt;/p&gt;
+  &lt;p&gt;
+    So, in the formula above:
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt; is the row number.
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;code class=&quot;highlighter-rouge&quot;&gt;counta(matrix!$1:$1) + 1&lt;/code&gt; is the column number.
+        It will evaluate to &lt;code class=&quot;highlighter-rouge&quot;&gt;7&lt;/code&gt; in this example.
+        Column 7 is G.
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;code class=&quot;highlighter-rouge&quot;&gt;4&lt;/code&gt; is the flag for returning the address in the format
+        &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;G1&quot;&lt;/code&gt;.
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Copying the matrix columns&lt;/h3&gt;
+  &lt;p&gt;
+    Copying the matrix columns is pretty similar to copying the rows.
+  &lt;/p&gt;
+  &lt;p style=&quot;text-align:center;margin:18px 0;&quot;&gt;
+    &lt;img
+        src=&quot;/assets/images/how-to-convert-a-matrix-to-a-table-in-google-sheets/copy-matrix-columns.png&quot;
+        alt=&quot;Copying the matrix columns&quot;
+        title=&quot;Copying the matrix columns&quot;
+        style=&quot;max-width:700px;max-height:400px;&quot;
+    /&gt;
+  &lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-escape&quot; data-lang=&quot;escape&quot;&gt;transpose(arrayformula(to_text(indirect(&quot;matrix!B1:&quot; &amp;amp; address(1, counta(matrix!$1:$1) + 1, 4)))))&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;p&gt;That's quite a mouthful! Here's what it does:&lt;/p&gt;
+  &lt;p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        First, it builds the &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;matrix!B1:G1&quot;&lt;/code&gt; cell range string with the help
+        of the &lt;em&gt;ADDRESS&lt;/em&gt; function.
+      &lt;/li&gt;
+      &lt;li&gt;
+        If a new column is added, the range is automatically adjusted.
+        For example, if we added the column &lt;code class=&quot;highlighter-rouge&quot;&gt;Jul-21&lt;/code&gt;, the cell range string would be
+        &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;matrix!B1:H1&quot;&lt;/code&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        Then, it transforms the &lt;em&gt;cell range string&lt;/em&gt; to a &lt;em&gt;cell range reference&lt;/em&gt;
+        with &lt;em&gt;INDIRECT&lt;/em&gt;, and copies the values to the position with
+        &lt;em&gt;ARRAYFORMULA&lt;/em&gt; (as discussed above).
+      &lt;/li&gt;
+      &lt;li&gt;
+        The values are converted to text with the
+        &lt;a href=&quot;https://support.google.com/docs/answer/3094285?hl=en-GB&quot;&gt;TO_TEXT&lt;/a&gt; function.
+        This is to make sure Google Sheets handles the values as texts (and not as dates).
+      &lt;/li&gt;
+      &lt;li&gt;
+        Note that &lt;em&gt;ARRAYFORMULA&lt;/em&gt; will output the cell range horizontally.
+        To change it to vertical, we need to use the
+        &lt;a href=&quot;https://support.google.com/docs/answer/3094262?hl=en-GB&quot;&gt;TRANSPOSE&lt;/a&gt; function.
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Flattening the matrix values&lt;/h3&gt;
+  &lt;p&gt;Now that both helper tables are ready, we can start adding columns to the main table.&lt;/p&gt;
+  &lt;p&gt;
+    To make things easier, let's use the
+    &lt;a href=&quot;https://support.google.com/docs/answer/10307761?hl=en-GB&quot;&gt;FLATTEN&lt;/a&gt; function.
+  &lt;/p&gt;
+  &lt;p&gt;
+    The &lt;em&gt;FLATTEN&lt;/em&gt; function takes a range of values and &lt;em&gt;flattens&lt;/em&gt; them into a single column.
+  &lt;/p&gt;
+  &lt;p&gt;
+    For example:
+  &lt;/p&gt;
+  &lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;table style=&quot;display: inline-block; vertical-align: middle;&quot;&gt;
+      &lt;tr&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;2&lt;/td&gt;
+        &lt;td&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;4&lt;/td&gt;
+        &lt;td&gt;5&lt;/td&gt;
+        &lt;td&gt;6&lt;/td&gt;
+        &lt;td&gt;7&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;8&lt;/td&gt;
+        &lt;td&gt;9&lt;/td&gt;
+        &lt;td&gt;10&lt;/td&gt;
+        &lt;td&gt;11&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;div style=&quot;display: inline-block; vertical-align: middle;&quot;&gt;&amp;#8594;&lt;/div&gt;
+    &lt;table style=&quot;display: inline-block; vertical-align: middle;&quot;&gt;
+      &lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;11&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;p&gt;
+    It can be used for extracting the matrix values into the main table:
+  &lt;/p&gt;
+  &lt;p style=&quot;text-align:center;margin:18px 0;&quot;&gt;
+    &lt;img
+        src=&quot;/assets/images/how-to-convert-a-matrix-to-a-table-in-google-sheets/flattening-matrix-values.png&quot;
+        alt=&quot;Flattening the matrix values&quot;
+        title=&quot;Flattening the matrix values&quot;
+        style=&quot;max-width:700px;max-height:400px;&quot;
+    /&gt;
+  &lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-escape&quot; data-lang=&quot;escape&quot;&gt;flatten(indirect(&quot;matrix!B2:&quot; &amp;amp; address(counta(matrix!$A:$A) + 1, counta(matrix!$1:$1) + 1, 4)))&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;p&gt;
+    This formula is pretty similar to the previous steps:
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        First, it builds the &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;matrix!B2:G10&quot;&lt;/code&gt; &lt;em&gt;cell range string&lt;/em&gt; with the
+        help of the &lt;em&gt;ADDRESS&lt;/em&gt; function.
+        If someone adds a new column or row to the matrix, the range is automatically adjusted.
+      &lt;/li&gt;
+      &lt;li&gt;
+        Then, the &lt;em&gt;cell range string&lt;/em&gt; is transformed to a &lt;em&gt;cell range reference&lt;/em&gt; with &lt;em&gt;INDIRECT&lt;/em&gt;.
+      &lt;/li&gt;
+      &lt;li&gt;
+        Finally, &lt;em&gt;FLATTEN&lt;/em&gt; flattens the matrix values into a column and outputs them
+        (similarly to &lt;em&gt;ARRAYFORMULA&lt;/em&gt;).
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/p&gt;
+  &lt;aside class=&quot;comment&quot;&gt;
     &lt;p&gt;
-        Note that this was all in my head, I haven't uttered a single word.
-        I was so lost in my thoughts I haven't even realized I've been silent for half a minute.
-    &lt;/p&gt;
-    &lt;aside class=&quot;comment&quot;&gt;
-        &lt;p&gt;Imagine asking someone what their favorite movie is and getting a thousand-yard stare as a response.&lt;/p&gt;
-    &lt;/aside&gt;
-    &lt;p&gt;
-        After I made the situation as uncomfortable as possible,
-        she patiently asked me a new question and we moved on to the rest of the interview (where I tried to
-        prove that I'm not actually a brick wall - despite all evidence to the contrary).
+      Note that &lt;em&gt;FLATTEN&lt;/em&gt; transforms the values in a &lt;strong&gt;left-to-right then top-to-bottom order&lt;/strong&gt;.
     &lt;/p&gt;
     &lt;p&gt;
-        I have better social skills now, but this awkward moment is still imprinted in my memory and it keeps me up at
-        night.
+      This is good news - we can exploit the ordering to calculate the corresponding rows/columns.
     &lt;/p&gt;
-    &lt;p&gt;
-        Hayley, if you're reading this: I don't know, I don't have one. What's yours?
-    &lt;/p&gt;
+  &lt;/aside&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Calculating the row IDs&lt;/h3&gt;
+  &lt;p&gt;
+    To calculate which matrix row a given item belongs to, divide the ID with the width of the matrix
+    and discard the remainder (keep the integer part only).
+  &lt;/p&gt;
+  &lt;p&gt;
+    For example:
+  &lt;/p&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;&amp;#8594;&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;&amp;#8594;&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;&amp;#8594;&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;p&gt;
+    That is,
+    &lt;ul&gt;
+      &lt;li&gt;0, 1, 2 and 3 divided by 4 is 0&lt;/li&gt;
+      &lt;li&gt;4, 5, 6 and 7 divided by 4 is 1&lt;/li&gt;
+      &lt;li&gt;8, 9, 10 and 11 divided by 4 is 2&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    We can use the
+    &lt;a href=&quot;https://support.google.com/docs/answer/3093436?hl=en-GB&quot;&gt;QUOTIENT&lt;/a&gt;
+    function for this calculation.
+  &lt;/p&gt;
+  &lt;p&gt;
+    For example:
+  &lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;QUOTIENT(5, 4) = 1&lt;/code&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;QUOTIENT(11, 4) = 2&lt;/code&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p style=&quot;text-align:center;margin:18px 0;&quot;&gt;
+    &lt;img
+        src=&quot;/assets/images/how-to-convert-a-matrix-to-a-table-in-google-sheets/calculating-row-ids.png&quot;
+        alt=&quot;Calculating the row IDs&quot;
+        title=&quot;Calculating the row IDs&quot;
+        style=&quot;max-width:700px;max-height:400px;&quot;
+    /&gt;
+  &lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-escape&quot; data-lang=&quot;escape&quot;&gt;ARRAYFORMULA(QUOTIENT(INDIRECT(&quot;A2:A&quot; &amp;amp; COUNTA($A:$A)), COUNTA(matrix!$1:$1)))&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;p&gt;The formula is pretty straightforward:&lt;/p&gt;
+  &lt;p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      First, it builds the &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;A2:A55&quot;&lt;/code&gt; &lt;em&gt;cell range string&lt;/em&gt; (referring to
+      the &lt;strong&gt;id&lt;/strong&gt; column).
+      Then, it's transformed to a &lt;em&gt;cell range reference&lt;/em&gt; with the &lt;em&gt;INDIRECT&lt;/em&gt; function.
+    &lt;/li&gt;
+    &lt;li&gt;
+      Then, the values are transformed with the &lt;em&gt;QUOTIENT&lt;/em&gt; function
+      (according to the rules above).
+    &lt;/li&gt;
+    &lt;li&gt;
+      Finally, the values are copied to the new column with &lt;em&gt;ARRAYFORMULA&lt;/em&gt;.
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Calculating the column IDs&lt;/h3&gt;
+  &lt;p&gt;
+    To calculate which matrix column a given item belongs to, divide the ID with the width of the matrix
+    and discard the integer part (keep the remainder only).
+  &lt;/p&gt;
+  &lt;p&gt;
+    For example:
+  &lt;/p&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;11&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&amp;#8595;&lt;/td&gt;
+      &lt;td&gt;&amp;#8595;&lt;/td&gt;
+      &lt;td&gt;&amp;#8595;&lt;/td&gt;
+      &lt;td&gt;&amp;#8595;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;p&gt;
+    That is,
+    &lt;ul&gt;
+      &lt;li&gt;0, 4 and 8 modulo 4 is 0&lt;/li&gt;
+      &lt;li&gt;1, 5 and 9 modulo 4 is 1&lt;/li&gt;
+      &lt;li&gt;2, 6 and 10 modulo 4 is 2&lt;/li&gt;
+      &lt;li&gt;3, 7 and 11 modulo 4 is 3&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    For this calculation,
+    the appropriate function is
+    &lt;a href=&quot;https://support.google.com/docs/answer/3093497?hl=en-GB&quot;&gt;MOD&lt;/a&gt;.
+  &lt;/p&gt;
+  &lt;p&gt;
+    For example:
+  &lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MOD(5, 4) = 1&lt;/code&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MOD(11, 4) = 3&lt;/code&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p style=&quot;text-align:center;margin:18px 0;&quot;&gt;
+    &lt;img
+        src=&quot;/assets/images/how-to-convert-a-matrix-to-a-table-in-google-sheets/calculating-column-ids.png&quot;
+        alt=&quot;Calculating the column IDs&quot;
+        title=&quot;Calculating the column IDs&quot;
+        style=&quot;max-width:700px;max-height:400px;&quot;
+    /&gt;
+  &lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-escape&quot; data-lang=&quot;escape&quot;&gt;ARRAYFORMULA(MOD(INDIRECT(&quot;A2:A&quot; &amp;amp; COUNTA($A:$A)), COUNTA(matrix!$1:$1)))&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Looking up the rows/columns by their IDs&lt;/h3&gt;
+  &lt;p&gt;
+    Finally, we need to use the helper tables created earlier to look up the actual row and column names.
+  &lt;/p&gt;
+  &lt;p&gt;
+    The best way to do it is with the
+    &lt;a href=&quot;https://support.google.com/docs/answer/3093318?hl=en-GB&quot;&gt;VLOOKUP&lt;/a&gt;
+    function.
+  &lt;/p&gt;
+  &lt;p&gt;For example:&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-escape&quot; data-lang=&quot;escape&quot;&gt;VLOOKUP(0, rows!A2:B10, 2) --&amp;gt; &quot;Business Development&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;p&gt;
+    &lt;em&gt;VLOOKUP&lt;/em&gt; takes 3 parameters:
+  &lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt; - the id to search for&lt;/li&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rows!A2:B10&lt;/code&gt; - the table to search in&lt;/li&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2&lt;/code&gt; - the column to return&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;The is the final formula:&lt;/p&gt;
+  &lt;p style=&quot;text-align:center;margin:18px 0;&quot;&gt;
+    &lt;img
+        src=&quot;/assets/images/how-to-convert-a-matrix-to-a-table-in-google-sheets/looking-up-rows.png&quot;
+        alt=&quot;Looking up rows&quot;
+        title=&quot;Looking up rows&quot;
+        style=&quot;max-width:700px;max-height:400px;&quot;
+    /&gt;
+  &lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-escape&quot; data-lang=&quot;escape&quot;&gt;ARRAYFORMULA(VLOOKUP(INDIRECT(&quot;C2:C&quot; &amp;amp; COUNTA($C:$C)), INDIRECT(&quot;rows!A2:B&quot; &amp;amp; COUNTA(rows!$B:$B)), 2))&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;p&gt;
+    It looks a bit complicated, but there's actually nothing new here:
+  &lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      First, it builds the &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;C2:C55&quot;&lt;/code&gt; and
+      &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;rows!A2:B10&quot;&lt;/code&gt; cell range references.
+      The first one refers to the &lt;strong&gt;row id&lt;/strong&gt; column, the second one refers to the helper table.
+    &lt;/li&gt;
+    &lt;li&gt;
+      Just like in the example, we pass 3 arguments to &lt;em&gt;VLOOKUP&lt;/em&gt; - the ids to search for, the table to search
+      in and the column to return.
+    &lt;/li&gt;
+    &lt;li&gt;
+      As we've seen before, passing in multiple values to a function that normally accepts a single value means
+      the function will be applied to each value.
+      The results are displayed with &lt;em&gt;ARRAYFORMULA&lt;/em&gt;.
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p style=&quot;text-align:center;margin:18px 0;&quot;&gt;
+    &lt;img
+        src=&quot;/assets/images/how-to-convert-a-matrix-to-a-table-in-google-sheets/looking-up-columns.png&quot;
+        alt=&quot;Looking up columns&quot;
+        title=&quot;Looking up columns&quot;
+        style=&quot;max-width:700px;max-height:400px;&quot;
+    /&gt;
+  &lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-escape&quot; data-lang=&quot;escape&quot;&gt;ARRAYFORMULA(VLOOKUP(INDIRECT(&quot;D2:D&quot; &amp;amp; COUNTA($D:$D)), INDIRECT(&quot;columns!A2:B&quot; &amp;amp; COUNTA(columns!$B:$B)), 2))&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Conclusion&lt;/h3&gt;
+  &lt;p&gt;
+    That's it!
+    I hope this post was helpful.
+  &lt;/p&gt;
+  &lt;p&gt;
+    We've transformed a matrix into a table using nothing but Google Sheets formulas.
+    Not as easy as it looks!
+  &lt;/p&gt;
 &lt;/section&gt;</content><author><name></name></author></entry><entry><title type="html">I wanna be the very best</title><link href="https://csirmazbendeguz.net/2020/12/21/i-wanna-be-the-very-best.html" rel="alternate" type="text/html" title="I wanna be the very best" /><published>2020-12-21T00:00:00+00:00</published><updated>2020-12-21T00:00:00+00:00</updated><id>https://csirmazbendeguz.net/2020/12/21/i-wanna-be-the-very-best</id><content type="html" xml:base="https://csirmazbendeguz.net/2020/12/21/i-wanna-be-the-very-best.html">&lt;section class=&quot;section&quot;&gt;
     &lt;p style=&quot;text-align:center;&quot;&gt;
         &lt;img
@@ -633,7 +1155,114 @@
     Avoiding top level functions and declaring one class per file is considered as best practice.
     This eliminates the possibility of ever relying on PHP to hoist your code.
   &lt;/p&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">The term &quot;hoisting&quot; is used exclusively by JavaScript to describe its feature of moving variable and function declarations to the top of the current scope. Other languages have concepts resembling hoisting too, but for some reason they aren't discussed nearly as much as they should be.</summary></entry><entry><title type="html">PHP quiz #6 - covariance</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html" rel="alternate" type="text/html" title="PHP quiz #6 - covariance" /><published>2019-06-16T00:00:00+01:00</published><updated>2019-06-16T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html">&lt;section class=&quot;section&quot;&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">The term &quot;hoisting&quot; is used exclusively by JavaScript to describe its feature of moving variable and function declarations to the top of the current scope. Other languages have concepts resembling hoisting too, but for some reason they aren't discussed nearly as much as they should be.</summary></entry><entry><title type="html">PHP quiz #5 - constructor overriding</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html" rel="alternate" type="text/html" title="PHP quiz #5 - constructor overriding" /><published>2019-06-16T00:00:00+01:00</published><updated>2019-06-16T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html">&lt;section class=&quot;section&quot;&gt;
+  &lt;h2&gt;Question&lt;/h2&gt;
+  &lt;p&gt;What will this code output?&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LogicException&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;A&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;B&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Exception!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+  &lt;ul class=&quot;answers&quot;&gt;
+    &lt;li class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;A&lt;/span&gt;
+      &lt;span&gt;Warning: Declaration of B::__construct(Exception $e) should be compatible with A::__construct(LogicException $l)&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;B&lt;/span&gt;
+      &lt;pre&gt;B&lt;/pre&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;C&lt;/span&gt;
+      &lt;pre&gt;AB&lt;/pre&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;C&lt;/span&gt;
+      &lt;span&gt;Fatal error: Uncaught Exception: Exception!&lt;/span&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h2&gt;Answer&lt;/h2&gt;
+  &lt;a id=&quot;show-answer&quot; href=&quot;#&quot;&gt;Show the answer&lt;/a&gt;
+  &lt;div id=&quot;answer&quot;&gt;
+    &lt;div class=&quot;answer&quot;&gt;
+      &lt;span class=&quot;answer-letter&quot;&gt;B&lt;/span&gt;
+      &lt;pre&gt;B&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h2&gt;Explanation&lt;/h2&gt;
+  &lt;p&gt;In PHP, the only rule to overriding constructors is that &lt;strong&gt;there are no rules&lt;/strong&gt;!&lt;/p&gt;
+  &lt;p&gt;
+    Constructors can be overridden with &lt;em&gt;any&lt;/em&gt; signature.
+    Their parameters can be changed freely and without consequence.
+  &lt;/p&gt;
+  &lt;p&gt;They can be overridden with completely unrelated parameter types:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Works fine!&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Closure&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;p&gt;Parameters can also be omitted (or added):&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// This is OK too.&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Overriding functions&lt;/h3&gt;
+  &lt;p&gt;
+    Note that this kind of freedom only applies to constructors.
+    Were these functions not constructors, PHP would issue a warning:
+  &lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;abc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LogicException&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Warning: Declaration of B::abc(Exception $e) should be&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// compatible with A::abc(LogicException $l)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;abc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+  &lt;h3&gt;Credits&lt;/h3&gt;
+  &lt;p&gt;This post was inspired by an inaccurate &lt;a href=&quot;https://en.wikipedia.org/wiki/Talk:Covariance_and_contravariance_(computer_science)#Inaccurate_PHP_example&quot;&gt;Wikipedia article&lt;/a&gt;.&lt;/p&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">Most PHP developers probably have already used constructor overriding, as it would be virtually impossible to create object oriented applications without it. Still, many of them might not be familiar with the exact rules around the subject - I know I wasn't.</summary></entry><entry><title type="html">PHP quiz #6 - covariance</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html" rel="alternate" type="text/html" title="PHP quiz #6 - covariance" /><published>2019-06-16T00:00:00+01:00</published><updated>2019-06-16T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-6-covariance.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;Will this code throw a warning (PHP 7.1)?&lt;/p&gt;
 
@@ -854,114 +1483,7 @@ obj.method(new array());&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
     PHP 7.4 is going to add support for real covariance/contravariance (&lt;a href=&quot;https://wiki.php.net/rfc/covariant-returns-and-contravariant-parameters&quot;&gt;rfc&lt;/a&gt;).
     It will be a great improvement to PHP's type system.
   &lt;/p&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">A complete guide to covariance and contravariance in PHP 7.1.</summary></entry><entry><title type="html">PHP quiz #5 - constructor overriding</title><link href="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html" rel="alternate" type="text/html" title="PHP quiz #5 - constructor overriding" /><published>2019-06-16T00:00:00+01:00</published><updated>2019-06-16T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/16/php-quiz-part-5-constructors.html">&lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;Question&lt;/h2&gt;
-  &lt;p&gt;What will this code output?&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LogicException&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;A&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;B&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Exception!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-  &lt;ul class=&quot;answers&quot;&gt;
-    &lt;li class=&quot;answer&quot;&gt;
-      &lt;span class=&quot;answer-letter&quot;&gt;A&lt;/span&gt;
-      &lt;span&gt;Warning: Declaration of B::__construct(Exception $e) should be compatible with A::__construct(LogicException $l)&lt;/span&gt;
-    &lt;/li&gt;
-    &lt;li class=&quot;answer&quot;&gt;
-      &lt;span class=&quot;answer-letter&quot;&gt;B&lt;/span&gt;
-      &lt;pre&gt;B&lt;/pre&gt;
-    &lt;/li&gt;
-    &lt;li class=&quot;answer&quot;&gt;
-      &lt;span class=&quot;answer-letter&quot;&gt;C&lt;/span&gt;
-      &lt;pre&gt;AB&lt;/pre&gt;
-    &lt;/li&gt;
-    &lt;li class=&quot;answer&quot;&gt;
-      &lt;span class=&quot;answer-letter&quot;&gt;C&lt;/span&gt;
-      &lt;span&gt;Fatal error: Uncaught Exception: Exception!&lt;/span&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;Answer&lt;/h2&gt;
-  &lt;a id=&quot;show-answer&quot; href=&quot;#&quot;&gt;Show the answer&lt;/a&gt;
-  &lt;div id=&quot;answer&quot;&gt;
-    &lt;div class=&quot;answer&quot;&gt;
-      &lt;span class=&quot;answer-letter&quot;&gt;B&lt;/span&gt;
-      &lt;pre&gt;B&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
-  &lt;h2&gt;Explanation&lt;/h2&gt;
-  &lt;p&gt;In PHP, the only rule to overriding constructors is that &lt;strong&gt;there are no rules&lt;/strong&gt;!&lt;/p&gt;
-  &lt;p&gt;
-    Constructors can be overridden with &lt;em&gt;any&lt;/em&gt; signature.
-    Their parameters can be changed freely and without consequence.
-  &lt;/p&gt;
-  &lt;p&gt;They can be overridden with completely unrelated parameter types:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// Works fine!&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Closure&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-  &lt;p&gt;Parameters can also be omitted (or added):&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// This is OK too.&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
-  &lt;h3&gt;Overriding functions&lt;/h3&gt;
-  &lt;p&gt;
-    Note that this kind of freedom only applies to constructors.
-    Were these functions not constructors, PHP would issue a warning:
-  &lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;abc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LogicException&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// Warning: Declaration of B::abc(Exception $e) should be&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// compatible with A::abc(LogicException $l)&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;abc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;/section&gt;
-
-&lt;section class=&quot;section&quot;&gt;
-  &lt;h3&gt;Credits&lt;/h3&gt;
-  &lt;p&gt;This post was inspired by an inaccurate &lt;a href=&quot;https://en.wikipedia.org/wiki/Talk:Covariance_and_contravariance_(computer_science)#Inaccurate_PHP_example&quot;&gt;Wikipedia article&lt;/a&gt;.&lt;/p&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">Most PHP developers probably have already used constructor overriding, as it would be virtually impossible to create object oriented applications without it. Still, many of them might not be familiar with the exact rules around the subject - I know I wasn't.</summary></entry><entry><title type="html">PHP quiz #2 - echo</title><link href="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html" rel="alternate" type="text/html" title="PHP quiz #2 - echo" /><published>2019-06-15T00:00:00+01:00</published><updated>2019-06-15T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html">&lt;section class=&quot;section&quot;&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">A complete guide to covariance and contravariance in PHP 7.1.</summary></entry><entry><title type="html">PHP quiz #2 - echo</title><link href="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html" rel="alternate" type="text/html" title="PHP quiz #2 - echo" /><published>2019-06-15T00:00:00+01:00</published><updated>2019-06-15T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/15/php-quiz-part-2-echoes.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
 
@@ -1094,7 +1616,7 @@ a&lt;/pre&gt;
     That is, passing multiple arguments to echo is essentially the same as writing
     separate, consecutive echo statements.
   &lt;/p&gt;
-&lt;/section&gt;</content><author><name></name></author><summary type="html">When people get into PHP development, the first thing they learn is usually the echo statement. Despite its elementary nature, I've found its handling of multiple arguments to be quite tricky.</summary></entry><entry><title type="html">PHP quiz #1 - for loop</title><link href="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html" rel="alternate" type="text/html" title="PHP quiz #1 - for loop" /><published>2019-06-14T00:00:00+01:00</published><updated>2019-06-14T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html">&lt;section class=&quot;section&quot;&gt;
+&lt;/section&gt;</content><author><name></name></author><summary type="html">When people get into PHP development, the first thing they usually learn is the echo statement. Despite its elementary nature, I've found its handling of multiple arguments to be quite tricky.</summary></entry><entry><title type="html">PHP quiz #1 - for loop</title><link href="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html" rel="alternate" type="text/html" title="PHP quiz #1 - for loop" /><published>2019-06-14T00:00:00+01:00</published><updated>2019-06-14T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops</id><content type="html" xml:base="https://csirmazbendeguz.net/2019/06/14/php-quiz-part-1-for-loops.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h2&gt;Question&lt;/h2&gt;
   &lt;p&gt;What will this code output?&lt;/p&gt;
 
@@ -1195,7 +1717,7 @@ a&lt;/pre&gt;
 &lt;span class=&quot;cm&quot;&gt;/* 2. */&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
   &lt;aside class=&quot;comment&quot;&gt;
     &lt;code class=&quot;highlighter-rouge&quot;&gt;printf&lt;/code&gt; returns the number of characters
-    written (&lt;code class=&quot;highlighter-rouge&quot;&gt;13&lt;/code&gt; in our case).
+    printed (&lt;code class=&quot;highlighter-rouge&quot;&gt;13&lt;/code&gt; in our case).
   &lt;/aside&gt;
   &lt;aside class=&quot;comment&quot;&gt;
     &lt;p&gt;
