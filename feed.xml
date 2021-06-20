@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2021-06-19T23:29:13+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">How to convert a matrix to a table in Google Sheets</title><link href="https://csirmazbendeguz.net/2021/06/19/how-to-convert-a-matrix-to-a-table-in-google-sheets.html" rel="alternate" type="text/html" title="How to convert a matrix to a table in Google Sheets" /><published>2021-06-19T00:00:00+01:00</published><updated>2021-06-19T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2021/06/19/how-to-convert-a-matrix-to-a-table-in-google-sheets</id><content type="html" xml:base="https://csirmazbendeguz.net/2021/06/19/how-to-convert-a-matrix-to-a-table-in-google-sheets.html">&lt;section class=&quot;section&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://csirmazbendeguz.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.net/" rel="alternate" type="text/html" /><updated>2021-06-20T01:35:08+01:00</updated><id>https://csirmazbendeguz.net/feed.xml</id><entry><title type="html">How to convert a matrix to a table in Google Sheets</title><link href="https://csirmazbendeguz.net/2021/06/19/how-to-convert-a-matrix-to-a-table-in-google-sheets.html" rel="alternate" type="text/html" title="How to convert a matrix to a table in Google Sheets" /><published>2021-06-19T00:00:00+01:00</published><updated>2021-06-19T00:00:00+01:00</updated><id>https://csirmazbendeguz.net/2021/06/19/how-to-convert-a-matrix-to-a-table-in-google-sheets</id><content type="html" xml:base="https://csirmazbendeguz.net/2021/06/19/how-to-convert-a-matrix-to-a-table-in-google-sheets.html">&lt;section class=&quot;section&quot;&gt;
   &lt;h3&gt;Motivation&lt;/h3&gt;
   &lt;p&gt;
     I came across an interesting problem while performing my data engineering duties at work.
@@ -19,7 +19,7 @@
     /&gt;
   &lt;/p&gt;
   &lt;p&gt;
-    The matrix defines the budget for each department for the first half of 2021.
+    It's a matrix that defines the monthly budget of each department for the first half of 2021.
   &lt;/p&gt;
   &lt;p&gt;
     To import this data into an RDBMS, we need to convert it to a table first.
@@ -37,7 +37,7 @@
     the changes are automatically reflected in the table.
   &lt;/p&gt;
   &lt;p&gt;
-    I haven't found any articles on the subject, so I thought my solution is worth sharing.
+    I haven't found any articles on the subject, so I think my solution is worth sharing.
   &lt;/p&gt;
 &lt;/section&gt;
 
@@ -152,15 +152,15 @@
     The idea is similar to copying cells.
     &lt;ul&gt;
       &lt;li&gt;
-        First, it builds the cell range string &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;B2:B10&quot;&lt;/code&gt;.
-        If a row is added/deleted, the range is automatically adjusted.
+        First, it builds the &lt;em&gt;cell range string&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;B2:B10&quot;&lt;/code&gt;.
+        If a row is added/deleted, this range is automatically adjusted.
       &lt;/li&gt;
       &lt;li&gt;
         Then, it converts the string to a &lt;em&gt;cell range reference&lt;/em&gt; with &lt;em&gt;INDIRECT&lt;/em&gt;.
       &lt;/li&gt;
       &lt;li&gt;
-        Next, it takes the row number of each cell (with &lt;em&gt;ROW&lt;/em&gt;) and subtracts two, so the resulting sequence
-        is zero-based. We'll see why this is important later.
+        Next, it takes the row number of each cell (with &lt;em&gt;ROW&lt;/em&gt;) and subtracts two from all of them, so the
+        resulting sequence is zero-based. We'll see why this is important later.
       &lt;/li&gt;
       &lt;li&gt;
         Finally, it copies the sequence to the given position with &lt;em&gt;ARRAYFORMULA&lt;/em&gt;.
@@ -185,7 +185,7 @@
   &lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-escape&quot; data-lang=&quot;escape&quot;&gt;address(1, counta(matrix!$1:$1) + 1, 4)&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
   &lt;p&gt;
-    The address function takes a row and a column number, and returns a cell reference string.
+    The &lt;em&gt;ADDRESS&lt;/em&gt; function takes a row and a column number, and returns a cell reference string.
   &lt;/p&gt;
   &lt;p&gt;
     So, in the formula above:
@@ -239,9 +239,9 @@
         &lt;em&gt;ARRAYFORMULA&lt;/em&gt; (as discussed above).
       &lt;/li&gt;
       &lt;li&gt;
-        The values are converted to text with the
+        To make sure Google Sheets handles the values as texts (not as dates), all values are
+        converted to text with the
         &lt;a href=&quot;https://support.google.com/docs/answer/3094285?hl=en-GB&quot;&gt;TO_TEXT&lt;/a&gt; function.
-        This is to make sure Google Sheets handles the values as texts (and not as dates).
       &lt;/li&gt;
       &lt;li&gt;
         Note that &lt;em&gt;ARRAYFORMULA&lt;/em&gt; will output the cell range horizontally.
@@ -295,7 +295,7 @@
     &lt;/table&gt;
   &lt;/div&gt;
   &lt;p&gt;
-    It can be used for extracting the matrix values into the main table:
+    We can use it to extract the matrix values into the main table:
   &lt;/p&gt;
   &lt;p style=&quot;text-align:center;margin:18px 0;&quot;&gt;
     &lt;img
@@ -307,14 +307,15 @@
   &lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-escape&quot; data-lang=&quot;escape&quot;&gt;flatten(indirect(&quot;matrix!B2:&quot; &amp;amp; address(counta(matrix!$A:$A) + 1, counta(matrix!$1:$1) + 1, 4)))&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
   &lt;p&gt;
-    This formula is pretty similar to the previous steps:
+    Conceptually, this formula is pretty similar to the previous ones:
   &lt;/p&gt;
   &lt;p&gt;
     &lt;ul&gt;
       &lt;li&gt;
-        First, it builds the &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;matrix!B2:G10&quot;&lt;/code&gt; &lt;em&gt;cell range string&lt;/em&gt; with the
+        First, it builds the &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;matrix!B2:G10&quot;&lt;/code&gt; cell range string with the
         help of the &lt;em&gt;ADDRESS&lt;/em&gt; function.
-        If someone adds a new column or row to the matrix, the range is automatically adjusted.
+        This range includes all matrix values (but not the row/column names).
+        If someone adds a new column or row to the matrix, it is automatically adjusted.
       &lt;/li&gt;
       &lt;li&gt;
         Then, the &lt;em&gt;cell range string&lt;/em&gt; is transformed to a &lt;em&gt;cell range reference&lt;/em&gt; with &lt;em&gt;INDIRECT&lt;/em&gt;.
@@ -330,7 +331,7 @@
       Note that &lt;em&gt;FLATTEN&lt;/em&gt; transforms the values in a &lt;strong&gt;left-to-right then top-to-bottom order&lt;/strong&gt;.
     &lt;/p&gt;
     &lt;p&gt;
-      This is good news - we can exploit the ordering to calculate the corresponding rows/columns.
+      This is good news - &lt;u&gt;we can exploit the ordering to calculate the corresponding rows/columns&lt;/u&gt;.
     &lt;/p&gt;
   &lt;/aside&gt;
 &lt;/section&gt;
@@ -380,17 +381,10 @@
     &lt;/ul&gt;
   &lt;/p&gt;
   &lt;p&gt;
-    We can use the
+    The
     &lt;a href=&quot;https://support.google.com/docs/answer/3093436?hl=en-GB&quot;&gt;QUOTIENT&lt;/a&gt;
-    function for this calculation.
+    function is the natural choice for this calculation.
   &lt;/p&gt;
-  &lt;p&gt;
-    For example:
-  &lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;QUOTIENT(5, 4) = 1&lt;/code&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;QUOTIENT(11, 4) = 2&lt;/code&gt;&lt;/li&gt;
-  &lt;/ul&gt;
   &lt;p style=&quot;text-align:center;margin:18px 0;&quot;&gt;
     &lt;img
         src=&quot;/assets/images/how-to-convert-a-matrix-to-a-table-in-google-sheets/calculating-row-ids.png&quot;
@@ -404,16 +398,16 @@
   &lt;p&gt;
   &lt;ul&gt;
     &lt;li&gt;
-      First, it builds the &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;A2:A55&quot;&lt;/code&gt; &lt;em&gt;cell range string&lt;/em&gt; (referring to
-      the &lt;strong&gt;id&lt;/strong&gt; column).
-      Then, it's transformed to a &lt;em&gt;cell range reference&lt;/em&gt; with the &lt;em&gt;INDIRECT&lt;/em&gt; function.
+      First, it builds the &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;A2:A55&quot;&lt;/code&gt; cell range string (referring to
+      the &lt;strong&gt;id&lt;/strong&gt; column) and
+      creates a cell range reference with the &lt;em&gt;INDIRECT&lt;/em&gt; function.
     &lt;/li&gt;
     &lt;li&gt;
       Then, the values are transformed with the &lt;em&gt;QUOTIENT&lt;/em&gt; function
       (according to the rules above).
     &lt;/li&gt;
     &lt;li&gt;
-      Finally, the values are copied to the new column with &lt;em&gt;ARRAYFORMULA&lt;/em&gt;.
+      Finally, the values are copied to the given cell with &lt;em&gt;ARRAYFORMULA&lt;/em&gt;.
     &lt;/li&gt;
   &lt;/ul&gt;
   &lt;/p&gt;
@@ -474,13 +468,6 @@
     the appropriate function is
     &lt;a href=&quot;https://support.google.com/docs/answer/3093497?hl=en-GB&quot;&gt;MOD&lt;/a&gt;.
   &lt;/p&gt;
-  &lt;p&gt;
-    For example:
-  &lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MOD(5, 4) = 1&lt;/code&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MOD(11, 4) = 3&lt;/code&gt;&lt;/li&gt;
-  &lt;/ul&gt;
   &lt;p style=&quot;text-align:center;margin:18px 0;&quot;&gt;
     &lt;img
         src=&quot;/assets/images/how-to-convert-a-matrix-to-a-table-in-google-sheets/calculating-column-ids.png&quot;
@@ -495,24 +482,29 @@
 &lt;section class=&quot;section&quot;&gt;
   &lt;h3&gt;Looking up the rows/columns by their IDs&lt;/h3&gt;
   &lt;p&gt;
-    Finally, we need to use the helper tables created earlier to look up the actual row and column names.
+    We're almost done!
   &lt;/p&gt;
   &lt;p&gt;
-    The best way to do it is with the
-    &lt;a href=&quot;https://support.google.com/docs/answer/3093318?hl=en-GB&quot;&gt;VLOOKUP&lt;/a&gt;
-    function.
+    We already have the row and column IDs.
+    All that's left to do is to &lt;em&gt;look up&lt;/em&gt; the actual values from the helper tables...
+    and when it comes to looking up things, the best in the business is:
+    &lt;a href=&quot;https://support.google.com/docs/answer/3093318?hl=en-GB&quot;&gt;VLOOKUP&lt;/a&gt;.
   &lt;/p&gt;
-  &lt;p&gt;For example:&lt;/p&gt;
+  &lt;p&gt;
+    To put it simply, it's a function for performing a linear search in a table.
+    For example:
+  &lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-escape&quot; data-lang=&quot;escape&quot;&gt;VLOOKUP(0, rows!A2:B10, 2) --&amp;gt; &quot;Business Development&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;p&gt;Translates to: &quot;find the row name where the id is 0&quot;.&lt;/p&gt;
   &lt;p&gt;
-    &lt;em&gt;VLOOKUP&lt;/em&gt; takes 3 parameters:
+    The function takes 3 parameters:
   &lt;/p&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt; - the id to search for&lt;/li&gt;
     &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rows!A2:B10&lt;/code&gt; - the table to search in&lt;/li&gt;
     &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2&lt;/code&gt; - the column to return&lt;/li&gt;
   &lt;/ul&gt;
-  &lt;p&gt;The is the final formula:&lt;/p&gt;
+  &lt;p&gt;And it can also be combined with &lt;em&gt;ARRAYFORMULA&lt;/em&gt;:&lt;/p&gt;
   &lt;p style=&quot;text-align:center;margin:18px 0;&quot;&gt;
     &lt;img
         src=&quot;/assets/images/how-to-convert-a-matrix-to-a-table-in-google-sheets/looking-up-rows.png&quot;
@@ -529,16 +521,14 @@
     &lt;li&gt;
       First, it builds the &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;C2:C55&quot;&lt;/code&gt; and
       &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;rows!A2:B10&quot;&lt;/code&gt; cell range references.
-      The first one refers to the &lt;strong&gt;row id&lt;/strong&gt; column, the second one refers to the helper table.
+      The first one refers to the &lt;strong&gt;row id&lt;/strong&gt; column, the second one refers to the rows helper table.
     &lt;/li&gt;
     &lt;li&gt;
-      Just like in the example, we pass 3 arguments to &lt;em&gt;VLOOKUP&lt;/em&gt; - the ids to search for, the table to search
+      We pass 3 arguments to &lt;em&gt;VLOOKUP&lt;/em&gt; - the ids to search for, the table to search
       in and the column to return.
     &lt;/li&gt;
     &lt;li&gt;
-      As we've seen before, passing in multiple values to a function that normally accepts a single value means
-      the function will be applied to each value.
-      The results are displayed with &lt;em&gt;ARRAYFORMULA&lt;/em&gt;.
+      Finally, &lt;em&gt;VLOOKUP&lt;/em&gt; finds the row name for each id and the results are displayed with &lt;em&gt;ARRAYFORMULA&lt;/em&gt;.
     &lt;/li&gt;
   &lt;/ul&gt;
   &lt;p style=&quot;text-align:center;margin:18px 0;&quot;&gt;
@@ -556,11 +546,13 @@
   &lt;h3&gt;Conclusion&lt;/h3&gt;
   &lt;p&gt;
     That's it!
-    I hope this post was helpful.
   &lt;/p&gt;
   &lt;p&gt;
-    We've transformed a matrix into a table using nothing but Google Sheets formulas.
+    We transformed a matrix into a table using nothing but Google Sheets formulas.
     Not as easy as it looks!
+  &lt;/p&gt;
+  &lt;p&gt;
+    I hope this post was helpful.
   &lt;/p&gt;
 &lt;/section&gt;</content><author><name></name></author></entry><entry><title type="html">I wanna be the very best</title><link href="https://csirmazbendeguz.net/2020/12/21/i-wanna-be-the-very-best.html" rel="alternate" type="text/html" title="I wanna be the very best" /><published>2020-12-21T00:00:00+00:00</published><updated>2020-12-21T00:00:00+00:00</updated><id>https://csirmazbendeguz.net/2020/12/21/i-wanna-be-the-very-best</id><content type="html" xml:base="https://csirmazbendeguz.net/2020/12/21/i-wanna-be-the-very-best.html">&lt;section class=&quot;section&quot;&gt;
     &lt;p style=&quot;text-align:center;&quot;&gt;
@@ -1768,7 +1760,7 @@ a&lt;/pre&gt;
   &lt;/div&gt;
   &lt;p&gt;
     In this case, the expression &lt;code class=&quot;highlighter-rouge&quot;&gt;$i &lt; 3, $j &lt; 2&lt;/code&gt; has the same effect as &lt;code class=&quot;highlighter-rouge&quot;&gt;$j &lt; 2&lt;/code&gt;.
-    The first operand is evaluated, but its result is disregarded.
+    The first operand is evaluated, but its result is discarded.
   &lt;/p&gt;
   &lt;p&gt;The loop will only iterate twice.&lt;/p&gt;
 &lt;/section&gt;</content><author><name></name></author><summary type="html">For loops are one of the most fundamental and ubiquitous control flow statements. They are so essential to computer programming, you would expect every developer to know them inside out. As for me, I never would have thought I could learn anything new about them - I was wrong.</summary></entry></feed>

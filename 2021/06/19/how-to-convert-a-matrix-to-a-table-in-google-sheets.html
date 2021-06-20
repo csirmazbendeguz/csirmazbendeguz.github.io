@@ -58,7 +58,7 @@
     />
   </p>
   <p>
-    The matrix defines the budget for each department for the first half of 2021.
+    It's a matrix that defines the monthly budget of each department for the first half of 2021.
   </p>
   <p>
     To import this data into an RDBMS, we need to convert it to a table first.
@@ -76,7 +76,7 @@
     the changes are automatically reflected in the table.
   </p>
   <p>
-    I haven't found any articles on the subject, so I thought my solution is worth sharing.
+    I haven't found any articles on the subject, so I think my solution is worth sharing.
   </p>
 </section>
 
@@ -191,15 +191,15 @@
     The idea is similar to copying cells.
     <ul>
       <li>
-        First, it builds the cell range string <code class="highlighter-rouge">"B2:B10"</code>.
-        If a row is added/deleted, the range is automatically adjusted.
+        First, it builds the <em>cell range string</em> <code class="highlighter-rouge">"B2:B10"</code>.
+        If a row is added/deleted, this range is automatically adjusted.
       </li>
       <li>
         Then, it converts the string to a <em>cell range reference</em> with <em>INDIRECT</em>.
       </li>
       <li>
-        Next, it takes the row number of each cell (with <em>ROW</em>) and subtracts two, so the resulting sequence
-        is zero-based. We'll see why this is important later.
+        Next, it takes the row number of each cell (with <em>ROW</em>) and subtracts two from all of them, so the
+        resulting sequence is zero-based. We'll see why this is important later.
       </li>
       <li>
         Finally, it copies the sequence to the given position with <em>ARRAYFORMULA</em>.
@@ -224,7 +224,7 @@
   </p>
 <figure class="highlight"><pre><code class="language-escape" data-lang="escape">address(1, counta(matrix!$1:$1) + 1, 4)</code></pre></figure>
   <p>
-    The address function takes a row and a column number, and returns a cell reference string.
+    The <em>ADDRESS</em> function takes a row and a column number, and returns a cell reference string.
   </p>
   <p>
     So, in the formula above:
@@ -278,9 +278,9 @@
         <em>ARRAYFORMULA</em> (as discussed above).
       </li>
       <li>
-        The values are converted to text with the
+        To make sure Google Sheets handles the values as texts (not as dates), all values are
+        converted to text with the
         <a href="https://support.google.com/docs/answer/3094285?hl=en-GB">TO_TEXT</a> function.
-        This is to make sure Google Sheets handles the values as texts (and not as dates).
       </li>
       <li>
         Note that <em>ARRAYFORMULA</em> will output the cell range horizontally.
@@ -334,7 +334,7 @@
     </table>
   </div>
   <p>
-    It can be used for extracting the matrix values into the main table:
+    We can use it to extract the matrix values into the main table:
   </p>
   <p style="text-align:center;margin:18px 0;">
     <img
@@ -346,14 +346,15 @@
   </p>
 <figure class="highlight"><pre><code class="language-escape" data-lang="escape">flatten(indirect("matrix!B2:" &amp; address(counta(matrix!$A:$A) + 1, counta(matrix!$1:$1) + 1, 4)))</code></pre></figure>
   <p>
-    This formula is pretty similar to the previous steps:
+    Conceptually, this formula is pretty similar to the previous ones:
   </p>
   <p>
     <ul>
       <li>
-        First, it builds the <code class="highlighter-rouge">"matrix!B2:G10"</code> <em>cell range string</em> with the
+        First, it builds the <code class="highlighter-rouge">"matrix!B2:G10"</code> cell range string with the
         help of the <em>ADDRESS</em> function.
-        If someone adds a new column or row to the matrix, the range is automatically adjusted.
+        This range includes all matrix values (but not the row/column names).
+        If someone adds a new column or row to the matrix, it is automatically adjusted.
       </li>
       <li>
         Then, the <em>cell range string</em> is transformed to a <em>cell range reference</em> with <em>INDIRECT</em>.
@@ -369,7 +370,7 @@
       Note that <em>FLATTEN</em> transforms the values in a <strong>left-to-right then top-to-bottom order</strong>.
     </p>
     <p>
-      This is good news - we can exploit the ordering to calculate the corresponding rows/columns.
+      This is good news - <u>we can exploit the ordering to calculate the corresponding rows/columns</u>.
     </p>
   </aside>
 </section>
@@ -419,17 +420,10 @@
     </ul>
   </p>
   <p>
-    We can use the
+    The
     <a href="https://support.google.com/docs/answer/3093436?hl=en-GB">QUOTIENT</a>
-    function for this calculation.
+    function is the natural choice for this calculation.
   </p>
-  <p>
-    For example:
-  </p>
-  <ul>
-    <li><code class="highlighter-rouge">QUOTIENT(5, 4) = 1</code></li>
-    <li><code class="highlighter-rouge">QUOTIENT(11, 4) = 2</code></li>
-  </ul>
   <p style="text-align:center;margin:18px 0;">
     <img
         src="/assets/images/how-to-convert-a-matrix-to-a-table-in-google-sheets/calculating-row-ids.png"
@@ -443,16 +437,16 @@
   <p>
   <ul>
     <li>
-      First, it builds the <code class="highlighter-rouge">"A2:A55"</code> <em>cell range string</em> (referring to
-      the <strong>id</strong> column).
-      Then, it's transformed to a <em>cell range reference</em> with the <em>INDIRECT</em> function.
+      First, it builds the <code class="highlighter-rouge">"A2:A55"</code> cell range string (referring to
+      the <strong>id</strong> column) and
+      creates a cell range reference with the <em>INDIRECT</em> function.
     </li>
     <li>
       Then, the values are transformed with the <em>QUOTIENT</em> function
       (according to the rules above).
     </li>
     <li>
-      Finally, the values are copied to the new column with <em>ARRAYFORMULA</em>.
+      Finally, the values are copied to the given cell with <em>ARRAYFORMULA</em>.
     </li>
   </ul>
   </p>
@@ -513,13 +507,6 @@
     the appropriate function is
     <a href="https://support.google.com/docs/answer/3093497?hl=en-GB">MOD</a>.
   </p>
-  <p>
-    For example:
-  </p>
-  <ul>
-    <li><code class="highlighter-rouge">MOD(5, 4) = 1</code></li>
-    <li><code class="highlighter-rouge">MOD(11, 4) = 3</code></li>
-  </ul>
   <p style="text-align:center;margin:18px 0;">
     <img
         src="/assets/images/how-to-convert-a-matrix-to-a-table-in-google-sheets/calculating-column-ids.png"
@@ -534,24 +521,29 @@
 <section class="section">
   <h3>Looking up the rows/columns by their IDs</h3>
   <p>
-    Finally, we need to use the helper tables created earlier to look up the actual row and column names.
+    We're almost done!
   </p>
   <p>
-    The best way to do it is with the
-    <a href="https://support.google.com/docs/answer/3093318?hl=en-GB">VLOOKUP</a>
-    function.
+    We already have the row and column IDs.
+    All that's left to do is to <em>look up</em> the actual values from the helper tables...
+    and when it comes to looking up things, the best in the business is:
+    <a href="https://support.google.com/docs/answer/3093318?hl=en-GB">VLOOKUP</a>.
   </p>
-  <p>For example:</p>
+  <p>
+    To put it simply, it's a function for performing a linear search in a table.
+    For example:
+  </p>
 <figure class="highlight"><pre><code class="language-escape" data-lang="escape">VLOOKUP(0, rows!A2:B10, 2) --&gt; "Business Development"</code></pre></figure>
+  <p>Translates to: "find the row name where the id is 0".</p>
   <p>
-    <em>VLOOKUP</em> takes 3 parameters:
+    The function takes 3 parameters:
   </p>
   <ul>
     <li><code class="highlighter-rouge">0</code> - the id to search for</li>
     <li><code class="highlighter-rouge">rows!A2:B10</code> - the table to search in</li>
     <li><code class="highlighter-rouge">2</code> - the column to return</li>
   </ul>
-  <p>The is the final formula:</p>
+  <p>And it can also be combined with <em>ARRAYFORMULA</em>:</p>
   <p style="text-align:center;margin:18px 0;">
     <img
         src="/assets/images/how-to-convert-a-matrix-to-a-table-in-google-sheets/looking-up-rows.png"
@@ -568,16 +560,14 @@
     <li>
       First, it builds the <code class="highlighter-rouge">"C2:C55"</code> and
       <code class="highlighter-rouge">"rows!A2:B10"</code> cell range references.
-      The first one refers to the <strong>row id</strong> column, the second one refers to the helper table.
+      The first one refers to the <strong>row id</strong> column, the second one refers to the rows helper table.
     </li>
     <li>
-      Just like in the example, we pass 3 arguments to <em>VLOOKUP</em> - the ids to search for, the table to search
+      We pass 3 arguments to <em>VLOOKUP</em> - the ids to search for, the table to search
       in and the column to return.
     </li>
     <li>
-      As we've seen before, passing in multiple values to a function that normally accepts a single value means
-      the function will be applied to each value.
-      The results are displayed with <em>ARRAYFORMULA</em>.
+      Finally, <em>VLOOKUP</em> finds the row name for each id and the results are displayed with <em>ARRAYFORMULA</em>.
     </li>
   </ul>
   <p style="text-align:center;margin:18px 0;">
@@ -595,11 +585,13 @@
   <h3>Conclusion</h3>
   <p>
     That's it!
-    I hope this post was helpful.
   </p>
   <p>
-    We've transformed a matrix into a table using nothing but Google Sheets formulas.
+    We transformed a matrix into a table using nothing but Google Sheets formulas.
     Not as easy as it looks!
+  </p>
+  <p>
+    I hope this post was helpful.
   </p>
 </section>
 
