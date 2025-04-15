@@ -1,4 +1,108 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://csirmazbendeguz.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.github.io/" rel="alternate" type="text/html" /><updated>2025-04-15T15:30:00+00:00</updated><id>https://csirmazbendeguz.github.io/feed.xml</id><entry><title type="html">How to convert a matrix to a table in Google Sheets</title><link href="https://csirmazbendeguz.github.io/2021/06/19/how-to-convert-a-matrix-to-a-table-in-google-sheets.html" rel="alternate" type="text/html" title="How to convert a matrix to a table in Google Sheets" /><published>2021-06-19T00:00:00+00:00</published><updated>2021-06-19T00:00:00+00:00</updated><id>https://csirmazbendeguz.github.io/2021/06/19/how-to-convert-a-matrix-to-a-table-in-google-sheets</id><content type="html" xml:base="https://csirmazbendeguz.github.io/2021/06/19/how-to-convert-a-matrix-to-a-table-in-google-sheets.html"><![CDATA[<section class="section">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://csirmazbendeguz.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.github.io/" rel="alternate" type="text/html" /><updated>2025-04-15T18:25:00+00:00</updated><id>https://csirmazbendeguz.github.io/feed.xml</id><entry><title type="html">You don’t need CompositePrimaryKeys</title><link href="https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys.html" rel="alternate" type="text/html" title="You don’t need CompositePrimaryKeys" /><published>2025-04-15T00:00:00+00:00</published><updated>2025-04-15T00:00:00+00:00</updated><id>https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys</id><content type="html" xml:base="https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys.html"><![CDATA[<section class="section">
+  <h3>TL;DR</h3>
+  <p>
+    <a href="https://docs.djangoproject.com/en/5.2/releases/5.2">Django 5.2</a>
+    ships with the new <code class="highlighter-rouge">CompositePrimaryKey</code>
+    class.
+  </p>
+  <p>
+    You should probably avoid it.
+  </p>
+</section>
+
+<section class="section">
+  <h3>Django 5.2</h3>
+  <p>
+    The latest release of Django comes with built-in support for
+    <a href="https://docs.djangoproject.com/en/dev/topics/composite-primary-key/">composite primary keys</a>.
+  </p>
+  <p>
+    This has been the oldest unresolved <a href="https://code.djangoproject.com/ticket/373">feature request</a>
+    in Django for a long time and I'm proud to have contributed to resolving it.
+  </p>
+  <p>
+    That said, the articles and the documentation doesn't seem to do a great job at
+    explaining when you should use it.
+  </p>
+</section>
+
+<section class="section">
+  <h3>Use Cases</h3>
+  <p>
+    In my opinion, there are 2 valid use-cases:
+  </p>
+  <p>
+    1. If you're connecting Django to a "<em>legacy</em>" database or an external database
+    (i.e. a database not managed by Django migrations), and this database uses composite
+    primary keys, use <code class="highlighter-rouge">CompositePrimaryKey</code> for ORM support.
+  </p>
+  <p>
+    2. If you're using a database sharding or partitioning solution that requires composite
+    primary keys (e.g. <a href="https://www.citusdata.com/">Citus</a>),
+    <code class="highlighter-rouge">CompositePrimaryKey</code> makes it easy to add
+    composite primary keys to your database tables.
+  </p>
+  <p>
+    Personally, my use case is "<em>multi-tenant database architecture with Citus</em>".
+  </p>
+</section>
+
+<section class="section">
+  <h3>When-Not-To-Use Cases</h3>
+  <p>
+    1. DO NOT use composite primary keys in place of surrogate keys
+  </p>
+  <p>
+    <strong>ALWAYS</strong> have a surrogate key. This can be either:
+  </p>
+  <p>
+    <ul>
+      <li>an auto-incremented integer (<code class="highlighter-rouge">AutoField</code>)</li>
+      <li>a UUID (<code class="highlighter-rouge">UUIDField</code>)</li>
+      <li>a Nano ID, CUID or similar (<code class="highlighter-rouge">CharField</code>)</li>
+    </ul>
+  </p>
+  <p><em>"Okay, but what if my database table has a natural composite key?"</em></p>
+  <p>
+    My recommendation is: <strong>DON'T DO IT!</strong>
+  </p>
+  <p>
+    It'll make life difficult for everyone who uses your table, including yourself
+    (think about foreign keys, DDL and DML updates).
+  </p>
+  <p>
+    2. DO NOT use composite primary keys in place of unique constraints
+  </p>
+  <p>
+    It's easy to change unique constraints, but it's hard to change primary keys
+    (again, think about the foreign keys).
+  </p>
+  <p>
+    <code class="highlighter-rouge">unique_together</code> and
+    <code class="highlighter-rouge">UniqueConstraint</code> are perfectly fine,
+    don't replace them with <code class="highlighter-rouge">CompositePrimaryKey</code> 🫠
+  </p>
+</section>
+
+<section class="section">
+  <h3>Conclusion</h3>
+  <p>
+    As a developer,
+    <code class="highlighter-rouge">CompositePrimaryKey</code>
+    can make your life easier, but it can also make it harder.
+  </p>
+  <p>
+    If you don't have a good reason to use it, you should probably avoid it.
+  </p>
+</section>
+
+<section class="section">
+  <h3>Disclaimer</h3>
+  <p>
+    This is my personal opinion and it doesn't represent
+    the opinion of any organization I'm a part of.
+  </p>
+</section>]]></content><author><name></name></author><summary type="html"><![CDATA[A word of caution is in order.]]></summary></entry><entry><title type="html">How to convert a matrix to a table in Google Sheets</title><link href="https://csirmazbendeguz.github.io/2021/06/19/how-to-convert-a-matrix-to-a-table-in-google-sheets.html" rel="alternate" type="text/html" title="How to convert a matrix to a table in Google Sheets" /><published>2021-06-19T00:00:00+00:00</published><updated>2021-06-19T00:00:00+00:00</updated><id>https://csirmazbendeguz.github.io/2021/06/19/how-to-convert-a-matrix-to-a-table-in-google-sheets</id><content type="html" xml:base="https://csirmazbendeguz.github.io/2021/06/19/how-to-convert-a-matrix-to-a-table-in-google-sheets.html"><![CDATA[<section class="section">
   <h3>Motivation</h3>
   <p>
     I came across an interesting problem while performing my data engineering duties at work.
@@ -1147,7 +1251,114 @@
     Avoiding top level functions and declaring one class per file is considered as best practice.
     This eliminates the possibility of ever relying on PHP to hoist your code.
   </p>
-</section>]]></content><author><name></name></author><summary type="html"><![CDATA[The term "hoisting" is used exclusively by JavaScript to describe its feature of moving variable and function declarations to the top of the current scope. Other languages have concepts resembling hoisting too, but for some reason they aren't discussed nearly as much as they should be.]]></summary></entry><entry><title type="html">PHP quiz #6 - covariance</title><link href="https://csirmazbendeguz.github.io/2019/06/16/php-quiz-part-6-covariance.html" rel="alternate" type="text/html" title="PHP quiz #6 - covariance" /><published>2019-06-16T00:00:00+00:00</published><updated>2019-06-16T00:00:00+00:00</updated><id>https://csirmazbendeguz.github.io/2019/06/16/php-quiz-part-6-covariance</id><content type="html" xml:base="https://csirmazbendeguz.github.io/2019/06/16/php-quiz-part-6-covariance.html"><![CDATA[<section class="section">
+</section>]]></content><author><name></name></author><summary type="html"><![CDATA[The term "hoisting" is used exclusively by JavaScript to describe its feature of moving variable and function declarations to the top of the current scope. Other languages have concepts resembling hoisting too, but for some reason they aren't discussed nearly as much as they should be.]]></summary></entry><entry><title type="html">PHP quiz #5 - constructor overriding</title><link href="https://csirmazbendeguz.github.io/2019/06/16/php-quiz-part-5-constructors.html" rel="alternate" type="text/html" title="PHP quiz #5 - constructor overriding" /><published>2019-06-16T00:00:00+00:00</published><updated>2019-06-16T00:00:00+00:00</updated><id>https://csirmazbendeguz.github.io/2019/06/16/php-quiz-part-5-constructors</id><content type="html" xml:base="https://csirmazbendeguz.github.io/2019/06/16/php-quiz-part-5-constructors.html"><![CDATA[<section class="section">
+  <h2>Question</h2>
+  <p>What will this code output?</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="kd">class</span> <span class="nc">A</span> <span class="p">{</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">LogicException</span> <span class="nv">$l</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"A"</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="nc">A</span> <span class="p">{</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"B</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">new</span> <span class="nc">B</span><span class="p">(</span><span class="k">new</span> <span class="nc">Exception</span><span class="p">(</span><span class="s1">'Exception!'</span><span class="p">));</span></code></pre></figure>
+
+  <ul class="answers">
+    <li class="answer">
+      <span class="answer-letter">A</span>
+      <span>Warning: Declaration of B::__construct(Exception $e) should be compatible with A::__construct(LogicException $l)</span>
+    </li>
+    <li class="answer">
+      <span class="answer-letter">B</span>
+      <pre>B</pre>
+    </li>
+    <li class="answer">
+      <span class="answer-letter">C</span>
+      <pre>AB</pre>
+    </li>
+    <li class="answer">
+      <span class="answer-letter">C</span>
+      <span>Fatal error: Uncaught Exception: Exception!</span>
+    </li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>Answer</h2>
+  <a id="show-answer" href="#">Show the answer</a>
+  <div id="answer">
+    <div class="answer">
+      <span class="answer-letter">B</span>
+      <pre>B</pre>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Explanation</h2>
+  <p>In PHP, the only rule to overriding constructors is that <strong>there are no rules</strong>!</p>
+  <p>
+    Constructors can be overridden with <em>any</em> signature.
+    Their parameters can be changed freely and without consequence.
+  </p>
+  <p>They can be overridden with completely unrelated parameter types:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="kd">class</span> <span class="nc">A</span> <span class="p">{</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">array</span> <span class="nv">$a</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="nc">A</span> <span class="p">{</span>
+  <span class="c1">// Works fine!</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">Closure</span> <span class="nv">$c</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span></code></pre></figure>
+  <p>Parameters can also be omitted (or added):</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="kd">class</span> <span class="nc">A</span> <span class="p">{</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">array</span> <span class="nv">$a</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="nc">A</span> <span class="p">{</span>
+  <span class="c1">// This is OK too.</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">()</span> <span class="p">{}</span>
+<span class="p">}</span></code></pre></figure>
+</section>
+
+<section class="section">
+  <h3>Overriding functions</h3>
+  <p>
+    Note that this kind of freedom only applies to constructors.
+    Were these functions not constructors, PHP would issue a warning:
+  </p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="kd">class</span> <span class="nc">A</span> <span class="p">{</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="n">abc</span><span class="p">(</span><span class="kt">LogicException</span> <span class="nv">$l</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="nc">A</span> <span class="p">{</span>
+  <span class="c1">// Warning: Declaration of B::abc(Exception $e) should be</span>
+  <span class="c1">// compatible with A::abc(LogicException $l)</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="n">abc</span><span class="p">(</span><span class="kt">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span></code></pre></figure>
+</section>
+
+<section class="section">
+  <h3>Credits</h3>
+  <p>This post was inspired by an inaccurate <a href="https://en.wikipedia.org/wiki/Talk:Covariance_and_contravariance_(computer_science)#Inaccurate_PHP_example">Wikipedia article</a>.</p>
+</section>]]></content><author><name></name></author><summary type="html"><![CDATA[Most PHP developers probably have already used constructor overriding, as it would be virtually impossible to create object oriented applications without it. Still, many of them might not be familiar with the exact rules around the subject - I know I wasn't.]]></summary></entry><entry><title type="html">PHP quiz #6 - covariance</title><link href="https://csirmazbendeguz.github.io/2019/06/16/php-quiz-part-6-covariance.html" rel="alternate" type="text/html" title="PHP quiz #6 - covariance" /><published>2019-06-16T00:00:00+00:00</published><updated>2019-06-16T00:00:00+00:00</updated><id>https://csirmazbendeguz.github.io/2019/06/16/php-quiz-part-6-covariance</id><content type="html" xml:base="https://csirmazbendeguz.github.io/2019/06/16/php-quiz-part-6-covariance.html"><![CDATA[<section class="section">
   <h2>Question</h2>
   <p>Will this code throw a warning (PHP 7.1)?</p>
 
@@ -1368,114 +1579,7 @@ obj.method(new array());</code></pre></figure>
     PHP 7.4 is going to add support for real covariance/contravariance (<a href="https://wiki.php.net/rfc/covariant-returns-and-contravariant-parameters">rfc</a>).
     It will be a great improvement to PHP's type system.
   </p>
-</section>]]></content><author><name></name></author><summary type="html"><![CDATA[A complete guide to covariance and contravariance in PHP 7.1.]]></summary></entry><entry><title type="html">PHP quiz #5 - constructor overriding</title><link href="https://csirmazbendeguz.github.io/2019/06/16/php-quiz-part-5-constructors.html" rel="alternate" type="text/html" title="PHP quiz #5 - constructor overriding" /><published>2019-06-16T00:00:00+00:00</published><updated>2019-06-16T00:00:00+00:00</updated><id>https://csirmazbendeguz.github.io/2019/06/16/php-quiz-part-5-constructors</id><content type="html" xml:base="https://csirmazbendeguz.github.io/2019/06/16/php-quiz-part-5-constructors.html"><![CDATA[<section class="section">
-  <h2>Question</h2>
-  <p>What will this code output?</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="kd">class</span> <span class="nc">A</span> <span class="p">{</span>
-  <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">LogicException</span> <span class="nv">$l</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="s2">"A"</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="nc">A</span> <span class="p">{</span>
-  <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="s2">"B</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">new</span> <span class="nc">B</span><span class="p">(</span><span class="k">new</span> <span class="nc">Exception</span><span class="p">(</span><span class="s1">'Exception!'</span><span class="p">));</span></code></pre></figure>
-
-  <ul class="answers">
-    <li class="answer">
-      <span class="answer-letter">A</span>
-      <span>Warning: Declaration of B::__construct(Exception $e) should be compatible with A::__construct(LogicException $l)</span>
-    </li>
-    <li class="answer">
-      <span class="answer-letter">B</span>
-      <pre>B</pre>
-    </li>
-    <li class="answer">
-      <span class="answer-letter">C</span>
-      <pre>AB</pre>
-    </li>
-    <li class="answer">
-      <span class="answer-letter">C</span>
-      <span>Fatal error: Uncaught Exception: Exception!</span>
-    </li>
-  </ul>
-</section>
-
-<section class="section">
-  <h2>Answer</h2>
-  <a id="show-answer" href="#">Show the answer</a>
-  <div id="answer">
-    <div class="answer">
-      <span class="answer-letter">B</span>
-      <pre>B</pre>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <h2>Explanation</h2>
-  <p>In PHP, the only rule to overriding constructors is that <strong>there are no rules</strong>!</p>
-  <p>
-    Constructors can be overridden with <em>any</em> signature.
-    Their parameters can be changed freely and without consequence.
-  </p>
-  <p>They can be overridden with completely unrelated parameter types:</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="kd">class</span> <span class="nc">A</span> <span class="p">{</span>
-  <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">array</span> <span class="nv">$a</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span>
-
-<span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="nc">A</span> <span class="p">{</span>
-  <span class="c1">// Works fine!</span>
-  <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">Closure</span> <span class="nv">$c</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span></code></pre></figure>
-  <p>Parameters can also be omitted (or added):</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="kd">class</span> <span class="nc">A</span> <span class="p">{</span>
-  <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">array</span> <span class="nv">$a</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span>
-
-<span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="nc">A</span> <span class="p">{</span>
-  <span class="c1">// This is OK too.</span>
-  <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">()</span> <span class="p">{}</span>
-<span class="p">}</span></code></pre></figure>
-</section>
-
-<section class="section">
-  <h3>Overriding functions</h3>
-  <p>
-    Note that this kind of freedom only applies to constructors.
-    Were these functions not constructors, PHP would issue a warning:
-  </p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="kd">class</span> <span class="nc">A</span> <span class="p">{</span>
-  <span class="k">public</span> <span class="k">function</span> <span class="n">abc</span><span class="p">(</span><span class="kt">LogicException</span> <span class="nv">$l</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span>
-
-<span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="nc">A</span> <span class="p">{</span>
-  <span class="c1">// Warning: Declaration of B::abc(Exception $e) should be</span>
-  <span class="c1">// compatible with A::abc(LogicException $l)</span>
-  <span class="k">public</span> <span class="k">function</span> <span class="n">abc</span><span class="p">(</span><span class="kt">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span></code></pre></figure>
-</section>
-
-<section class="section">
-  <h3>Credits</h3>
-  <p>This post was inspired by an inaccurate <a href="https://en.wikipedia.org/wiki/Talk:Covariance_and_contravariance_(computer_science)#Inaccurate_PHP_example">Wikipedia article</a>.</p>
-</section>]]></content><author><name></name></author><summary type="html"><![CDATA[Most PHP developers probably have already used constructor overriding, as it would be virtually impossible to create object oriented applications without it. Still, many of them might not be familiar with the exact rules around the subject - I know I wasn't.]]></summary></entry><entry><title type="html">PHP quiz #2 - echo</title><link href="https://csirmazbendeguz.github.io/2019/06/15/php-quiz-part-2-echoes.html" rel="alternate" type="text/html" title="PHP quiz #2 - echo" /><published>2019-06-15T00:00:00+00:00</published><updated>2019-06-15T00:00:00+00:00</updated><id>https://csirmazbendeguz.github.io/2019/06/15/php-quiz-part-2-echoes</id><content type="html" xml:base="https://csirmazbendeguz.github.io/2019/06/15/php-quiz-part-2-echoes.html"><![CDATA[<section class="section">
+</section>]]></content><author><name></name></author><summary type="html"><![CDATA[A complete guide to covariance and contravariance in PHP 7.1.]]></summary></entry><entry><title type="html">PHP quiz #2 - echo</title><link href="https://csirmazbendeguz.github.io/2019/06/15/php-quiz-part-2-echoes.html" rel="alternate" type="text/html" title="PHP quiz #2 - echo" /><published>2019-06-15T00:00:00+00:00</published><updated>2019-06-15T00:00:00+00:00</updated><id>https://csirmazbendeguz.github.io/2019/06/15/php-quiz-part-2-echoes</id><content type="html" xml:base="https://csirmazbendeguz.github.io/2019/06/15/php-quiz-part-2-echoes.html"><![CDATA[<section class="section">
   <h2>Question</h2>
   <p>What will this code output?</p>
 
@@ -1608,159 +1712,4 @@ a</pre>
     That is, passing multiple arguments to echo is essentially the same as writing
     separate, consecutive echo statements.
   </p>
-</section>]]></content><author><name></name></author><summary type="html"><![CDATA[When people get into PHP development, the first thing they usually learn is the echo statement. Despite its elementary nature, I've found its handling of multiple arguments to be quite tricky.]]></summary></entry><entry><title type="html">PHP quiz #1 - for loop</title><link href="https://csirmazbendeguz.github.io/2019/06/14/php-quiz-part-1-for-loops.html" rel="alternate" type="text/html" title="PHP quiz #1 - for loop" /><published>2019-06-14T00:00:00+00:00</published><updated>2019-06-14T00:00:00+00:00</updated><id>https://csirmazbendeguz.github.io/2019/06/14/php-quiz-part-1-for-loops</id><content type="html" xml:base="https://csirmazbendeguz.github.io/2019/06/14/php-quiz-part-1-for-loops.html"><![CDATA[<section class="section">
-  <h2>Question</h2>
-  <p>What will this code output?</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">$j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">$j</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="o">++</span><span class="nv">$i</span><span class="p">,</span> <span class="o">++</span><span class="nv">$j</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">echo</span> <span class="s2">"</span><span class="nv">$i</span><span class="s2">,</span><span class="nv">$j</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
-
-  <ul class="answers">
-    <li class="answer">
-      <span class="answer-letter">A</span>
-      <pre>Syntax error</pre>
-    </li>
-    <li class="answer">
-      <span class="answer-letter">B</span>
-      <pre>0,0
-1,1
-2,2</pre>
-    </li>
-    <li class="answer">
-      <span class="answer-letter">C</span>
-      <pre>0,0
-1,1</pre>
-    </li>
-    <li class="answer">
-      <span class="answer-letter">D</span>
-      <pre>0,0
-1,1
-2,1</pre>
-    </li>
-  </ul>
-</section>
-
-<section class="section">
-  <h2>Answer</h2>
-  <a id="show-answer" href="#">Show the answer</a>
-  <div id="answer">
-    <div class="answer">
-      <span class="answer-letter">C</span>
-      <pre>0,0
-1,1</pre>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <h2>Explanation</h2>
-  <h3>The for loop header</h3>
-  <p>
-    Similarly to other languages, it is perfectly legal to initialize and update multiple variables in for loop headers.
-    Consider the following:
-  </p>
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">$j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="mf">...</span><span class="p">;</span> <span class="o">++</span><span class="nv">$i</span><span class="p">,</span> <span class="o">++</span><span class="nv">$j</span><span class="p">)</span> <span class="c1">// OK!</span></code></pre></figure>
-  <p>
-    This is a valid PHP code snippet, and it does exactly what you would expect:
-    it introduces two variables, <code class="highlighter-rouge">$i</code> and <code class="highlighter-rouge">$j</code>,
-    with the initial value of <code class="highlighter-rouge">0</code>,
-    and it increments them by one at the end of each iteration.
-  </p>
-  <p>No trickery here.</p>
-  <p>The difficulty lies in the loop's condition:</p>
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">for</span> <span class="p">(</span><span class="mf">...</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">$j</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="mf">...</span><span class="p">)</span> <span class="c1">// ???</span></code></pre></figure>
-  <p>
-    It might not be immediately obvious what effect does this code have on the loop.
-    One thing's for sure: it won't throw any syntax errors, it's syntactically correct.
-  </p>
-  <aside class="comment">
-    <p>
-      At first glance, it might seem like the loop defines multiple conditions that are eventually <em>AND</em>ed together.
-      This is a fair guess and it's not without reason.
-      Haskell does something similar - it <em>AND</em>s together multiple predicates in list comprehensions.
-    </p>
-    <p>This is not the case here.</p>
-    <p>
-      PHP has its roots in C.
-      As such, it has a few weird historical remains that at first may sound completely counterintuitive.
-    </p>
-  </aside>
-  <p>
-    Surprising as it may seem, <code class="highlighter-rouge">$i < 3, $j < 2</code> is actually a
-    <strong>single expression</strong>, and as all expressions, it evaluates to something.
-  </p>
-</section>
-
-<section class="section">
-  <h3>Comma operator (C)</h3>
-  <p>In C, the <a href="https://en.wikipedia.org/wiki/Comma_operator">comma operator</a> (<code class="highlighter-rouge">,</code>) is an operator that evaluates two expressions and returns the result of the second one.</p>
-  <p>
-    For example, the following code prints the text <code class="highlighter-rouge">Hello World!</code> to stdout,
-    and assigns <code class="highlighter-rouge">3</code> to variable <code class="highlighter-rouge">a</code>:
-  </p>
-<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">printf</span><span class="p">(</span><span class="s">"Hello World!</span><span class="se">\n</span><span class="s">"</span><span class="p">),</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">);</span></code></pre></figure>
-
-  <p>The paranthesized expression is evaluated something like this:</p>
-<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cm">/* 0. */</span> <span class="n">printf</span><span class="p">(</span><span class="s">"Hello World!</span><span class="se">\n</span><span class="s">"</span><span class="p">),</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
-<span class="cm">/* 1. */</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">3</span>
-<span class="cm">/* 2. */</span> <span class="mi">3</span></code></pre></figure>
-  <aside class="comment">
-    <code class="highlighter-rouge">printf</code> returns the number of characters
-    printed (<code class="highlighter-rouge">13</code> in our case).
-  </aside>
-  <aside class="comment">
-    <p>
-      Notice the parentheses around the expression in question.
-      They are there for a reason.
-    </p>
-    <p>
-      In C, the comma operator has the lowest precedence of all operators.
-      Its precedence is even lower than the assignment operator's (<code class="highlighter-rouge">=</code>)!
-    </p>
-    <p>That is to say, omitting the parentheses would result in the code being parsed like this:</p>
-
-<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="n">printf</span><span class="p">(</span><span class="s">"Hello World!</span><span class="se">\n</span><span class="s">"</span><span class="p">)),</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span></code></pre></figure>
-
-    <p>Which, of course, wouldn't make any sense.</p>
-  </aside>
-</section>
-
-<section class="section">
-  <h3>Comma operator (PHP)</h3>
-  <p>
-    This ancient operator did not stand the test of time,
-    not many programming languages support it.
-  </p>
-  <p>
-    PHP doesn't do either.
-    It's not listed in the <a href="https://www.php.net/manual/en/language.operators.precedence.php">precedence table</a> and using it will generally result in a syntax error.
-  </p>
-<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="o">&lt;?</span><span class="n">php</span>
-
-<span class="c1">// Parse error: syntax error, unexpected ',' in ...</span>
-<span class="err">$</span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span></code></pre></figure>
-  <p>However, surprisingly, there is an exception to the rule: for loop conditions.</p>
-  <p>For some strange reason, in for loop conditions the comma operator is correctly evaluated.</p>
-  <div class="compare-table">
-    <table>
-      <tbody>
-      <tr>
-        <td>
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">for</span> <span class="p">(</span><span class="mf">...</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">$j</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="mf">...</span><span class="p">)</span></code></pre></figure>
-        </td>
-        <td>
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">for</span> <span class="p">(</span><span class="mf">...</span><span class="p">;</span> <span class="nv">$j</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="mf">...</span><span class="p">)</span></code></pre></figure>
-        </td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-  <p>
-    In this case, the expression <code class="highlighter-rouge">$i < 3, $j < 2</code> has the same effect as <code class="highlighter-rouge">$j < 2</code>.
-    The first operand is evaluated, but its result is discarded.
-  </p>
-  <p>The loop will only iterate twice.</p>
-</section>]]></content><author><name></name></author><summary type="html"><![CDATA[For loops are one of the most fundamental and ubiquitous control flow statements. They are so essential to computer programming, you would expect every developer to know them inside out. As for me, I never would have thought I could learn anything new about them - I was wrong.]]></summary></entry></feed>
+</section>]]></content><author><name></name></author><summary type="html"><![CDATA[When people get into PHP development, the first thing they usually learn is the echo statement. Despite its elementary nature, I've found its handling of multiple arguments to be quite tricky.]]></summary></entry></feed>

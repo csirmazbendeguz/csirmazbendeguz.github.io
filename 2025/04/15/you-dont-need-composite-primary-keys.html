@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <title>You don't need CompositePrimaryKeys - Bendegúz Csirmaz</title>
+    <script src="https://kit.fontawesome.com/a607672ce1.js"></script>
+    <link type="application/atom+xml" rel="alternate" href="https://csirmazbendeguz.github.io/feed.xml" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>You don’t need CompositePrimaryKeys</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="You don’t need CompositePrimaryKeys" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A word of caution is in order." />
+<meta property="og:description" content="A word of caution is in order." />
+<link rel="canonical" href="https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys.html" />
+<meta property="og:url" content="https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-04-15T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="You don’t need CompositePrimaryKeys" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-04-15T00:00:00+00:00","datePublished":"2025-04-15T00:00:00+00:00","description":"A word of caution is in order.","headline":"You don’t need CompositePrimaryKeys","mainEntityOfPage":{"@type":"WebPage","@id":"https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys.html"},"url":"https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+  </head>
+  <body>
+    <div class="wrapper post-wrapper">
+  <header class="header">
+    <h1 class="site-name">
+      <a href="/">Bendegúz&nbsp;Csirmaz</a>
+    </h1>
+  </header>
+  <main class="content">
+    <section class="section">
+      <h1>You don't need CompositePrimaryKeys</h1>
+      <span class="post__date">April 15, 2025</span>
+      <p>A word of caution is in order.</p>
+    </section>
+    <section class="section">
+  <h3>TL;DR</h3>
+  <p>
+    <a href="https://docs.djangoproject.com/en/5.2/releases/5.2">Django 5.2</a>
+    ships with the new <code class="highlighter-rouge">CompositePrimaryKey</code>
+    class.
+  </p>
+  <p>
+    You should probably avoid it.
+  </p>
+</section>
+
+<section class="section">
+  <h3>Django 5.2</h3>
+  <p>
+    The latest release of Django comes with built-in support for
+    <a href="https://docs.djangoproject.com/en/dev/topics/composite-primary-key/">composite primary keys</a>.
+  </p>
+  <p>
+    This has been the oldest unresolved <a href="https://code.djangoproject.com/ticket/373">feature request</a>
+    in Django for a long time and I'm proud to have contributed to resolving it.
+  </p>
+  <p>
+    That said, the articles and the documentation doesn't seem to do a great job at
+    explaining when you should use it.
+  </p>
+</section>
+
+<section class="section">
+  <h3>Use Cases</h3>
+  <p>
+    In my opinion, there are 2 valid use-cases:
+  </p>
+  <p>
+    1. If you're connecting Django to a "<em>legacy</em>" database or an external database
+    (i.e. a database not managed by Django migrations), and this database uses composite
+    primary keys, use <code class="highlighter-rouge">CompositePrimaryKey</code> for ORM support.
+  </p>
+  <p>
+    2. If you're using a database sharding or partitioning solution that requires composite
+    primary keys (e.g. <a href="https://www.citusdata.com/">Citus</a>),
+    <code class="highlighter-rouge">CompositePrimaryKey</code> makes it easy to add
+    composite primary keys to your database tables.
+  </p>
+  <p>
+    Personally, my use case is "<em>multi-tenant database architecture with Citus</em>".
+  </p>
+</section>
+
+<section class="section">
+  <h3>When-Not-To-Use Cases</h3>
+  <p>
+    1. DO NOT use composite primary keys in place of surrogate keys
+  </p>
+  <p>
+    <strong>ALWAYS</strong> have a surrogate key. This can be either:
+  </p>
+  <p>
+    <ul>
+      <li>an auto-incremented integer (<code class="highlighter-rouge">AutoField</code>)</li>
+      <li>a UUID (<code class="highlighter-rouge">UUIDField</code>)</li>
+      <li>a Nano ID, CUID or similar (<code class="highlighter-rouge">CharField</code>)</li>
+    </ul>
+  </p>
+  <p><em>"Okay, but what if my database table has a natural composite key?"</em></p>
+  <p>
+    My recommendation is: <strong>DON'T DO IT!</strong>
+  </p>
+  <p>
+    It'll make life difficult for everyone who uses your table, including yourself
+    (think about foreign keys, DDL and DML updates).
+  </p>
+  <p>
+    2. DO NOT use composite primary keys in place of unique constraints
+  </p>
+  <p>
+    It's easy to change unique constraints, but it's hard to change primary keys
+    (again, think about the foreign keys).
+  </p>
+  <p>
+    <code class="highlighter-rouge">unique_together</code> and
+    <code class="highlighter-rouge">UniqueConstraint</code> are perfectly fine,
+    don't replace them with <code class="highlighter-rouge">CompositePrimaryKey</code> 🫠
+  </p>
+</section>
+
+<section class="section">
+  <h3>Conclusion</h3>
+  <p>
+    As a developer,
+    <code class="highlighter-rouge">CompositePrimaryKey</code>
+    can make your life easier, but it can also make it harder.
+  </p>
+  <p>
+    If you don't have a good reason to use it, you should probably avoid it.
+  </p>
+</section>
+
+<section class="section">
+  <h3>Disclaimer</h3>
+  <p>
+    This is my personal opinion and it doesn't represent
+    the opinion of any organization I'm a part of.
+  </p>
+</section>
+
+  </main>
+  
+<div id="disqus_thread"></div>
+<script>
+  /**
+   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  var disqus_config = function () {
+  this.page.title = 'You don't need CompositePrimaryKeys';
+  this.page.url = 'https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys.html';  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/2025/04/15/you-dont-need-composite-primary-keys'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://csirmazbendeguz.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  <footer class="footer">
+  <span>Copyright&nbsp;©&nbsp;<span class="current-year">2019</span>&nbsp;Bendegúz&nbsp;Csirmaz</span>
+  <ul class="icons">
+    <li class="icon">
+      <a href="https://www.linkedin.com/in/bendeguz-csirmaz/" title="LinkedIn" class="icon-link">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  </ul>
+</footer>
+<script src="/assets/js/current-year.js"></script>
+
+</div>
+
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142286966-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142286966-1');
+</script>
+
+
+  </body>
+</html>
