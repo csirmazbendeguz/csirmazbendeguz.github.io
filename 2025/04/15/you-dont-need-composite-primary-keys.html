@@ -13,8 +13,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="You don’t need CompositePrimaryKeys" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A word of caution is in order." />
-<meta property="og:description" content="A word of caution is in order." />
+<meta name="description" content="A word of caution is in order" />
+<meta property="og:description" content="A word of caution is in order" />
 <link rel="canonical" href="https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys.html" />
 <meta property="og:url" content="https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys.html" />
 <meta property="og:type" content="article" />
@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="You don’t need CompositePrimaryKeys" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-04-15T00:00:00+00:00","datePublished":"2025-04-15T00:00:00+00:00","description":"A word of caution is in order.","headline":"You don’t need CompositePrimaryKeys","mainEntityOfPage":{"@type":"WebPage","@id":"https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys.html"},"url":"https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-04-15T00:00:00+00:00","datePublished":"2025-04-15T00:00:00+00:00","description":"A word of caution is in order","headline":"You don’t need CompositePrimaryKeys","mainEntityOfPage":{"@type":"WebPage","@id":"https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys.html"},"url":"https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys.html"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
@@ -39,7 +39,7 @@
     <section class="section">
       <h1>You don't need CompositePrimaryKeys</h1>
       <span class="post__date">April 15, 2025</span>
-      <p>A word of caution is in order.</p>
+      <p>A word of caution is in order</p>
     </section>
     <section class="section">
   <h3>TL;DR</h3>
@@ -82,8 +82,8 @@
   <p>
     2. If you're using a database sharding or partitioning solution that requires composite
     primary keys (e.g. <a href="https://www.citusdata.com/">Citus</a>),
-    <code class="highlighter-rouge">CompositePrimaryKey</code> makes it easy to add
-    composite primary keys to your database tables.
+    use <code class="highlighter-rouge">CompositePrimaryKey</code> to add
+    composite primary keys to your database tables through Django migrations.
   </p>
   <p>
     Personally, my use case is "<em>multi-tenant database architecture with Citus</em>".
@@ -110,15 +110,21 @@
     My recommendation is: <strong>DON'T DO IT!</strong>
   </p>
   <p>
-    It'll make life difficult for everyone who uses your table, including yourself
-    (think about foreign keys, DDL and DML updates).
+    It'll make life difficult for everyone who uses your table, including yourself.
+    Always think about:
+    <ul>
+      <li>foreign keys</li>
+      <li>DDL updates (what if a field is added to the composite key?)</li>
+      <li>DML updates (what if a value changes?)</li>
+      <li>downstream users</li>
+    </ul>
   </p>
   <p>
     2. DO NOT use composite primary keys in place of unique constraints
   </p>
   <p>
-    It's easy to change unique constraints, but it's hard to change primary keys
-    (again, think about the foreign keys).
+    It's easy to change a unique constraint, but it's hard to a change primary key
+    because unlike unique constraints, primary keys have dependencies (e.g. foreign keys).
   </p>
   <p>
     <code class="highlighter-rouge">unique_together</code> and
@@ -130,9 +136,8 @@
 <section class="section">
   <h3>Conclusion</h3>
   <p>
-    As a developer,
     <code class="highlighter-rouge">CompositePrimaryKey</code>
-    can make your life easier, but it can also make it harder.
+    can make life easier, but it can also make it harder.
   </p>
   <p>
     If you don't have a good reason to use it, you should probably avoid it.

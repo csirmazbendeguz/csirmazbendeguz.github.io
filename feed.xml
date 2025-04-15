@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://csirmazbendeguz.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.github.io/" rel="alternate" type="text/html" /><updated>2025-04-15T18:55:17+00:00</updated><id>https://csirmazbendeguz.github.io/feed.xml</id><entry><title type="html">You don’t need CompositePrimaryKeys</title><link href="https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys.html" rel="alternate" type="text/html" title="You don’t need CompositePrimaryKeys" /><published>2025-04-15T00:00:00+00:00</published><updated>2025-04-15T00:00:00+00:00</updated><id>https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys</id><content type="html" xml:base="https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys.html"><![CDATA[<section class="section">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://csirmazbendeguz.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.github.io/" rel="alternate" type="text/html" /><updated>2025-04-15T19:39:28+00:00</updated><id>https://csirmazbendeguz.github.io/feed.xml</id><entry><title type="html">You don’t need CompositePrimaryKeys</title><link href="https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys.html" rel="alternate" type="text/html" title="You don’t need CompositePrimaryKeys" /><published>2025-04-15T00:00:00+00:00</published><updated>2025-04-15T00:00:00+00:00</updated><id>https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys</id><content type="html" xml:base="https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys.html"><![CDATA[<section class="section">
   <h3>TL;DR</h3>
   <p>
     <a href="https://docs.djangoproject.com/en/5.2/releases/5.2">Django 5.2</a>
@@ -39,8 +39,8 @@
   <p>
     2. If you're using a database sharding or partitioning solution that requires composite
     primary keys (e.g. <a href="https://www.citusdata.com/">Citus</a>),
-    <code class="highlighter-rouge">CompositePrimaryKey</code> makes it easy to add
-    composite primary keys to your database tables.
+    use <code class="highlighter-rouge">CompositePrimaryKey</code> to add
+    composite primary keys to your database tables through Django migrations.
   </p>
   <p>
     Personally, my use case is "<em>multi-tenant database architecture with Citus</em>".
@@ -67,15 +67,21 @@
     My recommendation is: <strong>DON'T DO IT!</strong>
   </p>
   <p>
-    It'll make life difficult for everyone who uses your table, including yourself
-    (think about foreign keys, DDL and DML updates).
+    It'll make life difficult for everyone who uses your table, including yourself.
+    Always think about:
+    <ul>
+      <li>foreign keys</li>
+      <li>DDL updates (what if a field is added to the composite key?)</li>
+      <li>DML updates (what if a value changes?)</li>
+      <li>downstream users</li>
+    </ul>
   </p>
   <p>
     2. DO NOT use composite primary keys in place of unique constraints
   </p>
   <p>
-    It's easy to change unique constraints, but it's hard to change primary keys
-    (again, think about the foreign keys).
+    It's easy to change a unique constraint, but it's hard to a change primary key
+    because unlike unique constraints, primary keys have dependencies (e.g. foreign keys).
   </p>
   <p>
     <code class="highlighter-rouge">unique_together</code> and
@@ -87,9 +93,8 @@
 <section class="section">
   <h3>Conclusion</h3>
   <p>
-    As a developer,
     <code class="highlighter-rouge">CompositePrimaryKey</code>
-    can make your life easier, but it can also make it harder.
+    can make life easier, but it can also make it harder.
   </p>
   <p>
     If you don't have a good reason to use it, you should probably avoid it.
@@ -102,7 +107,7 @@
     This is my personal opinion and it doesn't represent
     the opinion of any organization I'm a part of.
   </p>
-</section>]]></content><author><name></name></author><summary type="html"><![CDATA[A word of caution is in order.]]></summary></entry><entry><title type="html">How to convert a matrix to a table in Google Sheets</title><link href="https://csirmazbendeguz.github.io/2021/06/19/how-to-convert-a-matrix-to-a-table-in-google-sheets.html" rel="alternate" type="text/html" title="How to convert a matrix to a table in Google Sheets" /><published>2021-06-19T00:00:00+00:00</published><updated>2021-06-19T00:00:00+00:00</updated><id>https://csirmazbendeguz.github.io/2021/06/19/how-to-convert-a-matrix-to-a-table-in-google-sheets</id><content type="html" xml:base="https://csirmazbendeguz.github.io/2021/06/19/how-to-convert-a-matrix-to-a-table-in-google-sheets.html"><![CDATA[<section class="section">
+</section>]]></content><author><name></name></author><summary type="html"><![CDATA[A word of caution is in order]]></summary></entry><entry><title type="html">How to convert a matrix to a table in Google Sheets</title><link href="https://csirmazbendeguz.github.io/2021/06/19/how-to-convert-a-matrix-to-a-table-in-google-sheets.html" rel="alternate" type="text/html" title="How to convert a matrix to a table in Google Sheets" /><published>2021-06-19T00:00:00+00:00</published><updated>2021-06-19T00:00:00+00:00</updated><id>https://csirmazbendeguz.github.io/2021/06/19/how-to-convert-a-matrix-to-a-table-in-google-sheets</id><content type="html" xml:base="https://csirmazbendeguz.github.io/2021/06/19/how-to-convert-a-matrix-to-a-table-in-google-sheets.html"><![CDATA[<section class="section">
   <h3>Motivation</h3>
   <p>
     I came across an interesting problem while performing my data engineering duties at work.
