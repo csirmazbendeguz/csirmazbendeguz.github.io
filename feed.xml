@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://csirmazbendeguz.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.github.io/" rel="alternate" type="text/html" /><updated>2025-04-15T19:47:21+00:00</updated><id>https://csirmazbendeguz.github.io/feed.xml</id><entry><title type="html">You don’t need CompositePrimaryKeys</title><link href="https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys.html" rel="alternate" type="text/html" title="You don’t need CompositePrimaryKeys" /><published>2025-04-15T00:00:00+00:00</published><updated>2025-04-15T00:00:00+00:00</updated><id>https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys</id><content type="html" xml:base="https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys.html"><![CDATA[<section class="section">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://csirmazbendeguz.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://csirmazbendeguz.github.io/" rel="alternate" type="text/html" /><updated>2025-04-15T20:37:33+00:00</updated><id>https://csirmazbendeguz.github.io/feed.xml</id><entry><title type="html">You don’t need CompositePrimaryKeys</title><link href="https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys.html" rel="alternate" type="text/html" title="You don’t need CompositePrimaryKeys" /><published>2025-04-15T00:00:00+00:00</published><updated>2025-04-15T00:00:00+00:00</updated><id>https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys</id><content type="html" xml:base="https://csirmazbendeguz.github.io/2025/04/15/you-dont-need-composite-primary-keys.html"><![CDATA[<section class="section">
   <h3>TL;DR</h3>
   <p>
     <a href="https://docs.djangoproject.com/en/5.2/releases/5.2">Django 5.2</a>
@@ -62,7 +62,9 @@
       <li>a Nano ID, CUID or similar (<code class="highlighter-rouge">CharField</code>)</li>
     </ul>
   </p>
-  <p><em>"Okay, but what if my database table has a natural composite key?"</em></p>
+  <p>
+    <em>"Okay, but what if my database table has a natural composite key?"</em>
+  </p>
   <p>
     My recommendation is: <strong>DON'T DO IT!</strong>
   </p>
@@ -71,10 +73,14 @@
     Always think about:
     <ul>
       <li>foreign keys</li>
-      <li>DDL updates (what if a field is added to the composite key?)</li>
-      <li>DML updates (what if a value changes?)</li>
+      <li>DDL updates (what if a field is added to / removed from the composite key?)</li>
+      <li>DML updates (what if a value changes in the composite key?)</li>
       <li>downstream users</li>
     </ul>
+  </p>
+  <p>
+    In my experience, natural keys work for simple apps, but they're not future proof
+    and always cause a headache later down the line.
   </p>
   <p>
     2. DO NOT use composite primary keys in place of unique constraints

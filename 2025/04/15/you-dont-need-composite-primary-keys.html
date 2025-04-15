@@ -105,7 +105,9 @@
       <li>a Nano ID, CUID or similar (<code class="highlighter-rouge">CharField</code>)</li>
     </ul>
   </p>
-  <p><em>"Okay, but what if my database table has a natural composite key?"</em></p>
+  <p>
+    <em>"Okay, but what if my database table has a natural composite key?"</em>
+  </p>
   <p>
     My recommendation is: <strong>DON'T DO IT!</strong>
   </p>
@@ -114,10 +116,14 @@
     Always think about:
     <ul>
       <li>foreign keys</li>
-      <li>DDL updates (what if a field is added to the composite key?)</li>
-      <li>DML updates (what if a value changes?)</li>
+      <li>DDL updates (what if a field is added to / removed from the composite key?)</li>
+      <li>DML updates (what if a value changes in the composite key?)</li>
       <li>downstream users</li>
     </ul>
+  </p>
+  <p>
+    In my experience, natural keys work for simple apps, but they're not future proof
+    and always cause a headache later down the line.
   </p>
   <p>
     2. DO NOT use composite primary keys in place of unique constraints
